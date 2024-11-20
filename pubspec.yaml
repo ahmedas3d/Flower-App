@@ -89,7 +89,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
-  flutter_launcher_icons:
+flutter_launcher_icons:
   android: true
   ios: true
   remove_alpha_ios: true
