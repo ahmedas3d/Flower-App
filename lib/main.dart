@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Flower_App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Flower_App extends StatelessWidget {
+  const Flower_App({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
