@@ -1,13 +1,20 @@
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
-  runApp(const Flower_App());
+  runApp(
+    BlocProvider(
+      create: (context) => AuthCubit(),
+      child: FlowerApp(),
+    ),
+  );
 }
 
-class Flower_App extends StatelessWidget {
-  const Flower_App({super.key});
+class FlowerApp extends StatelessWidget {
+  const FlowerApp({super.key});
 
   @override
   Widget build(BuildContext context) {

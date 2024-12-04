@@ -1,8 +1,8 @@
-import 'package:flower_app/features/AuthFeature/view/screens/email_verify_screen.dart';
-import 'package:flower_app/features/AuthFeature/view/screens/forgot_screen.dart';
-import 'package:flower_app/features/AuthFeature/view/screens/login_screen.dart';
-import 'package:flower_app/features/AuthFeature/view/screens/reset_password_screen.dart';
-import 'package:flower_app/features/AuthFeature/view/screens/sign_up_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/email_verify_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/forgot_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/login_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/reset_password_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_up_screen.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
-import 'package:flower_app/features/AuthFeature/view/widgets/custom_button.dart';
-import 'package:flower_app/features/AuthFeature/view/widgets/custom_text_field.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
