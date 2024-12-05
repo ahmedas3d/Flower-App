@@ -3,8 +3,10 @@ import 'package:flower_app/features/AuthFeature/presentation/view/screens/forgot
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/login_screen.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/reset_password_screen.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_up_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -20,11 +22,19 @@ class AppRoutes {
       // case splash:
       //   return MaterialPageRoute(builder: (_) => const SplashScreen());
       case loginScreen:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child: LoginScreen(),
+                ));
       case splash:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case signUpScreen:
-        return MaterialPageRoute(builder: (_) => const SignUpScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child: const SignUpScreen(),
+                ));
       case forgotPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ForgotScreen());
       case emailVerificationScreen:

@@ -1,6 +1,5 @@
 import 'package:flower_app/blocobserve.dart';
 import 'package:flower_app/core/routes/routes.dart';
-import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -8,10 +7,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 void main() {
   Bloc.observer = myblocobsever();
   runApp(
-    BlocProvider(
-      create: (context) => AuthCubit(),
-      child: FlowerApp(),
-    ),
+    const FlowerApp(),
   );
 }
 

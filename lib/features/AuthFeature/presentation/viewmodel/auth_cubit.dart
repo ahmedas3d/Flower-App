@@ -64,11 +64,16 @@ class AuthCubit extends Cubit<AuthState> {
 
     try {
       var response = await dio.post(
-        'https://elevate-tech.com/api/auth/login', // Example API endpoint for login
+        'https://flower.elevateegy.com/api/v1/auth/signin', // Example API endpoint for login
         data: {
           "email": email,
           "password": password,
         },
+        options: Options(
+          headers: {
+            "Content-Type": "application/json", // Ensure proper content type
+          },
+        ),
       );
 
       if (response.statusCode == 200) {
@@ -76,7 +81,8 @@ class AuthCubit extends Cubit<AuthState> {
       } else {
         emit(SignInErrorState(error: "Error in login"));
       }
-    } catch (e) {
+      //catch errors with Dio
+    } catch (e /* DioError */) {
       emit(SignInErrorState(
           error: e.toString())); // Emit error state if something goes wrong
     }
