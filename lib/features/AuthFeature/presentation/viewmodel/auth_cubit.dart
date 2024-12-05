@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -19,8 +20,8 @@ class AuthCubit extends Cubit<AuthState> {
     emit(SignUpLoadingState()); // Emit loading state
 
     try {
-      var response = await dio.post(
-        'https://elevate-tech.com/api/auth/register', // Example API endpoint
+      var response = await Dio().post(
+        'https://flower.elevateegy.com/api/v1/auth/signup',
         data: {
           "firstName": firstName,
           "lastName": lastName,
@@ -28,17 +29,33 @@ class AuthCubit extends Cubit<AuthState> {
           "password": password,
           "rePassword": rePassword,
           "phone": '+20$phone',
+          "gender": gender
         },
+        options: Options(
+          headers: {
+            "Content-Type": "application/json", // Ensure proper content type
+          },
+        ),
       );
 
-      if (response.statusCode == 200) {
-        emit(SignUpSuccessState()); // Emit success state on successful signup
+      // Handle successful response
+      if (response.statusCode == 201) {
+        emit(SignUpSuccessState());
+        print('Signup successful: ${response.data}');
       } else {
-        emit(SignUpErrorState(error: "Error in signup"));
+        emit(SignUpErrorState(
+            error: "Unexpected error: ${response.statusCode}"));
       }
     } catch (e) {
-      emit(SignUpErrorState(
-          error: e.toString())); // Emit error state if something goes wrong
+      // Catch Dio errors
+      if (e is DioError) {
+        print('DioError: ${e.response?.data ?? e.message}');
+        emit(SignUpErrorState(error: e.response?.data.toString() ?? e.message));
+      } else {
+        // Handle generic errors
+        print('Error: $e');
+        emit(SignUpErrorState(error: e.toString()));
+      }
     }
   }
 

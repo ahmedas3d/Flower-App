@@ -31,6 +31,13 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const EmailVerifyScreen());
       case resetPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
+      case homeScreen:
+        return MaterialPageRoute(
+            builder: (_) => Scaffold(
+                  body: Center(
+                    child: Text('Home Screen'),
+                  ),
+                ));
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(
