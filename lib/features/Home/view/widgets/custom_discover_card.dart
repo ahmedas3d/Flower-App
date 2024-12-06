@@ -90,7 +90,6 @@ class CustomDiscoverCard extends StatelessWidget {
 class DiscoverList extends StatelessWidget {
   DiscoverList({super.key});
 
-  // قائمة العناصر التي تحتوي على البيانات مثل الصور والعناوين
   final List<Map<String, String>> items = [
     {
       'image': 'assets/images/grad_card.png',

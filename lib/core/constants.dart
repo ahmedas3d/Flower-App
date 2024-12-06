@@ -12,6 +12,7 @@ class AppColors {
   static const Color primaryColor70 = Color(0xFF8c1447);
   static const Color primaryColor80 = Color(0xFF690f35);
   static const Color primaryColor90 = Color(0xFF460A23);
+  static const Color pinkLight = Color(0xffF9ECF0);
   static const Color greyColor = Color(0xFF535353);
   static const Color errorColor = Color(0xFFCC1010);
   static const Color successColor = Color(0xFF0CB3597);

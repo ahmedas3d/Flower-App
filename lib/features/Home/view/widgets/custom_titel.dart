@@ -15,33 +15,36 @@ class customTitle extends StatelessWidget {
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 18.sp,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w500,
-            color: AppColors.textColor1,
-          ),
-        ),
-        GestureDetector(
-          onTap: onTap,
-          child: Text(
-            viewAll ?? '',
+    return Padding(
+      padding: const EdgeInsets.only(right: 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
             style: TextStyle(
-              decoration: TextDecoration.underline,
-              decorationColor: AppColors.primaryColor,
-              fontSize: 12.sp,
+              fontSize: 18.sp,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,
-              color: AppColors.primaryColor,
+              color: AppColors.textColor1,
             ),
           ),
-        )
-      ],
+          GestureDetector(
+            onTap: onTap,
+            child: Text(
+              viewAll ?? '',
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationColor: AppColors.primaryColor,
+                fontSize: 12.sp,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w500,
+                color: AppColors.primaryColor,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
