@@ -1,20 +1,29 @@
-import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flower_app/core/constants.dart';
 
 Widget customSmallTextField({
   required String label,
   required String hint,
   bool isObscured = false,
   TextEditingController? controller,
+  TextEditingController? confirmPasswordController,
+  Function(String)? onChanged,
+  bool isConfirmPassword = false,
 }) {
+  bool isPasswordMatched = confirmPasswordController?.text == controller?.text;
+
   return SizedBox(
     width: 165,
     child: TextFormField(
       controller: controller,
-      obscureText: isObscured, // Ensure this handles text obscuring
+      obscureText: isObscured,
+      onChanged: onChanged,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter $label';
+        }
+        if (isConfirmPassword && value != confirmPasswordController?.text) {
+          return 'Passwords do not match';
         }
         return null;
       },
@@ -42,6 +51,15 @@ Widget customSmallTextField({
           borderSide: const BorderSide(color: AppColors.errorColor),
           borderRadius: BorderRadius.circular(10),
         ),
+        // Show icon only when the user has started typing and the passwords match
+        suffixIcon: isConfirmPassword
+            ? confirmPasswordController!.text.isNotEmpty && isPasswordMatched
+                ? Icon(
+                    Icons.check_circle,
+                    color: Colors.green,
+                  )
+                : null // Hide icon when password does not match
+            : null,
       ),
     ),
   );

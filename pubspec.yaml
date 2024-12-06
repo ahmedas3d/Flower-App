@@ -35,15 +35,12 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.0
   flutter_launcher_icons: ^0.14.1
-<<<<<<< HEAD
-  flutter_screenutil: ^5.9.3
-
-=======
   http: ^1.2.2
   modal_progress_hud_nsn: ^0.5.1
   provider_base_tools: ^0.1.6
   responsive_framework: ^1.5.1
->>>>>>> origin/master
+  flutter_screenutil: ^5.9.3
+
 dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:

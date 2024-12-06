@@ -1,12 +1,8 @@
+import 'package:bloc/bloc.dart';
 import 'package:flower_app/blocobserve.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-=======
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:responsive_framework/responsive_framework.dart';
->>>>>>> origin/master
 
 void main() {
   Bloc.observer = myblocobsever();
