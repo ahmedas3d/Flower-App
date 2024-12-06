@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onTap: () {
                     if (_formLoginKey.currentState!.validate()) {
                       Navigator.pushReplacementNamed(
-                          context, AppRoutes.homeScreen);
+                          context, AppRoutes.bottomNavBar);
                     }
                   },
                   color: AppColors.primaryColor,
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   title: 'Continue with gust',
                   onTap: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.homeScreen);
+                        context, AppRoutes.bottomNavBar);
                   },
                   color: AppColors.backgroundColor,
                   textColor: AppColors.textColor3,

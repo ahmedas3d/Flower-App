@@ -1,6 +1,6 @@
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const Flower_App());
@@ -11,19 +11,24 @@ class Flower_App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (context, child) => ResponsiveBreakpoints.builder(
-        child: child!,
-        breakpoints: [
-          const Breakpoint(start: 0, end: 450, name: MOBILE),
-          const Breakpoint(start: 451, end: 800, name: TABLET),
-          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
-          const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
-        ],
-      ),
-      initialRoute: AppRoutes.splash,
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: AppRoutes.generateRoute,
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          initialRoute: AppRoutes.splash,
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: AppRoutes.generateRoute,
+          builder: (context, widget) {
+            return MediaQuery(
+              data: MediaQuery.of(context)
+                  .copyWith(textScaler: TextScaler.linear(1.0)),
+              child: widget!,
+            );
+          },
+        );
+      },
     );
   }
 }
