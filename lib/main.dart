@@ -1,13 +1,22 @@
+import 'package:flower_app/blocobserve.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+=======
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+>>>>>>> origin/master
 
 void main() {
-  runApp(const Flower_App());
+  Bloc.observer = myblocobsever();
+  runApp(
+    const FlowerApp(),
+  );
 }
 
-class Flower_App extends StatelessWidget {
-  const Flower_App({super.key});
+class FlowerApp extends StatelessWidget {
+  const FlowerApp({super.key});
 
   @override
   Widget build(BuildContext context) {

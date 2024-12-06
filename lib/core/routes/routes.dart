@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flower_app/features/AuthFeature/view/screens/email_verify_screen.dart';
 import 'package:flower_app/features/AuthFeature/view/screens/forgot_screen.dart';
 import 'package:flower_app/features/AuthFeature/view/screens/login_screen.dart';
@@ -5,8 +6,17 @@ import 'package:flower_app/features/AuthFeature/view/screens/reset_password_scre
 import 'package:flower_app/features/AuthFeature/view/screens/sign_up_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
+=======
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/email_verify_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/forgot_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/login_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/reset_password_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_up_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
+>>>>>>> origin/master
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -23,11 +33,19 @@ class AppRoutes {
       // case splash:
       //   return MaterialPageRoute(builder: (_) => const SplashScreen());
       case loginScreen:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child: LoginScreen(),
+                ));
       case splash:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case signUpScreen:
-        return MaterialPageRoute(builder: (_) => const SignUpScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child: const SignUpScreen(),
+                ));
       case forgotPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ForgotScreen());
       case emailVerificationScreen:
@@ -35,9 +53,18 @@ class AppRoutes {
       case resetPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
       case homeScreen:
+<<<<<<< HEAD
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case bottomNavBar:
         return MaterialPageRoute(builder: (_) => const BottomNavBar());
+=======
+        return MaterialPageRoute(
+            builder: (_) => Scaffold(
+                  body: Center(
+                    child: Text('Home Screen'),
+                  ),
+                ));
+>>>>>>> origin/master
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flower_app/core/constants.dart';
+import 'package:flutter/material.dart';
 
 Widget customSmallTextField({
   required String label,
   required String hint,
-  bool isObscured = true,
+  bool isObscured = false,
   TextEditingController? controller,
 }) {
   return SizedBox(
