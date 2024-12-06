@@ -1,5 +1,5 @@
-import 'package:flower_app/features/AuthFeature/view/screens/login_screen.dart';
-import 'package:flower_app/features/AuthFeature/view/screens/sign_up_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/login_screen.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_up_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/email_verify_screen.dart';
