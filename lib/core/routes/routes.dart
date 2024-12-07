@@ -1,5 +1,6 @@
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/login_screen.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_up_screen.dart';
+import 'package:flower_app/features/BestSeller/view/screens/best_seller_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/email_verify_screen.dart';
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String resetPasswordScreen = '/resetPasswordScreen';
   static const String homeScreen = '/homeScreen';
   static const String bottomNavBar = '/bottomNavBar';
+  static const String bestSellerScreen = '/bestSellerScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -48,6 +50,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case bottomNavBar:
         return MaterialPageRoute(builder: (_) => const BottomNavBar());
+      case bestSellerScreen:
+        return MaterialPageRoute(builder: (_) => const BestSellerScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

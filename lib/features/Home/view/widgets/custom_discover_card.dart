@@ -104,7 +104,7 @@ class DiscoverList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250.h,
+      height: 255.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,

@@ -1,4 +1,5 @@
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/Home/view/widgets/best_seller.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_categories.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_discover_card.dart';
@@ -20,27 +21,30 @@ class HomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                children: [
-                  Image.asset(
-                    'assets/images/flower.png',
-                    width: 20.w,
-                    height: 20.h,
-                    fit: BoxFit.contain,
-                  ),
-                  Text(
-                    'Flowery',
-                    style: TextStyle(
-                      fontSize: 24.sp,
-                      fontFamily: 'IM FELL English',
-                      color: AppColors.primaryColor,
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/flower.png',
+                      width: 20.w,
+                      height: 20.h,
+                      fit: BoxFit.contain,
                     ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: customSearchField(),
-                  ),
-                ],
+                    Text(
+                      'Flowery',
+                      style: TextStyle(
+                        fontSize: 24.sp,
+                        fontFamily: 'IM FELL English',
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: customSearchField(),
+                    ),
+                  ],
+                ),
               ),
               Row(
                 children: [
@@ -104,7 +108,9 @@ class HomeScreen extends StatelessWidget {
               ),
               customTitle(
                 title: 'Best Sellers',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.bestSellerScreen);
+                },
                 viewAll: 'View All',
               ),
               SizedBox(

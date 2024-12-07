@@ -78,7 +78,7 @@ class BestSellerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 195.h,
+      height: 200.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,

@@ -38,7 +38,7 @@ class CustomCategories extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-            fontSize: 14.sp,
+            fontSize: 12.sp,
             color: AppColors.textColor1,
             fontWeight: FontWeight.w500,
             fontFamily: 'Inter',
@@ -78,7 +78,7 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 90.h,
+      height: 95.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,

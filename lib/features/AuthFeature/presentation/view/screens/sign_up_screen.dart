@@ -34,6 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
+        backgroundColor: AppColors.backgroundColor,
         title: const Text(
           'Sign Up',
           textAlign: TextAlign.center,
@@ -50,7 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             setState(() {
               loading = false;
             });
-            Navigator.pushReplacementNamed(context, AppRoutes.homeScreen);
+            Navigator.pushReplacementNamed(context, AppRoutes.bottomNavBar);
           } else if (state is SignUpErrorState) {
             setState(() {
               loading = false;
@@ -65,6 +66,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
         },
         child: ModalProgressHUD(
           inAsyncCall: loading,
+          progressIndicator: const CircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ),
           child: SingleChildScrollView(
             child: Form(
               key: _formSignUpKey,

@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
             setState(() {
               _isLoading = false;
             });
-            Navigator.pushReplacementNamed(context, AppRoutes.homeScreen);
+            Navigator.pushReplacementNamed(context, AppRoutes.bottomNavBar);
           } else if (state is SignInErrorState) {
             setState(() {
               _isLoading = false;
@@ -63,6 +63,9 @@ class _LoginScreenState extends State<LoginScreen> {
         },
         child: ModalProgressHUD(
           inAsyncCall: _isLoading,
+          progressIndicator: const CircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ),
           child: SingleChildScrollView(
             child: Form(
               key: _formLoginKey,
