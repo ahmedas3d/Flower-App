@@ -210,10 +210,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     customButton(
                       title: 'Sign Up',
                       onTap: () {
-                        if ((_formSignUpKey.currentState?.validate() ??
-                                false) &&
-                            (isMaleSelected || isFemaleSelected) &&
-                            password.text == confirmPassword.text) {
+                        if (password.text != confirmPassword.text) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Passwords do not match'),
+                              backgroundColor: AppColors.primaryColor,
+                            ),
+                          );
+                        } else if ((_formSignUpKey.currentState?.validate() ??
+                            false)) {
                           context.read<AuthCubit>().signUp(
                                 firstName: firstName.text,
                                 lastName: lastName.text,

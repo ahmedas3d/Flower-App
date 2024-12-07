@@ -46,16 +46,13 @@ class AuthCubit extends Cubit<AuthState> {
         emit(SignUpErrorState(
             error: "Unexpected error: ${response.statusCode}"));
       }
+    } on DioError catch (e) {
+      print('DioError: ${e.response?.data ?? e.message}');
+      emit(SignUpErrorState(error: e.response?.data.toString() ?? e.message));
     } catch (e) {
-      // Catch Dio errors
-      if (e is DioError) {
-        print('DioError: ${e.response?.data ?? e.message}');
-        emit(SignUpErrorState(error: e.response?.data.toString() ?? e.message));
-      } else {
-        // Handle generic errors
-        print('Error: $e');
-        emit(SignUpErrorState(error: e.toString()));
-      }
+      // Handle generic errors
+      print('Error: $e');
+      emit(SignUpErrorState(error: e.toString()));
     }
   }
 
@@ -79,12 +76,17 @@ class AuthCubit extends Cubit<AuthState> {
       if (response.statusCode == 200) {
         emit(SignInSuccessState()); // Emit success state on successful login
       } else {
-        emit(SignInErrorState(error: "Error in login"));
+        //using the error message from the server
+        emit(SignInErrorState(error: response.data['message']));
       }
       //catch errors with Dio
-    } catch (e /* DioError */) {
-      emit(SignInErrorState(
-          error: e.toString())); // Emit error state if something goes wrong
+    } on DioError catch (e) {
+      print('DioError: ${e.response?.data ?? e.message}');
+      emit(SignInErrorState(error: e.response?.data.toString() ?? e.message));
+    } catch (e) {
+      // Handle generic errors
+      print('Error: $e');
+      emit(SignInErrorState(error: e.toString()));
     }
   }
 
