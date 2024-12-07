@@ -1,4 +1,4 @@
-import 'package:flower_app/core/helper/api.dart';
+import 'package:flower_app/core/api/api.dart';
 import 'package:flower_app/features/Home/data/models/get_all_product_model.dart';
 
 class AllProductServices {
