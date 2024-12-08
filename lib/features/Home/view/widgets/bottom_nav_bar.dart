@@ -1,4 +1,5 @@
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/features/Categories/view/screens/categories_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    Center(child: Text('Category Screen')),
+    CategoriesScreen(),
     Center(child: Text('Cart Screen')),
     Center(child: Text('Profile Screen')),
   ];

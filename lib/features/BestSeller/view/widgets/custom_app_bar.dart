@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, required this.title, required this.subTitle});
+
+  final String title;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
               ),
               SizedBox(width: 5.w),
               Text(
-                'Best Sellers',
+                title,
                 style: TextStyle(
                   fontSize: 20.sp,
                   color: AppColors.textColor1,
@@ -38,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
             ],
           ),
           Text(
-            'Bloom with our exquisite best sellers',
+            subTitle,
             style: TextStyle(
               fontSize: 13.sp,
             ),

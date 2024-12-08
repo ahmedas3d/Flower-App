@@ -122,7 +122,9 @@ class HomeScreen extends StatelessWidget {
               ),
               customTitle(
                 title: 'Occasion',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.occasionScreen);
+                },
                 viewAll: 'View All',
               ),
               SizedBox(

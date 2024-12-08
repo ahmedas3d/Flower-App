@@ -1,11 +1,12 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/BestSeller/view/widgets/custom_app_bar.dart';
-import 'package:flower_app/features/BestSeller/view/widgets/products_list.dart';
+import 'package:flower_app/features/Occasion/view/widgets/all_occasion.dart';
+import 'package:flower_app/features/Occasion/view/widgets/list_all_occasion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BestSellerScreen extends StatelessWidget {
-  const BestSellerScreen({super.key});
+class OccasionScreen extends StatelessWidget {
+  const OccasionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,16 @@ class BestSellerScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomAppBar(
-              title: 'Best Sellers',
+              title: 'Occasion',
               subTitle: 'Bloom with our exquisite best sellers',
             ),
-            SizedBox(height: 20.h),
+            SizedBox(
+              height: 65.h,
+              width: double.infinity,
+              child: AllOccasionList(),
+            ),
             Expanded(
-              child: ProductsList(),
+              child: OccasionListScreen(),
             ),
           ],
         ),

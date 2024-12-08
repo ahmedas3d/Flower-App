@@ -162,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       title: 'Continue with gust',
                       onTap: () {
                         Navigator.pushReplacementNamed(
-                            context, AppRoutes.homeScreen);
+                            context, AppRoutes.bottomNavBar);
                       },
                       color: AppColors.backgroundColor,
                       textColor: AppColors.textColor3,
