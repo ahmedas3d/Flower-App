@@ -7,6 +7,7 @@ import 'package:flower_app/features/AuthFeature/presentation/view/screens/email_
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/forgot_screen.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/reset_password_screen.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
+import 'package:flower_app/features/ProductDetails/view/screens/product_details.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
   static const String homeScreen = '/homeScreen';
   static const String bottomNavBar = '/bottomNavBar';
   static const String bestSellerScreen = '/bestSellerScreen';
+  static const String productDetails = '/productDetails';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -52,6 +54,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const BottomNavBar());
       case bestSellerScreen:
         return MaterialPageRoute(builder: (_) => const BestSellerScreen());
+      case productDetails:
+        return MaterialPageRoute(builder: (_) => const ProductDetails());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

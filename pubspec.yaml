@@ -40,6 +40,7 @@ dependencies:
   provider_base_tools: ^0.1.6
   responsive_framework: ^1.5.1
   flutter_screenutil: ^5.9.3
+  smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
   flutter_lints: ^5.0.0

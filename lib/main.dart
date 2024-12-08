@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flower_app/blocobserve.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -16,6 +17,12 @@ class FlowerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
