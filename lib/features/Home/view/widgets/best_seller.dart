@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BestSellers extends StatelessWidget {
   const BestSellers({
@@ -27,8 +26,8 @@ class BestSellers extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 151.h,
-            width: 131.w,
+            height: 151,
+            width: 131,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(imageAsset),
@@ -36,11 +35,11 @@ class BestSellers extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 5.h),
+          SizedBox(height: 5),
           Text(
             title,
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 12,
               color: AppColors.textColor1,
               fontFamily: 'Inter',
             ),
@@ -48,7 +47,7 @@ class BestSellers extends StatelessWidget {
           Text(
             '$price EGP',
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.textColor1,
               fontWeight: FontWeight.bold,
               fontFamily: 'Inter',
@@ -84,13 +83,13 @@ class BestSellerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200.h,
+      height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 10.w),
+            padding: EdgeInsets.only(right: 10),
             child: BestSellers(
               imageAsset: items[index]['image']!,
               title: items[index]['title']!,

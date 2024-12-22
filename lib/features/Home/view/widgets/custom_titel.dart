@@ -1,6 +1,5 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class customTitle extends StatelessWidget {
   const customTitle({
@@ -23,7 +22,7 @@ class customTitle extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              fontSize: 18.sp,
+              fontSize: 18,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,
               color: AppColors.textColor1,
@@ -36,7 +35,7 @@ class customTitle extends StatelessWidget {
               style: TextStyle(
                 decoration: TextDecoration.underline,
                 decorationColor: AppColors.primaryColor,
-                fontSize: 12.sp,
+                fontSize: 12,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w500,
                 color: AppColors.primaryColor,

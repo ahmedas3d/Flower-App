@@ -3,7 +3,6 @@ import 'package:flower_app/features/BestSeller/view/widgets/custom_app_bar.dart'
 import 'package:flower_app/features/Occasion/view/widgets/all_occasion.dart';
 import 'package:flower_app/features/Occasion/view/widgets/list_all_occasion.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OccasionScreen extends StatelessWidget {
   const OccasionScreen({super.key});
@@ -22,7 +21,7 @@ class OccasionScreen extends StatelessWidget {
               subTitle: 'Bloom with our exquisite best sellers',
             ),
             SizedBox(
-              height: 65.h,
+              height: 65,
               width: double.infinity,
               child: AllOccasionList(),
             ),

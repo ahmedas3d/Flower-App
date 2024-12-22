@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AllOccasion extends StatelessWidget {
   const AllOccasion({
@@ -28,10 +27,10 @@ class AllOccasion extends StatelessWidget {
         Navigator.pushNamed(context, AppRoutes.productDetails);
       },
       child: Container(
-        height: 234.h,
-        width: 170.w,
+        height: 234,
+        width: 170,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey),
         ),
         child: Padding(
@@ -39,8 +38,8 @@ class AllOccasion extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 135.h,
-                width: 180.w,
+                height: 135,
+                width: 180,
                 decoration: BoxDecoration(
                   color: AppColors.pinkLight,
                 ),
@@ -51,17 +50,17 @@ class AllOccasion extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 5),
               SizedBox(
-                height: 40.h,
-                width: 125.w,
+                height: 40,
+                width: 125,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       title,
                       style: TextStyle(
-                        fontSize: 12.sp,
+                        fontSize: 12,
                         color: AppColors.textColor1,
                         fontFamily: 'Inter',
                       ),
@@ -71,17 +70,17 @@ class AllOccasion extends StatelessWidget {
                         Text(
                           'EGP $price',
                           style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 14,
                             color: AppColors.textColor1,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'Inter',
                           ),
                         ),
-                        SizedBox(width: 5.w),
+                        SizedBox(width: 5),
                         Text(
                           discount,
                           style: TextStyle(
-                            fontSize: 12.sp,
+                            fontSize: 12,
                             color: AppColors.greyColor,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Inter',
@@ -90,11 +89,11 @@ class AllOccasion extends StatelessWidget {
                             decorationThickness: 2.0,
                           ),
                         ),
-                        SizedBox(width: 5.w),
+                        SizedBox(width: 5),
                         Text(
                           sale,
                           style: TextStyle(
-                            fontSize: 12.sp,
+                            fontSize: 12,
                             color: AppColors.greenColor,
                             fontFamily: 'Inter',
                           ),
@@ -104,12 +103,12 @@ class AllOccasion extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 5),
               Container(
-                height: 30.h,
-                width: 150.w,
+                height: 30,
+                width: 150,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r),
+                  borderRadius: BorderRadius.circular(15),
                   color: AppColors.primaryColor,
                 ),
                 child: Row(
@@ -118,13 +117,13 @@ class AllOccasion extends StatelessWidget {
                     Icon(
                       Icons.shopping_cart_outlined,
                       color: Colors.white,
-                      size: 18.sp,
+                      size: 18,
                     ),
-                    SizedBox(width: 5.w),
+                    SizedBox(width: 5),
                     Text(
                       'Add to Cart',
                       style: TextStyle(
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'Inter',
@@ -209,8 +208,8 @@ class OccasionListScreen extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 20),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 10.w,
-        mainAxisSpacing: 10.h,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
         childAspectRatio: 0.7,
       ),
       itemCount: items.length,

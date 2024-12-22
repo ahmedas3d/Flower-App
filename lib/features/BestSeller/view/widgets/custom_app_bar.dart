@@ -1,6 +1,5 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, required this.title, required this.subTitle});
@@ -11,8 +10,8 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50.h,
-      width: 240.w,
+      height: 50,
+      width: 240,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -28,11 +27,11 @@ class CustomAppBar extends StatelessWidget {
                   size: 20,
                 ),
               ),
-              SizedBox(width: 5.w),
+              SizedBox(width: 5),
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 20.sp,
+                  fontSize: 20,
                   color: AppColors.textColor1,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
@@ -43,7 +42,7 @@ class CustomAppBar extends StatelessWidget {
           Text(
             subTitle,
             style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 13,
             ),
           ),
         ],

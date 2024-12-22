@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Occasion extends StatelessWidget {
   const Occasion({
@@ -20,8 +19,8 @@ class Occasion extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 151.h,
-          width: 131.w,
+          height: 151,
+          width: 131,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(imageAsset),
@@ -29,11 +28,11 @@ class Occasion extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 8),
         Text(
           title,
           style: TextStyle(
-            fontSize: 14.sp,
+            fontSize: 14,
             color: AppColors.textColor1,
             fontFamily: 'Inter',
             fontWeight: FontWeight.bold,
@@ -65,13 +64,13 @@ class OccasionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 180.h,
+      height: 180,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 10.w),
+            padding: EdgeInsets.only(right: 10),
             child: Occasion(
               imageAsset: items[index]['image']!,
               title: items[index]['title']!,

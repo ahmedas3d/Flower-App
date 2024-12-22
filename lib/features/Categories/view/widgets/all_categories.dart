@@ -1,6 +1,5 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AllCategories extends StatefulWidget {
   const AllCategories({super.key});
@@ -45,7 +44,7 @@ class _AllCategoriesState extends State<AllCategories> {
                   child: Text(
                     categories[index],
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       color: isActive ? AppColors.primaryColor : Colors.grey,
                       fontWeight: FontWeight.w500,
                     ),

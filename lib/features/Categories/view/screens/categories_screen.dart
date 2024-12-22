@@ -2,7 +2,6 @@ import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/Categories/view/widgets/all_categories.dart';
 import 'package:flower_app/features/Categories/view/widgets/list_all_categories.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -19,32 +18,32 @@ class CategoriesScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  height: 50.h,
-                  width: 285.w,
+                  height: 50,
+                  width: 285,
                   child: Center(
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Search',
                         hintStyle: TextStyle(
-                          fontSize: 14.sp,
+                          fontSize: 14,
                           fontFamily: 'Inter',
                           color: Colors.grey,
                         ),
                         contentPadding: EdgeInsets.symmetric(
-                          vertical: 3.h,
-                          horizontal: 8.w,
+                          vertical: 3,
+                          horizontal: 8,
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(10.r),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: AppColors.primaryColor),
-                          borderRadius: BorderRadius.circular(10.r),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         prefixIcon: Icon(
                           Icons.search,
-                          size: 20.sp,
+                          size: 20,
                           color: Colors.grey,
                         ),
                       ),
@@ -52,11 +51,11 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 50.h,
-                  width: 50.w,
+                  height: 50,
+                  width: 50,
                   decoration: BoxDecoration(
                     color: AppColors.primaryColor,
-                    borderRadius: BorderRadius.circular(10.r),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Icon(
                     Icons.filter_list,
@@ -66,7 +65,7 @@ class CategoriesScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 65.h,
+              height: 65,
               width: double.infinity,
               child: AllCategories(),
             ),

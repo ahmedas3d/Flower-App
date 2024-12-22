@@ -1,7 +1,6 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Specifications extends StatelessWidget {
   const Specifications({super.key});
@@ -18,7 +17,7 @@ class Specifications extends StatelessWidget {
               Text(
                 'EGP 1,500',
                 style: TextStyle(
-                  fontSize: 20.sp,
+                  fontSize: 20,
                   color: AppColors.textColor1,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
@@ -28,7 +27,7 @@ class Specifications extends StatelessWidget {
               Text(
                 'Status:',
                 style: TextStyle(
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   color: AppColors.textColor1,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
@@ -37,7 +36,7 @@ class Specifications extends StatelessWidget {
               Text(
                 'In Stock',
                 style: TextStyle(
-                  fontSize: 14.sp,
+                  fontSize: 14,
                   color: AppColors.greyColor,
                   fontFamily: 'Inter',
                 ),
@@ -47,7 +46,7 @@ class Specifications extends StatelessWidget {
           Text(
             'All prices include tax:',
             style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 13,
               color: AppColors.greyColor,
               fontFamily: 'Inter',
             ),
@@ -55,17 +54,17 @@ class Specifications extends StatelessWidget {
           Text(
             '15 Pink Rose Bouquet',
             style: TextStyle(
-              fontSize: 16.sp,
+              fontSize: 16,
               color: AppColors.textColor1,
               fontWeight: FontWeight.w500,
               fontFamily: 'Inter',
             ),
           ),
-          SizedBox(height: 15.h),
+          SizedBox(height: 15),
           Text(
             'Description:',
             style: TextStyle(
-              fontSize: 16.sp,
+              fontSize: 16,
               color: AppColors.textColor1,
               fontWeight: FontWeight.w500,
               fontFamily: 'Inter',
@@ -74,16 +73,16 @@ class Specifications extends StatelessWidget {
           Text(
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, in semper ante commodo. Etiam in lectus vitae libero convallis vestibulum. ',
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.greyColor,
               fontFamily: 'Inter',
             ),
           ),
-          SizedBox(height: 15.h),
+          SizedBox(height: 15),
           Text(
             'Bouquet include',
             style: TextStyle(
-              fontSize: 16.sp,
+              fontSize: 16,
               color: AppColors.textColor1,
               fontWeight: FontWeight.w500,
               fontFamily: 'Inter',
@@ -92,7 +91,7 @@ class Specifications extends StatelessWidget {
           Text(
             'Pink roses:15',
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.textColor1,
               fontFamily: 'Inter',
             ),
@@ -100,12 +99,12 @@ class Specifications extends StatelessWidget {
           Text(
             'White wrap',
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.textColor1,
               fontFamily: 'Inter',
             ),
           ),
-          SizedBox(height: 25.h),
+          SizedBox(height: 25),
           customButton(
             title: 'Add to Cart',
             onTap: () {},

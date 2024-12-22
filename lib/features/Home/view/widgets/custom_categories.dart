@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCategories extends StatelessWidget {
   const CustomCategories({
@@ -19,26 +18,26 @@ class CustomCategories extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 64.h,
-          width: 68.w,
+          height: 64,
+          width: 68,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.r),
+            borderRadius: BorderRadius.circular(15),
             color: AppColors.pinkLight,
           ),
           child: Center(
             child: Image.asset(
               imageAsset,
-              width: 24.w,
-              height: 23.h,
+              width: 24,
+              height: 23,
               fit: BoxFit.contain,
             ),
           ),
         ),
-        SizedBox(height: 5.h),
+        SizedBox(height: 5),
         Text(
           title,
           style: TextStyle(
-            fontSize: 12.sp,
+            fontSize: 12,
             color: AppColors.textColor1,
             fontWeight: FontWeight.w500,
             fontFamily: 'Inter',
@@ -78,13 +77,13 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 95.h,
+      height: 95,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 10.w),
+            padding: EdgeInsets.only(right: 10),
             child: CustomCategories(
               imageAsset: items[index]['image']!,
               title: items[index]['title']!,

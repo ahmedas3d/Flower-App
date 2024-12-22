@@ -1,7 +1,6 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/ProductDetails/view/widgets/specifications.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -23,12 +22,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           Stack(
             children: [
               Container(
-                height: 430.h,
+                height: 430,
                 width: double.infinity,
                 color: AppColors.pinkLight,
               ),
               SizedBox(
-                height: 430.h,
+                height: 430,
                 width: double.infinity,
                 child: PageView(
                   controller: _pageController,
@@ -58,8 +57,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
               ),
               Positioned(
-                top: 40.h,
-                left: 20.w,
+                top: 40,
+                left: 20,
                 child: InkWell(
                   onTap: () => Navigator.pop(context),
                   child: const Icon(
@@ -69,7 +68,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
               ),
               Positioned(
-                bottom: 10.h,
+                bottom: 10,
                 left: 0,
                 right: 0,
                 child: Center(
@@ -77,8 +76,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     controller: _pageController,
                     count: 3,
                     effect: ExpandingDotsEffect(
-                      dotHeight: 8.h,
-                      dotWidth: 8.w,
+                      dotHeight: 8,
+                      dotWidth: 8,
                       activeDotColor: AppColors.primaryColor,
                       dotColor: AppColors.greyColor,
                     ),
@@ -87,7 +86,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
             ],
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 10),
           Specifications(),
         ],
       ),

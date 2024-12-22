@@ -1,6 +1,5 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AllOccasionList extends StatefulWidget {
   const AllOccasionList({super.key});
@@ -45,7 +44,7 @@ class _AllOccasionState extends State<AllOccasionList> {
                   child: Text(
                     categories[index],
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       color: isActive ? AppColors.primaryColor : Colors.grey,
                       fontWeight: FontWeight.w500,
                     ),
