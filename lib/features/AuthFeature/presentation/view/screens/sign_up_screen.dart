@@ -1,6 +1,7 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_small_password_field.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_small_text_field.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
@@ -102,13 +103,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        customSmallTextField(
+                        customSmallPasswordField(
                           controller: password,
                           label: 'Password',
                           hint: 'Enter your Password',
                           isObscured: true,
                         ),
-                        customSmallTextField(
+                        customSmallPasswordField(
                           controller: confirmPassword,
                           label: 'Confirm Password',
                           hint: 'Confirm Password',
