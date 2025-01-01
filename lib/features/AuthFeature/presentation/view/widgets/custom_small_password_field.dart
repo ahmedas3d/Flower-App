@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flower_app/core/constants.dart';
 
-Widget customSmallPasswordField({
+Widget customPasswordField({
   required String label,
   required String hint,
   bool isObscured = false,
@@ -15,7 +15,7 @@ Widget customSmallPasswordField({
       RegExp(r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$');
 
   return SizedBox(
-    width: 165,
+    width: double.infinity,
     child: TextFormField(
       controller: controller,
       obscureText: isObscured,
@@ -25,7 +25,7 @@ Widget customSmallPasswordField({
           return 'Please enter $label';
         }
         if (!passwordPattern.hasMatch(value)) {
-          return 'Password must contain letters, numbers,\n and symbols, and be at least 8 characters long';
+          return 'Password must contain letters, numbers, and symbols, \nand be at least 8 characters long';
         }
         return null;
       },

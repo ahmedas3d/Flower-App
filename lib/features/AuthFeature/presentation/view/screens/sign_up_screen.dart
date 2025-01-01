@@ -100,22 +100,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       hint: 'Enter your Email',
                     ),
                     const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        customSmallPasswordField(
-                          controller: password,
-                          label: 'Password',
-                          hint: 'Enter your Password',
-                          isObscured: true,
-                        ),
-                        customSmallPasswordField(
-                          controller: confirmPassword,
-                          label: 'Confirm Password',
-                          hint: 'Confirm Password',
-                          isObscured: true,
-                        ),
-                      ],
+                    customPasswordField(
+                      controller: password,
+                      label: 'Password',
+                      hint: 'Enter your Password',
+                      isObscured: true,
+                    ),
+                    const SizedBox(height: 20),
+                    customPasswordField(
+                      controller: confirmPassword,
+                      label: 'Confirm Password',
+                      hint: 'Confirm Password',
+                      isObscured: true,
                     ),
                     const SizedBox(height: 20),
                     customTextField(
