@@ -6,6 +6,7 @@ import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_state.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -36,9 +37,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         backgroundColor: AppColors.backgroundColor,
-        title: const Text(
-          'Sign Up',
-          textAlign: TextAlign.center,
+        automaticallyImplyLeading: true,
+        title: Text(
+          S.of(context).signup,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
@@ -81,49 +82,49 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        customSmallTextField(
+                        customNameTextField(
                           controller: firstName,
-                          label: 'First Name',
-                          hint: 'Enter your First Name',
+                          label: S.of(context).firstName,
+                          hint: S.of(context).enteryourfirstname,
                         ),
-                        customSmallTextField(
+                        customNameTextField(
                           controller: lastName,
-                          label: 'Last Name',
-                          hint: 'Enter your Last Name',
+                          label: S.of(context).lastName,
+                          hint: S.of(context).enteryourlastname,
                         ),
                       ],
                     ),
                     const SizedBox(height: 20),
                     customTextField(
                       controller: email,
-                      label: 'Email',
-                      hint: 'Enter your Email',
+                      label: S.of(context).email,
+                      hint: S.of(context).enteryourEmail,
                     ),
                     const SizedBox(height: 20),
                     customPasswordField(
                       controller: password,
-                      label: 'Password',
-                      hint: 'Enter your Password',
+                      label: S.of(context).password,
+                      hint: S.of(context).enteryourPassword,
                       isObscured: true,
                     ),
                     const SizedBox(height: 20),
                     customPasswordField(
                       controller: confirmPassword,
-                      label: 'Confirm Password',
-                      hint: 'Confirm Password',
+                      label: S.of(context).confirmPassword,
+                      hint: S.of(context).confirmPassword,
                       isObscured: true,
                     ),
                     const SizedBox(height: 20),
                     customTextField(
                       controller: phone,
-                      label: 'Phone Number',
-                      hint: 'Enter your Phone Number',
+                      label: S.of(context).phoneNumber,
+                      hint: S.of(context).enteryourPhoneNumber,
                     ),
                     const SizedBox(height: 30),
                     Row(
                       children: [
-                        const Text(
-                          'Gender',
+                        Text(
+                          S.of(context).gender,
                           style: TextStyle(
                             color: AppColors.greyColor,
                             fontSize: 18,
@@ -147,8 +148,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 });
                               },
                             ),
-                            const Text(
-                              'Male',
+                            Text(
+                              S.of(context).male,
                               style: TextStyle(
                                 color: AppColors.greyColor,
                                 fontSize: 16,
@@ -167,8 +168,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 });
                               },
                             ),
-                            const Text(
-                              'Female',
+                            Text(
+                              S.of(context).female,
                               style: TextStyle(
                                 color: AppColors.greyColor,
                                 fontSize: 16,
@@ -184,18 +185,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Creating an account, you agree to our',
+                          S.of(context).creatingAnAccountYouAgreeToOur,
                           style: TextStyle(
                             color: AppColors.greyColor,
                             fontSize: 13,
                           ),
                         ),
                         Text(
-                          'Terms & Conditions',
+                          S.of(context).termsAndConditions,
                           style: TextStyle(
                             decoration: TextDecoration.underline,
                             fontSize: 13,
@@ -205,12 +206,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     const SizedBox(height: 40),
                     customButton(
-                      title: 'Sign Up',
+                      title: S.of(context).signup,
                       onTap: () {
                         if (password.text != confirmPassword.text) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Passwords do not match'),
+                            SnackBar(
+                              content: Text(S.of(context).passwordsDoNotMatch),
                               backgroundColor: AppColors.primaryColor,
                             ),
                           );
@@ -234,8 +235,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          "Already have an account?",
+                        Text(
+                          S.of(context).alreadyHaveAnAccount,
                           style: TextStyle(
                               fontSize: 15, color: AppColors.textColor1),
                         ),
@@ -243,8 +244,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: const Text(
-                            "Sign in",
+                          child: Text(
+                            " " + S.of(context).login,
                             style: TextStyle(
                               fontSize: 16,
                               color: AppColors.primaryColor,

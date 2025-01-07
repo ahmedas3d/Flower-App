@@ -1,35 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flower_app/core/constants.dart';
 
-Widget customSmallTextField({
+Widget customNameTextField({
   required String label,
   required String hint,
-  bool isObscured = false,
   TextEditingController? controller,
-  TextEditingController? confirmPasswordController,
-  Function(String)? onChanged,
-  bool isConfirmPassword = false,
 }) {
-  bool isPasswordMatched = confirmPasswordController?.text == controller?.text;
-
   return SizedBox(
     width: 165,
     child: TextFormField(
       controller: controller,
-      obscureText: isObscured,
-      onChanged: onChanged,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter $label';
         }
-        if (isConfirmPassword && value != confirmPasswordController?.text) {
-          return 'Passwords do not match';
+        if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+          return 'Please enter a valid name';
         }
         return null;
       },
       style: const TextStyle(color: AppColors.textColor1),
       decoration: InputDecoration(
-        label: Text(label),
+        label: Text(
+          label,
+          textDirection: TextDirection.rtl,
+        ),
         labelStyle: const TextStyle(
           color: AppColors.textColor3,
         ),
@@ -51,15 +46,6 @@ Widget customSmallTextField({
           borderSide: const BorderSide(color: AppColors.errorColor),
           borderRadius: BorderRadius.circular(10),
         ),
-        // Show icon only when the user has started typing and the passwords match
-        suffixIcon: isConfirmPassword
-            ? confirmPasswordController!.text.isNotEmpty && isPasswordMatched
-                ? Icon(
-                    Icons.check_circle,
-                    color: Colors.green,
-                  )
-                : null // Hide icon when password does not match
-            : null,
       ),
     ),
   );
