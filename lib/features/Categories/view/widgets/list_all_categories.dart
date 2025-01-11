@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ListAllCategories extends StatelessWidget {
@@ -46,64 +47,55 @@ class ListAllCategories extends StatelessWidget {
                 child: Center(
                   child: Image.asset(
                     imageAsset,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
-              SizedBox(height: 5),
-              SizedBox(
-                height: 40,
-                width: 12,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.textColor1,
-                        fontFamily: 'Inter',
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppColors.textColor1,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        'EGP $price',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: AppColors.textColor1,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'EGP $price',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.textColor1,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Inter',
-                          ),
+                      SizedBox(width: 5),
+                      Text(
+                        discount,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: AppColors.greyColor,
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: AppColors.greyColor,
+                          decorationThickness: 2.0,
                         ),
-                        SizedBox(width: 5),
-                        Text(
-                          discount,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.greyColor,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Inter',
-                            decoration: TextDecoration.lineThrough,
-                            decorationColor: AppColors.greyColor,
-                            decorationThickness: 2.0,
-                          ),
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        sale,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.greenColor,
                         ),
-                        SizedBox(width: 5),
-                        Text(
-                          sale,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.greenColor,
-                            fontFamily: 'Inter',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 15),
               Container(
                 height: 30,
                 width: 150,
@@ -121,12 +113,11 @@ class ListAllCategories extends StatelessWidget {
                     ),
                     SizedBox(width: 5),
                     Text(
-                      'Add to Cart',
+                      S.of(context).addToCart,
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
-                        fontFamily: 'Inter',
                       ),
                     ),
                   ],
@@ -210,7 +201,7 @@ class CategoriesList extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: 0.7,
+        childAspectRatio: 0.75,
       ),
       itemCount: items.length,
       itemBuilder: (context, index) {

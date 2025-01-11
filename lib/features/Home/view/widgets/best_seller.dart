@@ -41,7 +41,6 @@ class BestSellers extends StatelessWidget {
             style: TextStyle(
               fontSize: 12,
               color: AppColors.textColor1,
-              fontFamily: 'Inter',
             ),
           ),
           Text(
@@ -50,7 +49,6 @@ class BestSellers extends StatelessWidget {
               fontSize: 14,
               color: AppColors.textColor1,
               fontWeight: FontWeight.bold,
-              fontFamily: 'Inter',
             ),
           ),
         ],

@@ -28,5 +28,71 @@
   "termsAndConditions": "الشروط والاحكام",
   "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
   "alreadyHaveAnAccount": "هل لديك حساب؟",
-  "loginHere": "تسجيل الدخول هنا"
+  "loginHere": "تسجيل الدخول هنا",
+  "myOrders": "طلباتي",
+  "sacedAddresses": "العناوين المحفوظة",
+  "notifications": "الإشعارات",
+  "language": "اللغة",
+  "logout": "تسجيل الخروج",
+  "aboutUs": "معلومات عنا",
+  "deliverTo": "توصيل إلى",
+  "descoverSomethingNow": "اكتشف شيئًا الآن",
+  "giftNow": "هدية الآن",
+  "happyGraduation": "حان الوقت للاحتفال بجميع الخريجين بالسعادة",
+  "birthdayGift": "اكتشف الهدية المثالية\nلعيد الميلاد",
+  "categories": "الفئات",
+  "viewAll": "عرض الكل",
+  "gifts": "الهدايا",
+  "cards": "البطاقات",
+  "jewellery": "المجوهرات",
+  "bestSellers": "الأكثر مبيعًا",
+  "occasion": "المناسبة",
+  "wedding": "الزفاف",
+  "birthday": "عيد الميلاد",
+  "graduation": "الخريجين",
+  "home": "الرئيسية",
+  "profile": "الملف الشخصي",
+  "cart": "السلة",
+  "categorys": "الفئات",
+  "bloom": "تزدهر مع أفضل مبيعاتنا الرائعة",
+  "addToCart": "أضف إلى السلة",
+  "katbKetab": "كتب كتاب",
+  "engagement": "ارتباط",
+  "thankYou": "شكرا لك",
+  "getWell": "استعد جيدا",
+  "search": "بحث",
+  "status": "الحالة:",
+  "inStock": "متوفر",
+  "outOfStock": "غير متوفر",
+  "allPricesIncludeTax": "جميع الأسعار تشمل الضريبة:",
+  "bouquet": "15 باقة ورد وردي",
+  "description": "الوصف",
+  "descriptionText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, in semper ante commodo. Etiam in lectus vitae libero convallis vestibulum. ",
+  "bouquetInclude": "تشمل الباقة",
+  "pinkRoses": "ورود وردية:15",
+  "whiteWrap": "تغليف أبيض",
+  "confirmLogout": "تأكيد تسجيل الخروج",
+  "areYouSureYouWantToLogout": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "logout": "تسجيل الخروج",
+  "cancel": "إلغاء",
+  "logoutSuccessfully": "تم تسجيل الخروج بنجاح",
+  "editProfile": "تعديل الملف الشخصي",
+  "chooseFromGallery": "اختر من المعرض",
+  "useCamera": "استخدم الكاميرا",
+  "deletePhoto": "حذف الصورة",
+  "permissionDenied": "إذن مرفوض",
+  "sitting": "الإعدادات",
+  "firstname": "الاسم الاول",
+  "lastname": "الاسم الاخير",
+  "update": "تحديث",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "change": "تغيير",
+  "currentpassword": "كلمة المرور الحالية",
+  "enteryourCurrentPassword": "ادخل كلمة المرور الحالية",
+  "newPassword": "كلمة المرور الجديدة",
+  "enteryourNewPassword": "ادخل كلمة المرور الجديدة",
+  "pleaseEnter": "الرجاء إدخال",
+  "notification": "الإشعارات",
+  "newOffer": "عرض جديد 😍",
+  "rememberOrder": "تذكر الطلب ⏰"
 }

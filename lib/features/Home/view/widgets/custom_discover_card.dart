@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CustomDiscoverCard extends StatelessWidget {
@@ -49,7 +50,6 @@ class CustomDiscoverCard extends StatelessWidget {
                       title,
                       style: TextStyle(
                         fontSize: 14,
-                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         color: AppColors.textColor2,
                       ),
@@ -65,10 +65,9 @@ class CustomDiscoverCard extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          'Gift Now',
+                          S.of(context).giftNow,
                           style: TextStyle(
                             fontSize: 12,
-                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
                           ),
@@ -89,16 +88,16 @@ class CustomDiscoverCard extends StatelessWidget {
 class DiscoverList extends StatelessWidget {
   DiscoverList({super.key});
 
-  final List<Map<String, String>> items = [
-    {
-      'image': 'assets/images/grad_card.png',
-      'title': 'It\'s time to celebrate all grads with happiness',
-    },
-    {
-      'image': 'assets/images/birthday_card.png',
-      'title': 'Discover the perfect\nbirthday gift',
-    },
-  ];
+  List<Map<String, String>> items(BuildContext context) => [
+        {
+          'image': 'assets/images/grad_card.png',
+          'title': S.of(context).happyGraduation,
+        },
+        {
+          'image': 'assets/images/birthday_card.png',
+          'title': S.of(context).birthdayGift,
+        },
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -106,13 +105,13 @@ class DiscoverList extends StatelessWidget {
       height: 255,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: items.length,
+        itemCount: items(context).length,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(right: 10),
             child: CustomDiscoverCard(
-              imageAsset: items[index]['image']!,
-              title: items[index]['title']!,
+              imageAsset: items(context)[index]['image']!,
+              title: items(context)[index]['title']!,
             ),
           );
         },

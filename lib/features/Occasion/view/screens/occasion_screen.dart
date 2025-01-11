@@ -2,6 +2,7 @@ import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/BestSeller/view/widgets/custom_app_bar.dart';
 import 'package:flower_app/features/Occasion/view/widgets/all_occasion.dart';
 import 'package:flower_app/features/Occasion/view/widgets/list_all_occasion.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class OccasionScreen extends StatelessWidget {
@@ -17,8 +18,8 @@ class OccasionScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomAppBar(
-              title: 'Occasion',
-              subTitle: 'Bloom with our exquisite best sellers',
+              title: S.of(context).occasion,
+              subTitle: S.of(context).bloom,
             ),
             SizedBox(
               height: 65,

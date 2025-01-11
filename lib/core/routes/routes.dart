@@ -9,6 +9,10 @@ import 'package:flower_app/features/AuthFeature/presentation/view/screens/reset_
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/Occasion/view/screens/occasion_screen.dart';
 import 'package:flower_app/features/ProductDetails/view/screens/product_details_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/change-password_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/notification_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/profile_edit_screen.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +29,10 @@ class AppRoutes {
   static const String bestSellerScreen = '/bestSellerScreen';
   static const String productDetails = '/productDetails';
   static const String occasionScreen = '/occasionScreen';
+  static const String profileScreen = '/profileScreen';
+  static const String profileEdit = '/profileEdit';
+  static const String changePassword = '/changePassword';
+  static const String notificationScreen = '/notificationScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -60,6 +68,14 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
       case occasionScreen:
         return MaterialPageRoute(builder: (_) => const OccasionScreen());
+      case profileScreen:
+        return MaterialPageRoute(builder: (_) => ProfileScreen());
+      case profileEdit:
+        return MaterialPageRoute(builder: (_) => ProfileEditScreen());
+      case changePassword:
+        return MaterialPageRoute(builder: (_) => ChangePasswordScreen());
+      case notificationScreen:
+        return MaterialPageRoute(builder: (_) => NotificationScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

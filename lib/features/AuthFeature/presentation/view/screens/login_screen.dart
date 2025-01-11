@@ -38,31 +38,48 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
-          PopupMenuButton<String>(
-            offset: const Offset(0, 35),
-            elevation: 10,
-            color: AppColors.backgroundColor,
-            onSelected: (String value) {
-              Locale currentLocale = Localizations.localeOf(context);
-              if (value == 'ar') {
-                FlowerApp.setLocale(context, Locale('ar'));
-              } else {
-                FlowerApp.setLocale(context, Locale('en'));
-              }
-            },
-            itemBuilder: (BuildContext context) {
-              return [
-                PopupMenuItem<String>(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: DropdownButton<String>(
+              borderRadius: Localizations.localeOf(context).languageCode == 'ar'
+                  ? BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    )
+                  : BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                    ),
+              value: Localizations.localeOf(context).languageCode,
+              icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
+              underline: SizedBox(),
+              dropdownColor: AppColors.backgroundColor,
+              onChanged: (String? value) {
+                if (value != null) {
+                  if (value == 'ar') {
+                    FlowerApp.setLocale(context, Locale('ar'));
+                  } else {
+                    FlowerApp.setLocale(context, Locale('en'));
+                  }
+                }
+              },
+              items: [
+                DropdownMenuItem<String>(
                   value: 'ar',
-                  child: Text(S.of(context).arabic),
+                  child: Text(
+                    S.of(context).arabic,
+                    style: TextStyle(color: AppColors.textColor1, fontSize: 14),
+                  ),
                 ),
-                PopupMenuItem<String>(
+                DropdownMenuItem<String>(
                   value: 'en',
-                  child: Text(S.of(context).english),
+                  child: Text(
+                    S.of(context).english,
+                    style: TextStyle(color: AppColors.textColor1, fontSize: 14),
+                  ),
                 ),
-              ];
-            },
-            icon: const Icon(Icons.translate),
+              ],
+            ),
           ),
         ],
       ),

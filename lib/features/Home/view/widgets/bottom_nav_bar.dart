@@ -1,6 +1,8 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/Categories/view/screens/categories_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -17,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     HomeScreen(),
     CategoriesScreen(),
     Center(child: Text('Cart Screen')),
-    Center(child: Text('Profile Screen')),
+    ProfileScreen(),
   ];
 
   @override
@@ -38,22 +40,22 @@ class _BottomNavBarState extends State<BottomNavBar> {
             _currentIndex = index;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: S.of(context).home,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
-            label: 'Category',
+            label: S.of(context).categories,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
+            label: S.of(context).cart,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: S.of(context).profile,
           ),
         ],
       ),

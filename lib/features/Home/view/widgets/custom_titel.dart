@@ -23,7 +23,6 @@ class customTitle extends StatelessWidget {
             title,
             style: TextStyle(
               fontSize: 18,
-              fontFamily: 'Inter',
               fontWeight: FontWeight.w500,
               color: AppColors.textColor1,
             ),
@@ -36,7 +35,6 @@ class customTitle extends StatelessWidget {
                 decoration: TextDecoration.underline,
                 decorationColor: AppColors.primaryColor,
                 fontSize: 12,
-                fontFamily: 'Inter',
                 fontWeight: FontWeight.w500,
                 color: AppColors.primaryColor,
               ),

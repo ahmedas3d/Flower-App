@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget {
       height: 50,
       width: 240,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -34,7 +34,6 @@ class CustomAppBar extends StatelessWidget {
                   fontSize: 20,
                   color: AppColors.textColor1,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'Inter',
                 ),
               ),
             ],

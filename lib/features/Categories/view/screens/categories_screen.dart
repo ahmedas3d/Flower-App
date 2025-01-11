@@ -1,6 +1,7 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/Categories/view/widgets/all_categories.dart';
 import 'package:flower_app/features/Categories/view/widgets/list_all_categories.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -23,10 +24,9 @@ class CategoriesScreen extends StatelessWidget {
                   child: Center(
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: 'Search',
+                        hintText: S.of(context).search,
                         hintStyle: TextStyle(
                           fontSize: 14,
-                          fontFamily: 'Inter',
                           color: Colors.grey,
                         ),
                         contentPadding: EdgeInsets.symmetric(

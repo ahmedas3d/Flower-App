@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class AllOccasion extends StatelessWidget {
@@ -62,7 +63,6 @@ class AllOccasion extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 12,
                         color: AppColors.textColor1,
-                        fontFamily: 'Inter',
                       ),
                     ),
                     Row(
@@ -73,7 +73,6 @@ class AllOccasion extends StatelessWidget {
                             fontSize: 14,
                             color: AppColors.textColor1,
                             fontWeight: FontWeight.w500,
-                            fontFamily: 'Inter',
                           ),
                         ),
                         SizedBox(width: 5),
@@ -83,7 +82,6 @@ class AllOccasion extends StatelessWidget {
                             fontSize: 12,
                             color: AppColors.greyColor,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Inter',
                             decoration: TextDecoration.lineThrough,
                             decorationColor: AppColors.greyColor,
                             decorationThickness: 2.0,
@@ -95,7 +93,6 @@ class AllOccasion extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 12,
                             color: AppColors.greenColor,
-                            fontFamily: 'Inter',
                           ),
                         ),
                       ],
@@ -121,12 +118,11 @@ class AllOccasion extends StatelessWidget {
                     ),
                     SizedBox(width: 5),
                     Text(
-                      'Add to Cart',
+                      S.of(context).addToCart,
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
-                        fontFamily: 'Inter',
                       ),
                     ),
                   ],

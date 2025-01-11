@@ -1,6 +1,7 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/BestSeller/view/widgets/custom_app_bar.dart';
 import 'package:flower_app/features/BestSeller/view/widgets/products_list.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerScreen extends StatelessWidget {
@@ -16,8 +17,8 @@ class BestSellerScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomAppBar(
-              title: 'Best Sellers',
-              subTitle: 'Bloom with our exquisite best sellers',
+              title: S.of(context).bestSellers,
+              subTitle: S.of(context).bloom,
             ),
             SizedBox(height: 20),
             Expanded(

@@ -1,5 +1,6 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class Specifications extends StatelessWidget {
@@ -20,93 +21,83 @@ class Specifications extends StatelessWidget {
                   fontSize: 20,
                   color: AppColors.textColor1,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'Inter',
                 ),
               ),
               const Spacer(),
               Text(
-                'Status:',
+                S.of(context).status,
                 style: TextStyle(
                   fontSize: 16,
                   color: AppColors.textColor1,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'Inter',
                 ),
               ),
               Text(
-                'In Stock',
+                S.of(context).inStock,
                 style: TextStyle(
                   fontSize: 14,
                   color: AppColors.greyColor,
-                  fontFamily: 'Inter',
                 ),
               ),
             ],
           ),
           Text(
-            'All prices include tax:',
+            S.of(context).allPricesIncludeTax,
             style: TextStyle(
               fontSize: 13,
               color: AppColors.greyColor,
-              fontFamily: 'Inter',
             ),
           ),
           Text(
-            '15 Pink Rose Bouquet',
+            S.of(context).bouquet,
             style: TextStyle(
               fontSize: 16,
               color: AppColors.textColor1,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Inter',
             ),
           ),
           SizedBox(height: 15),
           Text(
-            'Description:',
+            S.of(context).description,
             style: TextStyle(
               fontSize: 16,
               color: AppColors.textColor1,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Inter',
             ),
           ),
           Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, in semper ante commodo. Etiam in lectus vitae libero convallis vestibulum. ',
+            S.of(context).descriptionText,
             style: TextStyle(
               fontSize: 14,
               color: AppColors.greyColor,
-              fontFamily: 'Inter',
             ),
           ),
           SizedBox(height: 15),
           Text(
-            'Bouquet include',
+            S.of(context).bouquetInclude,
             style: TextStyle(
               fontSize: 16,
               color: AppColors.textColor1,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Inter',
             ),
           ),
           Text(
-            'Pink roses:15',
+            S.of(context).pinkRoses,
             style: TextStyle(
               fontSize: 14,
               color: AppColors.textColor1,
-              fontFamily: 'Inter',
             ),
           ),
           Text(
-            'White wrap',
+            S.of(context).whiteWrap,
             style: TextStyle(
               fontSize: 14,
               color: AppColors.textColor1,
-              fontFamily: 'Inter',
             ),
           ),
           SizedBox(height: 25),
           customButton(
-            title: 'Add to Cart',
+            title: S.of(context).addToCart,
             onTap: () {},
             color: AppColors.primaryColor,
             textColor: AppColors.textColor2,

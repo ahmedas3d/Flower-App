@@ -6,7 +6,9 @@ import 'package:flower_app/features/Home/view/widgets/custom_discover_card.dart'
 import 'package:flower_app/features/Home/view/widgets/custom_search_field.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_titel.dart';
 import 'package:flower_app/features/Home/view/widgets/occasion.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,8 +26,8 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 8),
                 child: Row(
                   children: [
-                    Image.asset(
-                      'assets/images/flower.png',
+                    SvgPicture.asset(
+                      'assets/icons/Flower.svg',
                       width: 20,
                       height: 20,
                       fit: BoxFit.contain,
@@ -53,10 +55,9 @@ class HomeScreen extends StatelessWidget {
                     color: AppColors.greyColor,
                   ),
                   Text(
-                    'Deliver to ',
+                    '${S.of(context).deliverTo} ',
                     style: TextStyle(
                       fontSize: 14,
-                      fontFamily: 'Inter',
                       color: AppColors.greyColor,
                     ),
                   ),
@@ -66,7 +67,6 @@ class HomeScreen extends StatelessWidget {
                         '2XVP+XC - Sheikh Zayed ',
                         style: TextStyle(
                           fontSize: 14,
-                          fontFamily: 'Inter',
                           color: AppColors.textColor1,
                         ),
                       ),
@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 8),
               customTitle(
-                title: 'Discover something now',
+                title: S.of(context).descoverSomethingNow,
               ),
               SizedBox(
                 height: 10,
@@ -94,9 +94,9 @@ class HomeScreen extends StatelessWidget {
               DiscoverList(),
               SizedBox(height: 8),
               customTitle(
-                title: 'Categories',
+                title: S.of(context).categories,
                 onTap: () {},
-                viewAll: 'View All',
+                viewAll: S.of(context).viewAll,
               ),
               SizedBox(
                 height: 10,
@@ -106,11 +106,11 @@ class HomeScreen extends StatelessWidget {
                 height: 10,
               ),
               customTitle(
-                title: 'Best Sellers',
+                title: S.of(context).bestSellers,
                 onTap: () {
                   Navigator.pushNamed(context, AppRoutes.bestSellerScreen);
                 },
-                viewAll: 'View All',
+                viewAll: S.of(context).viewAll,
               ),
               SizedBox(
                 height: 10,
@@ -120,16 +120,19 @@ class HomeScreen extends StatelessWidget {
                 height: 10,
               ),
               customTitle(
-                title: 'Occasion',
+                title: S.of(context).occasion,
                 onTap: () {
                   Navigator.pushNamed(context, AppRoutes.occasionScreen);
                 },
-                viewAll: 'View All',
+                viewAll: S.of(context).viewAll,
               ),
               SizedBox(
                 height: 10,
               ),
               OccasionList(),
+              SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),

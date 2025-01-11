@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CustomCategories extends StatelessWidget {
@@ -40,7 +41,6 @@ class CustomCategories extends StatelessWidget {
             fontSize: 12,
             color: AppColors.textColor1,
             fontWeight: FontWeight.w500,
-            fontFamily: 'Inter',
           ),
         )
       ],
@@ -51,31 +51,30 @@ class CustomCategories extends StatelessWidget {
 class CategoriesList extends StatelessWidget {
   CategoriesList({super.key});
 
-  final List<Map<String, String>> items = [
-    {
-      'image': 'assets/icons/tulip.png',
-      'title': 'Flowers',
-    },
-    {
-      'image': 'assets/icons/gift.png',
-      'title': 'Gifts',
-    },
-    {
-      'image': 'assets/icons/card.png',
-      'title': 'Cards',
-    },
-    {
-      'image': 'assets/icons/diamond.png',
-      'title': 'Jewellery',
-    },
-    {
-      'image': 'assets/icons/tulip.png',
-      'title': 'Flowers',
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, String>> items = [
+      {
+        'image': 'assets/icons/tulip.png',
+        'title': S.of(context).flowers,
+      },
+      {
+        'image': 'assets/icons/gift.png',
+        'title': S.of(context).gifts,
+      },
+      {
+        'image': 'assets/icons/card.png',
+        'title': S.of(context).cards,
+      },
+      {
+        'image': 'assets/icons/diamond.png',
+        'title': S.of(context).jewellery,
+      },
+      {
+        'image': 'assets/icons/tulip.png',
+        'title': S.of(context).flowers,
+      },
+    ];
     return SizedBox(
       height: 95,
       child: ListView.builder(

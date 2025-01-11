@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class Occasion extends StatelessWidget {
@@ -19,7 +20,7 @@ class Occasion extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 151,
+          height: 150,
           width: 131,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -34,7 +35,6 @@ class Occasion extends StatelessWidget {
           style: TextStyle(
             fontSize: 14,
             color: AppColors.textColor1,
-            fontFamily: 'Inter',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -46,20 +46,20 @@ class Occasion extends StatelessWidget {
 class OccasionList extends StatelessWidget {
   OccasionList({super.key});
 
-  final List<Map<String, String>> items = [
-    {
-      'image': 'assets/images/occasion1.jpg',
-      'title': 'Wedding',
-    },
-    {
-      'image': 'assets/images/occasion.jpg',
-      'title': 'Birthday',
-    },
-    {
-      'image': 'assets/images/occasion2.jpg',
-      'title': 'Graduation ',
-    },
-  ];
+  List<Map<String, String>> items(BuildContext context) => [
+        {
+          'image': 'assets/images/occasion1.jpg',
+          'title': S.of(context).wedding,
+        },
+        {
+          'image': 'assets/images/occasion.jpg',
+          'title': S.of(context).birthday,
+        },
+        {
+          'image': 'assets/images/occasion2.jpg',
+          'title': S.of(context).graduation,
+        },
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -67,13 +67,13 @@ class OccasionList extends StatelessWidget {
       height: 180,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: items.length,
+        itemCount: items(context).length,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(right: 10),
             child: Occasion(
-              imageAsset: items[index]['image']!,
-              title: items[index]['title']!,
+              imageAsset: items(context)[index]['image']!,
+              title: items(context)[index]['title']!,
             ),
           );
         },
