@@ -6,11 +6,12 @@ Widget customButton({
   required Color color,
   required Color textColor,
   Color? borderColor,
+  double size = 50,
 }) {
   return GestureDetector(
     onTap: onTap,
     child: Container(
-      height: 50,
+      height: size,
       width: double.infinity,
       decoration: BoxDecoration(
           color: color,

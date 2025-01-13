@@ -185,7 +185,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 title: S.of(context).myOrders,
                 iconTwo: Icons.arrow_forward_ios,
                 color: AppColors.greyColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.myOrderScreen);
+                },
               ),
               const SizedBox(height: 25),
               RowSettings(
