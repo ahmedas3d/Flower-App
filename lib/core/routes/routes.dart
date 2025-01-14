@@ -9,11 +9,13 @@ import 'package:flower_app/features/AuthFeature/presentation/view/screens/reset_
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/Occasion/view/screens/occasion_screen.dart';
 import 'package:flower_app/features/ProductDetails/view/screens/product_details_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/add_address.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/change-password_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/my_order_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/notification_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_edit_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/saved_address.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,6 +37,8 @@ class AppRoutes {
   static const String changePassword = '/changePassword';
   static const String notificationScreen = '/notificationScreen';
   static const String myOrderScreen = '/myOrderScreen';
+  static const String savedAddress = '/savedAddress';
+  static const String addAddress = '/addAddress';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -80,6 +84,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => NotificationScreen());
       case myOrderScreen:
         return MaterialPageRoute(builder: (_) => MyOrderScreen());
+      case savedAddress:
+        return MaterialPageRoute(builder: (_) => SavedAddress());
+      case addAddress:
+        return MaterialPageRoute(builder: (_) => AddAddress());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

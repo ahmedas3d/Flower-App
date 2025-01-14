@@ -94,5 +94,8 @@
   "notification": "Notification",
   "newOffer": "New Offer 😍",
   "rememberOrder": "Remember ⏰",
-  "myOrders": "My Orders"
+  "myOrders": "My Orders",
+  "sacedAddresses": "Saved Addresses",
+  "addNewAddress": "Add New Address",
+  "address": "Address"
 }

@@ -195,7 +195,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 title: S.of(context).sacedAddresses,
                 iconTwo: Icons.arrow_forward_ios,
                 color: AppColors.greyColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.savedAddress);
+                },
               ),
               const SizedBox(height: 25),
               Divider(
