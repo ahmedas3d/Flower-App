@@ -29,8 +29,6 @@
   "passwordsDoNotMatch": "Passwords do not match",
   "alreadyHaveAnAccount": "Already have an account?",
   "loginHere": "Login here",
-  "myOrders": "My Orders",
-  "sacedAddresses": "Saved Addresses",
   "notifications": "Notifications",
   "language": "Language",
   "logout": "Logout",
@@ -72,7 +70,6 @@
   "whiteWrap": "White wrap",
   "confirmLogout": "Confirm Logout",
   "areYouSureYouWantToLogout": "Are you sure you want to logout?",
-  "logout": "Logout",
   "cancel": "Cancel",
   "logoutSuccessfully": "Logout Successfully",
   "editProfile": "Edit Profile",
@@ -97,5 +94,9 @@
   "myOrders": "My Orders",
   "sacedAddresses": "Saved Addresses",
   "addNewAddress": "Add New Address",
-  "address": "Address"
+  "address": "Address",
+  "enteryourAddress": "Enter your Address",
+  "city": "City",
+  "recipientName": "Recipient Name",
+  "enteryourRecipientName": "Enter your Recipient Name"
 }

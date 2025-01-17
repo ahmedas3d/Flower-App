@@ -29,11 +29,8 @@
   "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
   "alreadyHaveAnAccount": "هل لديك حساب؟",
   "loginHere": "تسجيل الدخول هنا",
-  "myOrders": "طلباتي",
-  "sacedAddresses": "العناوين المحفوظة",
   "notifications": "الإشعارات",
   "language": "اللغة",
-  "logout": "تسجيل الخروج",
   "aboutUs": "معلومات عنا",
   "deliverTo": "توصيل إلى",
   "descoverSomethingNow": "اكتشف شيئًا الآن",
@@ -98,5 +95,9 @@
   "myOrders": "طلباتي",
   "sacedAddresses": "العناوين المحفوظة",
   "addNewAddress": "اضافة عنوان جديد",
-  "address": "العنوان"
+  "address": "العنوان",
+  "enteryourAddress": "ادخل العنوان",
+  "city": "المدينة",
+  "recipientName": "اسم المستلم",
+  "enteryourRecipientName": "ادخل اسم المستلم"
 }
