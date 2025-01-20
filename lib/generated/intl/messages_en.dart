@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
+        "active": MessageLookupByLibrary.simpleMessage("Active"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("Add New Address"),
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
@@ -34,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to logout?"),
+        "area": MessageLookupByLibrary.simpleMessage("Area"),
         "bestSellers": MessageLookupByLibrary.simpleMessage("Best Sellers"),
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
         "birthdayGift": MessageLookupByLibrary.simpleMessage(
@@ -51,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "change": MessageLookupByLibrary.simpleMessage("Change"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
+        "city": MessageLookupByLibrary.simpleMessage("City"),
+        "completed": MessageLookupByLibrary.simpleMessage("Completed"),
         "confirmLogout": MessageLookupByLibrary.simpleMessage("Confirm Logout"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -67,12 +71,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description:"),
         "descriptionText": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, in semper ante commodo. Etiam in lectus vitae libero convallis vestibulum. "),
+        "discount": MessageLookupByLibrary.simpleMessage("Discount"),
         "donthaveanaccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "engagement": MessageLookupByLibrary.simpleMessage("Engagement"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "enterYourAddress":
+            MessageLookupByLibrary.simpleMessage("Enter your Address"),
         "enteryourConfirmPassword": MessageLookupByLibrary.simpleMessage(
             "Enter your confirmation password"),
         "enteryourCurrentPassword":
@@ -85,11 +92,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "enteryourPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
+        "enteryourRecipientName":
+            MessageLookupByLibrary.simpleMessage("Enter your Recipient Name"),
         "enteryourfirstname":
             MessageLookupByLibrary.simpleMessage("Enter your first name"),
         "enteryourlastname":
             MessageLookupByLibrary.simpleMessage("Enter your last name"),
         "female": MessageLookupByLibrary.simpleMessage("Female"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "firstname": MessageLookupByLibrary.simpleMessage("First Name"),
         "flowers": MessageLookupByLibrary.simpleMessage("Flowers"),
@@ -102,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "graduation": MessageLookupByLibrary.simpleMessage("Graduation"),
         "happyGraduation": MessageLookupByLibrary.simpleMessage(
             "It\'s time to celebrate all grads with happiness"),
+        "highesPrice": MessageLookupByLibrary.simpleMessage("Highes Price"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "inStock": MessageLookupByLibrary.simpleMessage("In Stock"),
         "jewellery": MessageLookupByLibrary.simpleMessage("Jewellery"),
@@ -114,13 +125,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "logoutSuccessfully":
             MessageLookupByLibrary.simpleMessage("Logout Successfully"),
+        "lowesPrice": MessageLookupByLibrary.simpleMessage("Lowes Price"),
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
         "newOffer": MessageLookupByLibrary.simpleMessage("New Offer 😍"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "newe": MessageLookupByLibrary.simpleMessage("New"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "occasion": MessageLookupByLibrary.simpleMessage("Occasion"),
+        "old": MessageLookupByLibrary.simpleMessage("Old"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
@@ -131,7 +145,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Please Enter"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("Please fill all fields"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "recipientName": MessageLookupByLibrary.simpleMessage("Recipient Name"),
         "rememberOrder": MessageLookupByLibrary.simpleMessage("Remember ⏰"),
         "rememberpassword": MessageLookupByLibrary.simpleMessage("Remember me"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
@@ -140,10 +156,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "signup": MessageLookupByLibrary.simpleMessage(" Sign Up"),
         "sitting": MessageLookupByLibrary.simpleMessage("Sitting"),
+        "sortBy": MessageLookupByLibrary.simpleMessage("Sort by"),
         "status": MessageLookupByLibrary.simpleMessage("Status:"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
         "thankYou": MessageLookupByLibrary.simpleMessage("Thank you"),
+        "trackOrder": MessageLookupByLibrary.simpleMessage("Track Order"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "useCamera": MessageLookupByLibrary.simpleMessage("Camera"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),

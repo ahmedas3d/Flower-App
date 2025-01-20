@@ -1,4 +1,5 @@
 {
+  "@@locale": "en",
   "arabic": "Arabic",
   "english": "English",
   "login": "Login",
@@ -95,8 +96,20 @@
   "sacedAddresses": "Saved Addresses",
   "addNewAddress": "Add New Address",
   "address": "Address",
-  "enteryourAddress": "Enter your Address",
+  "enterYourAddress": "Enter your Address",
   "city": "City",
   "recipientName": "Recipient Name",
-  "enteryourRecipientName": "Enter your Recipient Name"
+  "enteryourRecipientName": "Enter your Recipient Name",
+  "area": "Area",
+  "active": "Active",
+  "completed": "Completed",
+  "trackOrder": "Track Order",
+  "sortBy": "Sort by",
+  "lowesPrice": "Lowes Price",
+  "highesPrice": "Highes Price",
+  "newe": "New",
+  "old": "Old",
+  "discount": "Discount",
+  "price": "Price",
+  "filter": "Filter"
 }

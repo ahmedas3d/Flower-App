@@ -1,4 +1,5 @@
 {
+  "@@locale": "ar",
   "arabic": "العربية",
   "english": "الإنجليزية",
   "login": "تسجيل الدخول",
@@ -96,8 +97,20 @@
   "sacedAddresses": "العناوين المحفوظة",
   "addNewAddress": "اضافة عنوان جديد",
   "address": "العنوان",
-  "enteryourAddress": "ادخل العنوان",
+  "enterYourAddress": "ادخل العنوان",
   "city": "المدينة",
   "recipientName": "اسم المستلم",
-  "enteryourRecipientName": "ادخل اسم المستلم"
+  "enteryourRecipientName": "ادخل اسم المستلم",
+  "area": "المنطقة",
+  "active": "نشط",
+  "completed": "مكتمل",
+  "trackOrder": "تتبع الطلب",
+  "sortBy": "ترتيب حسب",
+  "lowesPrice": "السعر الاقل",
+  "highesPrice": "السعر الاكثر",
+  "newe": "جديد",
+  "old": "قديم",
+  "discount": "خصم",
+  "price": "السعر",
+  "filter": "تصفية"
 }

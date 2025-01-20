@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUs": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
+        "active": MessageLookupByLibrary.simpleMessage("نشط"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("اضافة عنوان جديد"),
         "addToCart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
@@ -34,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد تسجيل الخروج؟"),
+        "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
         "bestSellers": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
         "birthday": MessageLookupByLibrary.simpleMessage("عيد الميلاد"),
         "birthdayGift": MessageLookupByLibrary.simpleMessage(
@@ -50,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "change": MessageLookupByLibrary.simpleMessage("تغيير"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("اختر من المعرض"),
+        "city": MessageLookupByLibrary.simpleMessage("المدينة"),
+        "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
         "confirmLogout":
             MessageLookupByLibrary.simpleMessage("تأكيد تسجيل الخروج"),
         "confirmPassword":
@@ -67,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "descriptionText": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, in semper ante commodo. Etiam in lectus vitae libero convallis vestibulum. "),
+        "discount": MessageLookupByLibrary.simpleMessage("خصم"),
         "donthaveanaccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "editProfile":
@@ -74,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "engagement": MessageLookupByLibrary.simpleMessage("ارتباط"),
         "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
+        "enterYourAddress":
+            MessageLookupByLibrary.simpleMessage("ادخل العنوان"),
         "enteryourConfirmPassword":
             MessageLookupByLibrary.simpleMessage("أدخل تأكيد كلمة المرور"),
         "enteryourCurrentPassword":
@@ -86,11 +93,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "enteryourPhoneNumber":
             MessageLookupByLibrary.simpleMessage("أدخل رقم الهاتف"),
+        "enteryourRecipientName":
+            MessageLookupByLibrary.simpleMessage("ادخل اسم المستلم"),
         "enteryourfirstname":
             MessageLookupByLibrary.simpleMessage("أدخل اسمك الأول"),
         "enteryourlastname":
             MessageLookupByLibrary.simpleMessage("أدخل اسمك الأخير"),
         "female": MessageLookupByLibrary.simpleMessage("انثى"),
+        "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
         "firstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
         "firstname": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
         "flowers": MessageLookupByLibrary.simpleMessage("الزهور"),
@@ -103,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "graduation": MessageLookupByLibrary.simpleMessage("الخريجين"),
         "happyGraduation": MessageLookupByLibrary.simpleMessage(
             "حان الوقت للاحتفال بجميع الخريجين بالسعادة"),
+        "highesPrice": MessageLookupByLibrary.simpleMessage("السعر الاكثر"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "inStock": MessageLookupByLibrary.simpleMessage("متوفر"),
         "jewellery": MessageLookupByLibrary.simpleMessage("المجوهرات"),
@@ -115,14 +126,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "logoutSuccessfully":
             MessageLookupByLibrary.simpleMessage("تم تسجيل الخروج بنجاح"),
+        "lowesPrice": MessageLookupByLibrary.simpleMessage("السعر الاقل"),
         "male": MessageLookupByLibrary.simpleMessage("ذكر"),
         "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "newOffer": MessageLookupByLibrary.simpleMessage("عرض جديد 😍"),
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+        "newe": MessageLookupByLibrary.simpleMessage("جديد"),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "occasion": MessageLookupByLibrary.simpleMessage("المناسبة"),
+        "old": MessageLookupByLibrary.simpleMessage("قديم"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
@@ -132,7 +146,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("الرجاء إدخال"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("يرجى ملء جميع الحقول"),
+        "price": MessageLookupByLibrary.simpleMessage("السعر"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "recipientName": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
         "rememberOrder": MessageLookupByLibrary.simpleMessage("تذكر الطلب ⏰"),
         "rememberpassword": MessageLookupByLibrary.simpleMessage("تذكرني"),
         "resetPassword":
@@ -142,10 +158,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "signup": MessageLookupByLibrary.simpleMessage("إنشاء حساب "),
         "sitting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+        "sortBy": MessageLookupByLibrary.simpleMessage("ترتيب حسب"),
         "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والاحكام"),
         "thankYou": MessageLookupByLibrary.simpleMessage("شكرا لك"),
+        "trackOrder": MessageLookupByLibrary.simpleMessage("تتبع الطلب"),
         "update": MessageLookupByLibrary.simpleMessage("تحديث"),
         "useCamera": MessageLookupByLibrary.simpleMessage("استخدم الكاميرا"),
         "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),

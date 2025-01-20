@@ -34,13 +34,13 @@ class _MyOrderScreenState extends State<MyOrderScreen>
           unselectedLabelColor: Colors.grey,
           indicatorWeight: 3.0,
           indicatorSize: TabBarIndicatorSize.tab,
-          labelStyle: const TextStyle(fontSize: 16),
-          tabs: const [
+          labelStyle: const TextStyle(fontSize: 16, fontFamily: "Almarai"),
+          tabs: [
             Tab(
-              text: "Active",
+              text: S.of(context).active,
             ),
             Tab(
-              text: "Completed",
+              text: S.of(context).completed,
             ),
           ],
         ),

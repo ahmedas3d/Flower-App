@@ -1,5 +1,6 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CompletedOrder extends StatelessWidget {
@@ -114,7 +115,7 @@ class ActiveOrderItem extends StatelessWidget {
                 ),
                 const Spacer(),
                 customButton(
-                  title: "Track Order",
+                  title: S.of(context).trackOrder,
                   onTap: () {},
                   color: AppColors.primaryColor,
                   textColor: Colors.white,

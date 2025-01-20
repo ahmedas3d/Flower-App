@@ -350,26 +350,6 @@ class S {
     );
   }
 
-  /// `My Orders`
-  String get myOrders {
-    return Intl.message(
-      'My Orders',
-      name: 'myOrders',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Saved Addresses`
-  String get sacedAddresses {
-    return Intl.message(
-      'Saved Addresses',
-      name: 'sacedAddresses',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Notifications`
   String get notifications {
     return Intl.message(
@@ -990,6 +970,26 @@ class S {
     );
   }
 
+  /// `My Orders`
+  String get myOrders {
+    return Intl.message(
+      'My Orders',
+      name: 'myOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved Addresses`
+  String get sacedAddresses {
+    return Intl.message(
+      'Saved Addresses',
+      name: 'sacedAddresses',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Add New Address`
   String get addNewAddress {
     return Intl.message(
@@ -1005,6 +1005,166 @@ class S {
     return Intl.message(
       'Address',
       name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your Address`
+  String get enterYourAddress {
+    return Intl.message(
+      'Enter your Address',
+      name: 'enterYourAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City`
+  String get city {
+    return Intl.message(
+      'City',
+      name: 'city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recipient Name`
+  String get recipientName {
+    return Intl.message(
+      'Recipient Name',
+      name: 'recipientName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your Recipient Name`
+  String get enteryourRecipientName {
+    return Intl.message(
+      'Enter your Recipient Name',
+      name: 'enteryourRecipientName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Area`
+  String get area {
+    return Intl.message(
+      'Area',
+      name: 'area',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message(
+      'Active',
+      name: 'active',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message(
+      'Completed',
+      name: 'completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track Order`
+  String get trackOrder {
+    return Intl.message(
+      'Track Order',
+      name: 'trackOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort by`
+  String get sortBy {
+    return Intl.message(
+      'Sort by',
+      name: 'sortBy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lowes Price`
+  String get lowesPrice {
+    return Intl.message(
+      'Lowes Price',
+      name: 'lowesPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Highes Price`
+  String get highesPrice {
+    return Intl.message(
+      'Highes Price',
+      name: 'highesPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New`
+  String get newe {
+    return Intl.message(
+      'New',
+      name: 'newe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old`
+  String get old {
+    return Intl.message(
+      'Old',
+      name: 'old',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discount`
+  String get discount {
+    return Intl.message(
+      'Discount',
+      name: 'discount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message(
+      'Price',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter`
+  String get filter {
+    return Intl.message(
+      'Filter',
+      name: 'filter',
       desc: '',
       args: [],
     );

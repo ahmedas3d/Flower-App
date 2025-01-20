@@ -56,7 +56,7 @@ class AddAddress extends StatelessWidget {
                     customTextField(
                       controller: address,
                       label: S.of(context).address,
-                      hint: "Enter your address",
+                      hint: S.of(context).enterYourAddress,
                     ),
                     const SizedBox(height: 15),
                     customTextField(
@@ -67,8 +67,8 @@ class AddAddress extends StatelessWidget {
                     const SizedBox(height: 15),
                     customTextField(
                       controller: recipientName,
-                      label: "Recipient Name",
-                      hint: "Enter your recipient name",
+                      label: S.of(context).recipientName,
+                      hint: S.of(context).enteryourRecipientName,
                     ),
                     const SizedBox(height: 15),
                     Row(
@@ -78,7 +78,7 @@ class AddAddress extends StatelessWidget {
                             dropdownColor: AppColors.backgroundColor,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             decoration: InputDecoration(
-                              labelText: 'City',
+                              labelText: S.of(context).city,
                               labelStyle: const TextStyle(
                                 color: AppColors.textColor3,
                               ),
@@ -111,7 +111,7 @@ class AddAddress extends StatelessWidget {
                             dropdownColor: AppColors.backgroundColor,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             decoration: InputDecoration(
-                              labelText: 'Area',
+                              labelText: S.of(context).area,
                               labelStyle: const TextStyle(
                                 color: AppColors.textColor3,
                               ),
