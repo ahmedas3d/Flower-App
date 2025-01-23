@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "categorys": MessageLookupByLibrary.simpleMessage("Categorys"),
         "change": MessageLookupByLibrary.simpleMessage("Change"),
+        "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
@@ -66,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Current password"),
         "deletePhoto": MessageLookupByLibrary.simpleMessage("Delete Photo"),
         "deliverTo": MessageLookupByLibrary.simpleMessage("Deliver to"),
+        "deliveryFee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
         "descoverSomethingNow":
             MessageLookupByLibrary.simpleMessage("Discover something now"),
         "description": MessageLookupByLibrary.simpleMessage("Description:"),
@@ -76,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emptyCart": MessageLookupByLibrary.simpleMessage(
+            "Your cart is empty! Start shopping now."),
         "engagement": MessageLookupByLibrary.simpleMessage("Engagement"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "enterYourAddress":
@@ -120,8 +124,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "lastname": MessageLookupByLibrary.simpleMessage("Last Name"),
-        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "login": MessageLookupByLibrary.simpleMessage("LogIn"),
         "loginHere": MessageLookupByLibrary.simpleMessage("Login here"),
+        "loginRequired": MessageLookupByLibrary.simpleMessage("Login Required"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "logoutSuccessfully":
             MessageLookupByLibrary.simpleMessage("Logout Successfully"),
@@ -131,6 +136,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "newOffer": MessageLookupByLibrary.simpleMessage("New Offer 😍"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
         "newe": MessageLookupByLibrary.simpleMessage("New"),
+        "noProductInCart":
+            MessageLookupByLibrary.simpleMessage("No Product In Cart"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "occasion": MessageLookupByLibrary.simpleMessage("Occasion"),
@@ -145,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Please Enter"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("Please fill all fields"),
+        "pleaseLogIn": MessageLookupByLibrary.simpleMessage(
+            "Please log in to access your profile."),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "recipientName": MessageLookupByLibrary.simpleMessage("Recipient Name"),
@@ -158,9 +167,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "sitting": MessageLookupByLibrary.simpleMessage("Sitting"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort by"),
         "status": MessageLookupByLibrary.simpleMessage("Status:"),
+        "subTotal": MessageLookupByLibrary.simpleMessage("Sub Total"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
         "thankYou": MessageLookupByLibrary.simpleMessage("Thank you"),
+        "total": MessageLookupByLibrary.simpleMessage("Total"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("Track Order"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "useCamera": MessageLookupByLibrary.simpleMessage("Camera"),

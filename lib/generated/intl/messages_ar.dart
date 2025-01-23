@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
         "categorys": MessageLookupByLibrary.simpleMessage("الفئات"),
         "change": MessageLookupByLibrary.simpleMessage("تغيير"),
+        "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("اختر من المعرض"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),
@@ -77,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "editProfile":
             MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "emptyCart": MessageLookupByLibrary.simpleMessage(
+            "سلة التسوق الخاصة بك فارغة! ابدأ التسوق الآن."),
         "engagement": MessageLookupByLibrary.simpleMessage("ارتباط"),
         "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "enterYourAddress":
@@ -123,6 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastname": MessageLookupByLibrary.simpleMessage("الاسم الاخير"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginHere": MessageLookupByLibrary.simpleMessage("تسجيل الدخول هنا"),
+        "loginRequired":
+            MessageLookupByLibrary.simpleMessage("تحتاج لتسجيل الدخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "logoutSuccessfully":
             MessageLookupByLibrary.simpleMessage("تم تسجيل الخروج بنجاح"),
@@ -133,6 +138,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
         "newe": MessageLookupByLibrary.simpleMessage("جديد"),
+        "noProductInCart":
+            MessageLookupByLibrary.simpleMessage("لا يوجد منتج في سلة التسوق"),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "occasion": MessageLookupByLibrary.simpleMessage("المناسبة"),
@@ -160,9 +167,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "sitting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sortBy": MessageLookupByLibrary.simpleMessage("ترتيب حسب"),
         "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
+        "subTotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والاحكام"),
         "thankYou": MessageLookupByLibrary.simpleMessage("شكرا لك"),
+        "total": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("تتبع الطلب"),
         "update": MessageLookupByLibrary.simpleMessage("تحديث"),
         "useCamera": MessageLookupByLibrary.simpleMessage("استخدم الكاميرا"),

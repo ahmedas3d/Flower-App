@@ -1,5 +1,6 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
+import 'package:flower_app/features/Cart/presentation/view/screens/no_product_in_cart.dart';
 import 'package:flower_app/features/Categories/view/screens/categories_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
@@ -19,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _screens = [
     HomeScreen(),
     CategoriesScreen(),
-    CartScreen(),
+    NoProductInCart(),
     ProfileScreen(),
   ];
 

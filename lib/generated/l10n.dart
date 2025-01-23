@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `Login`
+  /// `LogIn`
   String get login {
     return Intl.message(
-      'Login',
+      'LogIn',
       name: 'login',
       desc: '',
       args: [],
@@ -1165,6 +1165,86 @@ class S {
     return Intl.message(
       'Filter',
       name: 'filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sub Total`
+  String get subTotal {
+    return Intl.message(
+      'Sub Total',
+      name: 'subTotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message(
+      'Total',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message(
+      'Checkout',
+      name: 'checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Fee`
+  String get deliveryFee {
+    return Intl.message(
+      'Delivery Fee',
+      name: 'deliveryFee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login Required`
+  String get loginRequired {
+    return Intl.message(
+      'Login Required',
+      name: 'loginRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please log in to access your profile.`
+  String get pleaseLogIn {
+    return Intl.message(
+      'Please log in to access your profile.',
+      name: 'pleaseLogIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your cart is empty! Start shopping now.`
+  String get emptyCart {
+    return Intl.message(
+      'Your cart is empty! Start shopping now.',
+      name: 'emptyCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Product In Cart`
+  String get noProductInCart {
+    return Intl.message(
+      'No Product In Cart',
+      name: 'noProductInCart',
       desc: '',
       args: [],
     );

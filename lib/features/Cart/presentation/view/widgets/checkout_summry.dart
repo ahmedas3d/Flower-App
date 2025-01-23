@@ -1,3 +1,4 @@
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flower_app/core/constants.dart';
 
@@ -31,16 +32,17 @@ class CheckoutSummary extends StatelessWidget {
       child: Column(
         children: [
           // Sub Total
-          _buildSummaryRow("Sub Total", "EGP ${total.toString()}"),
+          _buildSummaryRow(S.of(context).subTotal, "EGP ${total.toString()}"),
           const SizedBox(height: 10),
           // Delivery Fee
-          _buildSummaryRow("Delivery Fee", "EGP 10"),
+          _buildSummaryRow(S.of(context).deliveryFee, "EGP 10"),
           const SizedBox(height: 10),
           // Divider
           const Divider(color: AppColors.greyColor),
           const SizedBox(height: 10),
           // Total
-          _buildSummaryRow("Total", "EGP ${total + 10}", isTotal: true),
+          _buildSummaryRow(S.of(context).total, "EGP ${total + 10}",
+              isTotal: true),
           const SizedBox(height: 20),
           // Checkout Button
           SizedBox(
@@ -57,7 +59,7 @@ class CheckoutSummary extends StatelessWidget {
                 ),
               ),
               child: Text(
-                "Checkout",
+                S.of(context).checkout,
                 style: TextStyle(
                   fontSize: isSmallScreen ? 14 : 16,
                   fontWeight: FontWeight.bold,

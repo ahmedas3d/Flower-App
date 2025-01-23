@@ -1,5 +1,6 @@
 import 'package:flower_app/features/Cart/presentation/view/widgets/checkout_summry.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_row_address.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/Cart/presentation/view/widgets/product_in_cart.dart';
@@ -25,7 +26,7 @@ class _CartScreenState extends State<CartScreen> {
         title: Row(
           children: [
             Text(
-              "Cart",
+              S.of(context).cart,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

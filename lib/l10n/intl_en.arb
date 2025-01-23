@@ -2,7 +2,7 @@
   "@@locale": "en",
   "arabic": "Arabic",
   "english": "English",
-  "login": "Login",
+  "login": "LogIn",
   "flowers": "Flowers",
   "email": "Email",
   "enteryourEmail": "Enter your email",
@@ -111,5 +111,13 @@
   "old": "Old",
   "discount": "Discount",
   "price": "Price",
-  "filter": "Filter"
+  "filter": "Filter",
+  "subTotal": "Sub Total",
+  "total": "Total",
+  "checkout": "Checkout",
+  "deliveryFee": "Delivery Fee",
+  "loginRequired": "Login Required",
+  "pleaseLogIn": "Please log in to access your profile.",
+  "emptyCart": "Your cart is empty! Start shopping now.",
+  "noProductInCart": "No Product In Cart"
 }
