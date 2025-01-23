@@ -3,6 +3,7 @@ import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/Home/view/widgets/best_seller.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_categories.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_discover_card.dart';
+import 'package:flower_app/features/Home/view/widgets/custom_row_address.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_search_field.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_titel.dart';
 import 'package:flower_app/features/Home/view/widgets/occasion.dart';
@@ -47,43 +48,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.location_on_outlined,
-                    size: 18,
-                    color: AppColors.greyColor,
-                  ),
-                  Text(
-                    '${S.of(context).deliverTo} ',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.greyColor,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        '2XVP+XC - Sheikh Zayed ',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.textColor1,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        iconSize: 24,
-                        color: AppColors.primaryColor,
-                        icon: Icon(
-                          Icons.keyboard_arrow_down,
-                        ),
-                        padding: EdgeInsets.zero,
-                        alignment: Alignment.centerLeft,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              CustomRowAddress(),
               SizedBox(height: 8),
               customTitle(
                 title: S.of(context).descoverSomethingNow,

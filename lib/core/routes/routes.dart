@@ -1,6 +1,7 @@
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/login_screen.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_up_screen.dart';
 import 'package:flower_app/features/BestSeller/view/screens/best_seller_screen.dart';
+import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/screens/email_verify_screen.dart';
@@ -39,6 +40,7 @@ class AppRoutes {
   static const String myOrderScreen = '/myOrderScreen';
   static const String savedAddress = '/savedAddress';
   static const String addAddress = '/addAddress';
+  static const String cartScreen = '/cartScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -88,6 +90,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => SavedAddress());
       case addAddress:
         return MaterialPageRoute(builder: (_) => AddAddress());
+      case cartScreen:
+        return MaterialPageRoute(builder: (_) => CartScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

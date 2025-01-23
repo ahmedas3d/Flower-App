@@ -17,31 +17,31 @@ class RowSettings extends StatelessWidget {
   VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          icon,
-          size: 18,
-          color: AppColors.greyColor,
-        ),
-        const SizedBox(width: 3),
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 16,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Row(
+        children: [
+          Icon(
+            icon,
+            size: 18,
             color: AppColors.greyColor,
           ),
-        ),
-        const Spacer(),
-        GestureDetector(
-          onTap: onPressed,
-          child: Icon(
+          const SizedBox(width: 3),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 16,
+              color: AppColors.greyColor,
+            ),
+          ),
+          const Spacer(),
+          Icon(
             iconTwo,
             size: 18,
             color: color,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

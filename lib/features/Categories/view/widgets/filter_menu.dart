@@ -149,12 +149,10 @@ class _CustomRowFilterState extends State<CustomRowFilter> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Checkbox(
+            Radio(
+              groupValue: isChecked,
               activeColor: AppColors.primaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              value: isChecked,
+              value: true,
               onChanged: (bool? newValue) {
                 setState(() {
                   isChecked = newValue ?? false;
