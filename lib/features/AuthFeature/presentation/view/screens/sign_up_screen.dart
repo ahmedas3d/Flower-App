@@ -11,14 +11,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  SignUpScreen({super.key});
 
-  @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-}
-
-class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController firstName = TextEditingController();
   final TextEditingController lastName = TextEditingController();
   final TextEditingController email = TextEditingController();
@@ -28,8 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final GlobalKey<FormState> _formSignUpKey = GlobalKey<FormState>();
   bool loading = false;
   bool rememberPassword = false;
-  bool isMaleSelected = false;
-  bool isFemaleSelected = false;
+  final ValueNotifier<String> genderNotifier = ValueNotifier<String>('male');
 
   @override
   Widget build(BuildContext context) {
@@ -46,18 +40,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is SignUpLoadingState) {
-            setState(() {
-              loading = true;
-            });
+            loading = true;
           } else if (state is SignUpSuccessState) {
-            setState(() {
-              loading = false;
-            });
+            loading = false;
             Navigator.pushReplacementNamed(context, AppRoutes.bottomNavBar);
           } else if (state is SignUpErrorState) {
-            setState(() {
-              loading = false;
-            });
+            loading = false;
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.error),
@@ -134,51 +122,49 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         const Spacer(
                           flex: 2,
                         ),
-                        Row(
-                          children: [
-                            Checkbox(
-                              activeColor: AppColors.primaryColor,
-                              shape: const CircleBorder(),
-                              value: isMaleSelected,
-                              onChanged: (bool? newValue) {
-                                setState(() {
-                                  isMaleSelected = newValue ?? false;
-                                  // When Male is selected, unselect Female
-                                  if (isMaleSelected) isFemaleSelected = false;
-                                });
-                              },
-                            ),
-                            Text(
-                              S.of(context).male,
-                              style: TextStyle(
-                                color: AppColors.greyColor,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            Checkbox(
-                              activeColor: AppColors.primaryColor,
-                              shape: const CircleBorder(),
-                              value: isFemaleSelected,
-                              onChanged: (bool? newValue) {
-                                setState(() {
-                                  isFemaleSelected = newValue ?? false;
-                                  // When Female is selected, unselect Male
-                                  if (isFemaleSelected) isMaleSelected = false;
-                                });
-                              },
-                            ),
-                            Text(
-                              S.of(context).female,
-                              style: TextStyle(
-                                color: AppColors.greyColor,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Spacer(
-                          flex: 1,
+                        ValueListenableBuilder<String>(
+                          valueListenable: genderNotifier,
+                          builder: (context, gender, child) {
+                            return Row(
+                              children: [
+                                Checkbox(
+                                  activeColor: AppColors.primaryColor,
+                                  shape: const CircleBorder(),
+                                  value: gender == 'male',
+                                  onChanged: (bool? newValue) {
+                                    if (newValue ?? false) {
+                                      genderNotifier.value = 'male';
+                                    }
+                                  },
+                                ),
+                                Text(
+                                  S.of(context).male,
+                                  style: TextStyle(
+                                    color: AppColors.greyColor,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                Checkbox(
+                                  activeColor: AppColors.primaryColor,
+                                  shape: const CircleBorder(),
+                                  value: gender == 'female',
+                                  onChanged: (bool? newValue) {
+                                    if (newValue ?? false) {
+                                      genderNotifier.value = 'female';
+                                    }
+                                  },
+                                ),
+                                Text(
+                                  S.of(context).female,
+                                  style: TextStyle(
+                                    color: AppColors.greyColor,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -224,7 +210,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 password: password.text,
                                 rePassword: confirmPassword.text,
                                 phone: phone.text,
-                                gender: (isMaleSelected) ? "male" : "female",
+                                gender: genderNotifier.value == "male"
+                                    ? "male"
+                                    : "female",
                               );
                         }
                       },
