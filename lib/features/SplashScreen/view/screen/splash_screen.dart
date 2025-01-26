@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

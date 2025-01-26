@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "329772655927",
+    "project_id": "flowerapp-44cc0",
+    "storage_bucket": "flowerapp-44cc0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329772655927:android:ad71444d1ab9253671e6b2",
+        "android_client_info": {
+          "package_name": "com.example.flower_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329772655927-ubauar6mdigvsb9v81lue61b46mpn660.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flower_app",
+            "certificate_hash": "0b16980d5de577059aec1d3ebde8d5dbf649357d"
+          }
+        },
+        {
+          "client_id": "329772655927-09p2i2dmhksb6h6ffqh3q2228lr2lfvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqJlgJ1u5uKUqqXB0wJ4hnHVWSU0_Y-7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329772655927-09p2i2dmhksb6h6ffqh3q2228lr2lfvh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "329772655927-jktic5r3kji8654uftq8u69bqcap0cvu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flowerApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329772655927:android:9afd9f73192a0a7171e6b2",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329772655927-t5vqulr3mqj9ov80u37u7mqbsdd4h17r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.test",
+            "certificate_hash": "0b16980d5de577059aec1d3ebde8d5dbf649357d"
+          }
+        },
+        {
+          "client_id": "329772655927-09p2i2dmhksb6h6ffqh3q2228lr2lfvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqJlgJ1u5uKUqqXB0wJ4hnHVWSU0_Y-7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329772655927-09p2i2dmhksb6h6ffqh3q2228lr2lfvh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "329772655927-jktic5r3kji8654uftq8u69bqcap0cvu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flowerApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
