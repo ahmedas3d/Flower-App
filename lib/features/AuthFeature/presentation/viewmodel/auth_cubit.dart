@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'auth_state.dart';
@@ -7,13 +8,13 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
   final dio = Dio(); // Dio for HTTP requests
-
+  FirebaseAuth user = FirebaseAuth.instance;
+  late String _email;
+  late String _password;
   void signUp({
     required String firstName,
     required String lastName,
-    required String email,
     required String phone,
-    required String password,
     required String rePassword,
     required String gender,
   }) async {
@@ -25,8 +26,8 @@ class AuthCubit extends Cubit<AuthState> {
         data: {
           "firstName": firstName,
           "lastName": lastName,
-          "email": email,
-          "password": password,
+          "email": _email,
+          "password": _password,
           "rePassword": rePassword,
           "phone": '+20$phone',
           "gender": gender
@@ -40,8 +41,15 @@ class AuthCubit extends Cubit<AuthState> {
 
       // Handle successful response
       if (response.statusCode == 201) {
-        emit(SignUpSuccessState());
         print('Signup successful: ${response.data}');
+        print("using firebase to create acoount");
+        try {
+          await user.createUserWithEmailAndPassword(
+              email: _email, password: _password);
+        } catch (e) {
+          emit(SignUpErrorState(error: "firebase error: ${e.toString()}"));
+        }
+        emit(SignUpSuccessState());
       } else {
         emit(SignUpErrorState(
             error: "Unexpected error: ${response.statusCode}"));
@@ -92,5 +100,35 @@ class AuthCubit extends Cubit<AuthState> {
 
   void signOut() {
     emit(SignOutState()); // Emit sign-out state
+  }
+
+  Future<void> verify_email() async {
+    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
+  }
+
+  Future<void> checker_email() async {
+    try {
+      user.currentUser!.reload();
+      if (FirebaseAuth.instance.currentUser!.emailVerified) {
+        emit(verfiyEmailState_success());
+      } else {
+        emit(verfiyEmailState_error(error: "Please verify your email"));
+      }
+    } on Exception catch (e) {
+      emit(verfiyEmailState_error(error: e.toString()));
+    }
+  }
+
+  void setEmailandpassword(String textemail, String textpassword) {
+    _email = textemail;
+    _password = textpassword;
+  }
+
+  String getemail() {
+    return _email;
+  }
+
+  String getpassword() {
+    return _password;
   }
 }

@@ -63,7 +63,11 @@ class AppRoutes {
       case forgotPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ForgotScreen());
       case emailVerificationScreen:
-        return MaterialPageRoute(builder: (_) => const EmailVerifyScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child: const EmailVerifyScreen(),
+                ));
       case resetPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
       case homeScreen:

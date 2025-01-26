@@ -43,7 +43,14 @@ class SignUpScreen extends StatelessWidget {
             loading = true;
           } else if (state is SignUpSuccessState) {
             loading = false;
-            Navigator.pushReplacementNamed(context, AppRoutes.bottomNavBar);
+            context.read<AuthCubit>().setEmailandpassword(
+                  email.text,
+                  password.text,
+                );
+
+            context.read<AuthCubit>().verify_email();
+            Navigator.pushReplacementNamed(
+                context, AppRoutes.emailVerificationScreen);
           } else if (state is SignUpErrorState) {
             loading = false;
             ScaffoldMessenger.of(context).showSnackBar(
@@ -203,11 +210,12 @@ class SignUpScreen extends StatelessWidget {
                           );
                         } else if ((_formSignUpKey.currentState?.validate() ??
                             false)) {
+                          context
+                              .read<AuthCubit>()
+                              .setEmailandpassword(email.text, password.text);
                           context.read<AuthCubit>().signUp(
                                 firstName: firstName.text,
                                 lastName: lastName.text,
-                                email: email.text,
-                                password: password.text,
                                 rePassword: confirmPassword.text,
                                 phone: phone.text,
                                 gender: genderNotifier.value == "male"

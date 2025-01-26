@@ -21,3 +21,10 @@ class SignInErrorState extends AuthState {
 }
 
 class SignOutState extends AuthState {}
+
+class verfiyEmailState_success extends AuthState {}
+
+class verfiyEmailState_error extends AuthState {
+  final String error;
+  verfiyEmailState_error({required this.error});
+}
