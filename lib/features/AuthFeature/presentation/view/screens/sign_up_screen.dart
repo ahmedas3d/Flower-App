@@ -4,11 +4,13 @@ import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_small_password_field.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_small_text_field.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/widgets/social_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_state.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -24,6 +26,35 @@ class SignUpScreen extends StatelessWidget {
   bool loading = false;
   bool rememberPassword = false;
   final ValueNotifier<String> genderNotifier = ValueNotifier<String>('male');
+
+  String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter a password';
+    }
+    if (value.length < 8) {
+      return 'Password must be at least 8 characters long';
+    }
+    if (!value.contains(RegExp(r'[A-Z]'))) {
+      return 'Password must contain at least one uppercase letter';
+    }
+    if (!value.contains(RegExp(r'[a-z]'))) {
+      return 'Password must contain at least one lowercase letter';
+    }
+    if (!value.contains(RegExp(r'[0-9]'))) {
+      return 'Password must contain at least one number';
+    }
+    return null;
+  }
+
+  String? validateConfirmPassword(String? value, String password) {
+    if (value == null || value.isEmpty) {
+      return 'Please confirm your password';
+    }
+    if (value != password) {
+      return 'Passwords do not match';
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +132,7 @@ class SignUpScreen extends StatelessWidget {
                       label: S.of(context).password,
                       hint: S.of(context).enteryourPassword,
                       isObscured: true,
+                      validator: validatePassword,
                     ),
                     const SizedBox(height: 20),
                     customPasswordField(
@@ -108,6 +140,8 @@ class SignUpScreen extends StatelessWidget {
                       label: S.of(context).confirmPassword,
                       hint: S.of(context).confirmPassword,
                       isObscured: true,
+                      validator: (value) =>
+                          validateConfirmPassword(value, password.text),
                     ),
                     const SizedBox(height: 20),
                     customTextField(
@@ -176,7 +210,7 @@ class SignUpScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -197,31 +231,50 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 20),
+                    socialButton(
+                      title: S.of(context).google,
+                      onTap: () {},
+                      color: Colors.white,
+                      textColor: AppColors.textColor1,
+                      icon: FontAwesomeIcons.google,
+                      borderColor: Colors.grey[300],
+                    ),
+                    const SizedBox(height: 8),
+                    socialButton(
+                      title: S.of(context).facebook,
+                      onTap: () {},
+                      color: Colors.blue[800]!,
+                      textColor: AppColors.textColor2,
+                      icon: FontAwesomeIcons.facebook,
+                    ),
+                    const SizedBox(height: 8),
                     customButton(
                       title: S.of(context).signup,
                       onTap: () {
-                        if (password.text != confirmPassword.text) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(S.of(context).passwordsDoNotMatch),
-                              backgroundColor: AppColors.primaryColor,
-                            ),
-                          );
-                        } else if ((_formSignUpKey.currentState?.validate() ??
-                            false)) {
-                          context
-                              .read<AuthCubit>()
-                              .setEmailandpassword(email.text, password.text);
-                          context.read<AuthCubit>().signUp(
-                                firstName: firstName.text,
-                                lastName: lastName.text,
-                                rePassword: confirmPassword.text,
-                                phone: phone.text,
-                                gender: genderNotifier.value == "male"
-                                    ? "male"
-                                    : "female",
-                              );
+                        if (_formSignUpKey.currentState?.validate() ?? false) {
+                          if (password.text != confirmPassword.text) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content:
+                                    Text(S.of(context).passwordsDoNotMatch),
+                                backgroundColor: AppColors.primaryColor,
+                              ),
+                            );
+                          } else {
+                            context
+                                .read<AuthCubit>()
+                                .setEmailandpassword(email.text, password.text);
+                            context.read<AuthCubit>().signUp(
+                                  firstName: firstName.text,
+                                  lastName: lastName.text,
+                                  rePassword: confirmPassword.text,
+                                  phone: phone.text,
+                                  gender: genderNotifier.value == "male"
+                                      ? "male"
+                                      : "female",
+                                );
+                          }
                         }
                       },
                       color: AppColors.primaryColor,

@@ -2,12 +2,14 @@ import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/widgets/social_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_state.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flower_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -181,6 +183,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                     const SizedBox(height: 35),
+                    socialButton(
+                      title: S.of(context).google,
+                      onTap: () {},
+                      color: Colors.white,
+                      textColor: AppColors.textColor1,
+                      icon: FontAwesomeIcons.google,
+                      borderColor: Colors.grey[300],
+                    ),
+                    const SizedBox(height: 8),
+                    socialButton(
+                      title: S.of(context).facebook,
+                      onTap: () {},
+                      color: Colors.blue[800]!,
+                      textColor: AppColors.textColor2,
+                      icon: FontAwesomeIcons.facebook,
+                    ),
+                    const SizedBox(height: 8),
                     customButton(
                       title: S.of(context).login,
                       onTap: () {
@@ -201,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: AppColors.primaryColor,
                       textColor: AppColors.textColor2,
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 8),
                     customButton(
                       title: S.of(context).continuewithguest,
                       onTap: () {

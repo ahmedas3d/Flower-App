@@ -221,7 +221,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 icon: Icons.info,
                 iconTwo: Icons.arrow_forward_ios,
                 color: AppColors.greyColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.aboutScreen);
+                },
               ),
               const SizedBox(height: 25),
               RowSettings(
@@ -229,7 +231,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 icon: Icons.policy,
                 iconTwo: Icons.arrow_forward_ios,
                 color: AppColors.greyColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.tremsAndConditionView);
+                },
               ),
               const SizedBox(height: 25),
               Divider(

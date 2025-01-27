@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aboutDescription": MessageLookupByLibrary.simpleMessage(
+            "مرحبًا بك في تطبيق Flower، وجهتك المفضلة للحصول على زهور جميلة ونضرة في متناول يدك. نحن نؤمن بأن كل لحظة، سواء كانت كبيرة أو صغيرة، تستحق أن يتم الاحتفال بها بجمال الزهور الطبيعي. مع شغفنا بالجودة والإبداع، يقدم تطبيقنا تجربة تسوق سلسة حيث يمكنك استكشاف مجموعة واسعة من تنسيقات الزهور والباقات والهدايا المصممة خصيصًا لكل مناسبة. سواء كان عيد ميلاد، أو ذكرى سنوية، أو مجرد لفتة لإظهار اهتمامك، فنحن نوفر لك كل ما تحتاجه. نحن نستورد الزهور مباشرةً من مزارعين موثوقين لضمان نضارتها، ونقدم تسليمًا سريعًا في نفس اليوم أو في جدول زمني، ونقدم تصميمات قابلة للتخصيص لجعل كل لحظة فريدة من نوعها. في Flower App، نحن ملتزمون بنشر الفرح والحب من خلال أناقة الزهور الخالدة. دعنا نساعدك على خلق ذكريات تزدهر إلى الأبد."),
         "aboutUs": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
+        "aboutUsQuestion": MessageLookupByLibrary.simpleMessage(" ماذا عنا؟"),
         "active": MessageLookupByLibrary.simpleMessage("نشط"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("اضافة عنوان جديد"),
@@ -50,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
         "categorys": MessageLookupByLibrary.simpleMessage("الفئات"),
         "change": MessageLookupByLibrary.simpleMessage("تغيير"),
+        "checkYourEmail": MessageLookupByLibrary.simpleMessage(
+            "قم بالتحقق من البريد الالكتروني"),
         "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("اختر من المعرض"),
@@ -72,12 +77,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "descriptionText": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, in semper ante commodo. Etiam in lectus vitae libero convallis vestibulum. "),
+        "didntReceiveCode":
+            MessageLookupByLibrary.simpleMessage("لم يتم ارسال الرمز؟ "),
         "discount": MessageLookupByLibrary.simpleMessage("خصم"),
         "donthaveanaccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "editProfile":
             MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "emailVerification":
+            MessageLookupByLibrary.simpleMessage("التحقق من البريد الالكتروني"),
+        "emailVerify":
+            MessageLookupByLibrary.simpleMessage("تحقق من البريد الالكتروني"),
         "emptyCart": MessageLookupByLibrary.simpleMessage(
             "سلة التسوق الخاصة بك فارغة! ابدأ التسوق الآن."),
         "engagement": MessageLookupByLibrary.simpleMessage("ارتباط"),
@@ -102,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل اسمك الأول"),
         "enteryourlastname":
             MessageLookupByLibrary.simpleMessage("أدخل اسمك الأخير"),
+        "facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
         "female": MessageLookupByLibrary.simpleMessage("انثى"),
         "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
         "firstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
@@ -113,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getWell": MessageLookupByLibrary.simpleMessage("استعد جيدا"),
         "giftNow": MessageLookupByLibrary.simpleMessage("هدية الآن"),
         "gifts": MessageLookupByLibrary.simpleMessage("الهدايا"),
+        "google": MessageLookupByLibrary.simpleMessage("جوجل"),
         "graduation": MessageLookupByLibrary.simpleMessage("الخريجين"),
         "happyGraduation": MessageLookupByLibrary.simpleMessage(
             "حان الوقت للاحتفال بجميع الخريجين بالسعادة"),
@@ -133,6 +146,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تسجيل الخروج بنجاح"),
         "lowesPrice": MessageLookupByLibrary.simpleMessage("السعر الاقل"),
         "male": MessageLookupByLibrary.simpleMessage("ذكر"),
+        "myEmail":
+            MessageLookupByLibrary.simpleMessage("ahmedxasaad@gmail.com"),
         "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "newOffer": MessageLookupByLibrary.simpleMessage("عرض جديد 😍"),
         "newPassword":
@@ -158,11 +173,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "recipientName": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
         "rememberOrder": MessageLookupByLibrary.simpleMessage("تذكر الطلب ⏰"),
         "rememberpassword": MessageLookupByLibrary.simpleMessage("تذكرني"),
+        "resend": MessageLookupByLibrary.simpleMessage("اعادة الارسال"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "sacedAddresses":
             MessageLookupByLibrary.simpleMessage("العناوين المحفوظة"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
+        "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
+            "يرجى ادخال الرمز الذي تم ارساله لعنوان البريد الالكتروني الخاص بك."),
         "signup": MessageLookupByLibrary.simpleMessage("إنشاء حساب "),
         "sitting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sortBy": MessageLookupByLibrary.simpleMessage("ترتيب حسب"),
@@ -170,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subTotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والاحكام"),
+        "termsAndSOnditionsDescription": MessageLookupByLibrary.simpleMessage(
+            "باستخدام تطبيق Flowe، فإنك توافق على الشروط وسياسة الخصوصية الخاصة بنا. التطبيق مصمم للاستخدام الشخصي فقط، ويحظر أي سوء استخدام أو أنشطة تضر بالمنصة أو بالمستخدمين الآخرين. أنت مسؤول عن حماية بيانات اعتماد حسابك وإخطارنا على الفور بأي وصول غير مصرح به. الأسعار قابلة للتغيير دون إشعار مسبق، وأوقات التسليم هي تقديرات قد تختلف بسبب عوامل خارجية. يمكن إلغاء الطلبات خلال [إطار زمني محدد]، بشرط ألا تتم معالجتها، وسيتم إصدار المبالغ المستردة وفقًا لسياستنا. جميع المحتويات، بما في ذلك النصوص والصور والتصميمات، مملوكة لتطبيق Flowe ومحمية بموجب قوانين حقوق الطبع والنشر. يمنع منعا باتا النسخ أو التوزيع غير المصرح به. نحن لسنا مسؤولين عن أي أضرار أو تأخيرات أو أخطاء غير مباشرة ناتجة عن استخدام التطبيق. خصوصيتك مهمة بالنسبة لنا؛ يرجى مراجعة سياسة الخصوصية الخاصة بنا لفهم كيفية التعامل مع بياناتك. من خلال الاستمرار في استخدام التطبيق، فإنك تؤكد موافقتك على هذه الشروط. لأية أسئلة أو استفسارات، اتصل بنا على"),
         "thankYou": MessageLookupByLibrary.simpleMessage("شكرا لك"),
         "total": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("تتبع الطلب"),

@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aboutDescription": MessageLookupByLibrary.simpleMessage(
+            "Welcome to Flower App, your go-to destination for beautiful and fresh flowers at your fingertips. We believe every moment—big or small—deserves to be celebrated with the natural beauty of flowers. With a passion for quality and creativity, our app offers a seamless shopping experience where you can explore a wide range of floral arrangements, bouquets, and gifts tailored to every occasion. Whether it’s a birthday, anniversary, or just a gesture to show you care, we’ve got you covered. We source flowers directly from trusted growers to ensure freshness, offer fast same-day or scheduled delivery, and provide customizable designs to make every moment unique. At Flowe App, we are committed to spreading joy and love through the timeless elegance of flowers. Let us help you create memories that bloom forever."),
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
+        "aboutUsQuestion": MessageLookupByLibrary.simpleMessage("About Us?"),
         "active": MessageLookupByLibrary.simpleMessage("Active"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("Add New Address"),
@@ -51,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "categorys": MessageLookupByLibrary.simpleMessage("Categorys"),
         "change": MessageLookupByLibrary.simpleMessage("Change"),
+        "checkYourEmail":
+            MessageLookupByLibrary.simpleMessage("Check your email url"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
@@ -73,11 +78,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description:"),
         "descriptionText": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, in semper ante commodo. Etiam in lectus vitae libero convallis vestibulum. "),
+        "didntReceiveCode":
+            MessageLookupByLibrary.simpleMessage("Didn\'t receive code? "),
         "discount": MessageLookupByLibrary.simpleMessage("Discount"),
         "donthaveanaccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailVerification":
+            MessageLookupByLibrary.simpleMessage("Email Verification"),
+        "emailVerify": MessageLookupByLibrary.simpleMessage("Email Verify"),
         "emptyCart": MessageLookupByLibrary.simpleMessage(
             "Your cart is empty! Start shopping now."),
         "engagement": MessageLookupByLibrary.simpleMessage("Engagement"),
@@ -102,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your first name"),
         "enteryourlastname":
             MessageLookupByLibrary.simpleMessage("Enter your last name"),
+        "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "female": MessageLookupByLibrary.simpleMessage("Female"),
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
@@ -113,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getWell": MessageLookupByLibrary.simpleMessage("Get well"),
         "giftNow": MessageLookupByLibrary.simpleMessage("Gift Now"),
         "gifts": MessageLookupByLibrary.simpleMessage("Gifts"),
+        "google": MessageLookupByLibrary.simpleMessage("Google"),
         "graduation": MessageLookupByLibrary.simpleMessage("Graduation"),
         "happyGraduation": MessageLookupByLibrary.simpleMessage(
             "It\'s time to celebrate all grads with happiness"),
@@ -132,6 +144,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Logout Successfully"),
         "lowesPrice": MessageLookupByLibrary.simpleMessage("Lowes Price"),
         "male": MessageLookupByLibrary.simpleMessage("Male"),
+        "myEmail":
+            MessageLookupByLibrary.simpleMessage("ahmedxasaad@gmail.com"),
         "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
         "newOffer": MessageLookupByLibrary.simpleMessage("New Offer 😍"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
@@ -159,10 +173,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "recipientName": MessageLookupByLibrary.simpleMessage("Recipient Name"),
         "rememberOrder": MessageLookupByLibrary.simpleMessage("Remember ⏰"),
         "rememberpassword": MessageLookupByLibrary.simpleMessage("Remember me"),
+        "resend": MessageLookupByLibrary.simpleMessage("Resend"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "sacedAddresses":
             MessageLookupByLibrary.simpleMessage("Saved Addresses"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
+            "Please enter your code that send to your\n email address."),
         "signup": MessageLookupByLibrary.simpleMessage(" Sign Up"),
         "sitting": MessageLookupByLibrary.simpleMessage("Sitting"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort by"),
@@ -170,6 +187,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subTotal": MessageLookupByLibrary.simpleMessage("Sub Total"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
+        "termsAndSOnditionsDescription": MessageLookupByLibrary.simpleMessage(
+            "By using Flowe App, you agree to our Terms and Privacy Policy. The app is designed for personal use only, and any misuse or activities that harm the platform or other users are prohibited. You are responsible for safeguarding your account credentials and notifying us immediately of any unauthorized access. Prices are subject to change without prior notice, and delivery times are estimates that may vary due to external factors. Orders can be canceled within [specific time frame], provided they have not been processed, and refunds will be issued according to our policy. All content, including text, images, and designs, is owned by Flowe App and protected by copyright laws. Unauthorized reproduction or distribution is strictly prohibited. We are not responsible for any indirect damages, delays, or errors resulting from the use of the app. Your privacy is important to us; please review our Privacy Policy to understand how your data is handled. By continuing to use the app, you confirm your acceptance of these Terms. For any questions or concerns, contact us at "),
         "thankYou": MessageLookupByLibrary.simpleMessage("Thank you"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("Track Order"),

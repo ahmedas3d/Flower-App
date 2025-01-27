@@ -1249,6 +1249,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Facebook`
+  String get facebook {
+    return Intl.message(
+      'Facebook',
+      name: 'facebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google`
+  String get google {
+    return Intl.message(
+      'Google',
+      name: 'google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Us?`
+  String get aboutUsQuestion {
+    return Intl.message(
+      'About Us?',
+      name: 'aboutUsQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Flower App, your go-to destination for beautiful and fresh flowers at your fingertips. We believe every moment—big or small—deserves to be celebrated with the natural beauty of flowers. With a passion for quality and creativity, our app offers a seamless shopping experience where you can explore a wide range of floral arrangements, bouquets, and gifts tailored to every occasion. Whether it’s a birthday, anniversary, or just a gesture to show you care, we’ve got you covered. We source flowers directly from trusted growers to ensure freshness, offer fast same-day or scheduled delivery, and provide customizable designs to make every moment unique. At Flowe App, we are committed to spreading joy and love through the timeless elegance of flowers. Let us help you create memories that bloom forever.`
+  String get aboutDescription {
+    return Intl.message(
+      'Welcome to Flower App, your go-to destination for beautiful and fresh flowers at your fingertips. We believe every moment—big or small—deserves to be celebrated with the natural beauty of flowers. With a passion for quality and creativity, our app offers a seamless shopping experience where you can explore a wide range of floral arrangements, bouquets, and gifts tailored to every occasion. Whether it’s a birthday, anniversary, or just a gesture to show you care, we’ve got you covered. We source flowers directly from trusted growers to ensure freshness, offer fast same-day or scheduled delivery, and provide customizable designs to make every moment unique. At Flowe App, we are committed to spreading joy and love through the timeless elegance of flowers. Let us help you create memories that bloom forever.',
+      name: 'aboutDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By using Flowe App, you agree to our Terms and Privacy Policy. The app is designed for personal use only, and any misuse or activities that harm the platform or other users are prohibited. You are responsible for safeguarding your account credentials and notifying us immediately of any unauthorized access. Prices are subject to change without prior notice, and delivery times are estimates that may vary due to external factors. Orders can be canceled within [specific time frame], provided they have not been processed, and refunds will be issued according to our policy. All content, including text, images, and designs, is owned by Flowe App and protected by copyright laws. Unauthorized reproduction or distribution is strictly prohibited. We are not responsible for any indirect damages, delays, or errors resulting from the use of the app. Your privacy is important to us; please review our Privacy Policy to understand how your data is handled. By continuing to use the app, you confirm your acceptance of these Terms. For any questions or concerns, contact us at `
+  String get termsAndSOnditionsDescription {
+    return Intl.message(
+      'By using Flowe App, you agree to our Terms and Privacy Policy. The app is designed for personal use only, and any misuse or activities that harm the platform or other users are prohibited. You are responsible for safeguarding your account credentials and notifying us immediately of any unauthorized access. Prices are subject to change without prior notice, and delivery times are estimates that may vary due to external factors. Orders can be canceled within [specific time frame], provided they have not been processed, and refunds will be issued according to our policy. All content, including text, images, and designs, is owned by Flowe App and protected by copyright laws. Unauthorized reproduction or distribution is strictly prohibited. We are not responsible for any indirect damages, delays, or errors resulting from the use of the app. Your privacy is important to us; please review our Privacy Policy to understand how your data is handled. By continuing to use the app, you confirm your acceptance of these Terms. For any questions or concerns, contact us at ',
+      name: 'termsAndSOnditionsDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ahmedxasaad@gmail.com`
+  String get myEmail {
+    return Intl.message(
+      'ahmedxasaad@gmail.com',
+      name: 'myEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Verify`
+  String get emailVerify {
+    return Intl.message(
+      'Email Verify',
+      name: 'emailVerify',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Verification`
+  String get emailVerification {
+    return Intl.message(
+      'Email Verification',
+      name: 'emailVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your code that send to your\n email address.`
+  String get sendCodeIntoYourEmail {
+    return Intl.message(
+      'Please enter your code that send to your\n email address.',
+      name: 'sendCodeIntoYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your email url`
+  String get checkYourEmail {
+    return Intl.message(
+      'Check your email url',
+      name: 'checkYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive code? `
+  String get didntReceiveCode {
+    return Intl.message(
+      'Didn\'t receive code? ',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend`
+  String get resend {
+    return Intl.message(
+      'Resend',
+      name: 'resend',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

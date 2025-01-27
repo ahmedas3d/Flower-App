@@ -10,6 +10,7 @@ import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
 import 'package:flower_app/features/Occasion/view/screens/occasion_screen.dart';
 import 'package:flower_app/features/ProductDetails/view/screens/product_details_screen.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/about_us.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/add_address.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/change-password_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/my_order_screen.dart';
@@ -17,6 +18,7 @@ import 'package:flower_app/features/Profile/presentation/view/screens/notificati
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_edit_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/saved_address.dart';
+import 'package:flower_app/features/Profile/presentation/view/screens/terms_and_conditions.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,6 +43,8 @@ class AppRoutes {
   static const String savedAddress = '/savedAddress';
   static const String addAddress = '/addAddress';
   static const String cartScreen = '/cartScreen';
+  static const String aboutScreen = '/aboutScreen';
+  static const String tremsAndConditionView = '/tremsAndConditionView';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -96,6 +100,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => AddAddress());
       case cartScreen:
         return MaterialPageRoute(builder: (_) => CartScreen());
+      case aboutScreen:
+        return MaterialPageRoute(builder: (_) => AboutScreen());
+      case tremsAndConditionView:
+        return MaterialPageRoute(builder: (_) => TermsAndConditionsView());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(
