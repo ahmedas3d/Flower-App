@@ -51,6 +51,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cards": MessageLookupByLibrary.simpleMessage("Cards"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+        "cashOnDelivery":
+            MessageLookupByLibrary.simpleMessage("Cash on delivery"),
+        "cashOnDeliveryDescription": MessageLookupByLibrary.simpleMessage(
+            "Pay with cash when receiving order"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "categorys": MessageLookupByLibrary.simpleMessage("Categorys"),
         "change": MessageLookupByLibrary.simpleMessage("Change"),
@@ -68,10 +72,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Continue as guest"),
         "creatingAnAccountYouAgreeToOur": MessageLookupByLibrary.simpleMessage(
             "Creating an account, you agree to our"),
+        "creditCard": MessageLookupByLibrary.simpleMessage("Credit Card"),
+        "creditCardDescription":
+            MessageLookupByLibrary.simpleMessage("Pay using credit/debit card"),
         "currentpassword":
             MessageLookupByLibrary.simpleMessage("Current password"),
         "deletePhoto": MessageLookupByLibrary.simpleMessage("Delete Photo"),
         "deliverTo": MessageLookupByLibrary.simpleMessage("Deliver to"),
+        "deliveryAddress":
+            MessageLookupByLibrary.simpleMessage("Delivery Address"),
         "deliveryFee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
         "deliveryTime": MessageLookupByLibrary.simpleMessage("Delivery Time"),
         "descoverSomethingNow":
@@ -95,6 +104,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "enterYourAddress":
             MessageLookupByLibrary.simpleMessage("Enter your Address"),
+        "enterYourName":
+            MessageLookupByLibrary.simpleMessage("Enter your name"),
         "enteryourConfirmPassword": MessageLookupByLibrary.simpleMessage(
             "Enter your confirmation password"),
         "enteryourCurrentPassword":
@@ -132,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "highesPrice": MessageLookupByLibrary.simpleMessage("Highes Price"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "inStock": MessageLookupByLibrary.simpleMessage("In Stock"),
+        "itIsAGift": MessageLookupByLibrary.simpleMessage("It is a gift"),
         "jewellery": MessageLookupByLibrary.simpleMessage("Jewellery"),
         "katbKetab": MessageLookupByLibrary.simpleMessage("Katb Ketab"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -148,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myEmail":
             MessageLookupByLibrary.simpleMessage("ahmedxasaad@gmail.com"),
         "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
         "newOffer": MessageLookupByLibrary.simpleMessage("New Offer 😍"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
         "newe": MessageLookupByLibrary.simpleMessage("New"),
@@ -160,10 +173,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method"),
         "permissionDenied":
             MessageLookupByLibrary.simpleMessage("Permission Denied"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "pinkRoses": MessageLookupByLibrary.simpleMessage("Pink roses:15"),
+        "placeOrder": MessageLookupByLibrary.simpleMessage("Place Order"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Please Enter"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("Please fill all fields"),

@@ -133,5 +133,15 @@
   "checkYourEmail": "Check your email url",
   "didntReceiveCode": "Didn't receive code? ",
   "resend": "Resend",
-  "deliveryTime": "Delivery Time"
+  "deliveryTime": "Delivery Time",
+  "deliveryAddress": "Delivery Address",
+  "paymentMethod": "Payment Method",
+  "cashOnDelivery": "Cash on delivery",
+  "cashOnDeliveryDescription": "Pay with cash when receiving order",
+  "creditCard": "Credit Card",
+  "creditCardDescription": "Pay using credit/debit card",
+  "name": "Name",
+  "enterYourName": "Enter your name",
+  "itIsAGift": "It is a gift",
+  "placeOrder": "Place Order"
 }

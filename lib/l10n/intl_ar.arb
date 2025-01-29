@@ -134,5 +134,15 @@
   "checkYourEmail": "قم بالتحقق من البريد الالكتروني",
   "didntReceiveCode": "لم يتم ارسال الرمز؟ ",
   "resend": "اعادة الارسال",
-  "deliveryTime": "وقت التسليم"
+  "deliveryTime": "وقت التسليم",
+  "deliveryAddress": "عنوان التسليم",
+  "paymentMethod": "طريقة الدفع",
+  "cashOnDelivery": "الدفع عند التسليم",
+  "cashOnDeliveryDescription": "الدفع نقدًا عند استلام الطلب",
+  "creditCard": "بطاقة ائتمان",
+  "creditCardDescription": "الدفع باستخدام بطاقة الائتمان/الخصم",
+  "name": "الاسم",
+  "enterYourName": "ادخل الاسم",
+  "itIsAGift": "إنها هدية",
+  "placeOrder": "اطلب"
 }

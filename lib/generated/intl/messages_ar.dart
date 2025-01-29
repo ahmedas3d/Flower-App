@@ -50,6 +50,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cards": MessageLookupByLibrary.simpleMessage("البطاقات"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+        "cashOnDelivery":
+            MessageLookupByLibrary.simpleMessage("الدفع عند التسليم"),
+        "cashOnDeliveryDescription": MessageLookupByLibrary.simpleMessage(
+            "الدفع نقدًا عند استلام الطلب"),
         "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
         "categorys": MessageLookupByLibrary.simpleMessage("الفئات"),
         "change": MessageLookupByLibrary.simpleMessage("تغيير"),
@@ -68,10 +72,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("المتابعة كضيف"),
         "creatingAnAccountYouAgreeToOur":
             MessageLookupByLibrary.simpleMessage("انشاء حساب، توافق على"),
+        "creditCard": MessageLookupByLibrary.simpleMessage("بطاقة ائتمان"),
+        "creditCardDescription": MessageLookupByLibrary.simpleMessage(
+            "الدفع باستخدام بطاقة الائتمان/الخصم"),
         "currentpassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الحالية"),
         "deletePhoto": MessageLookupByLibrary.simpleMessage("حذف الصورة"),
         "deliverTo": MessageLookupByLibrary.simpleMessage("توصيل إلى"),
+        "deliveryAddress":
+            MessageLookupByLibrary.simpleMessage("عنوان التسليم"),
         "deliveryTime": MessageLookupByLibrary.simpleMessage("وقت التسليم"),
         "descoverSomethingNow":
             MessageLookupByLibrary.simpleMessage("اكتشف شيئًا الآن"),
@@ -96,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "enterYourAddress":
             MessageLookupByLibrary.simpleMessage("ادخل العنوان"),
+        "enterYourName": MessageLookupByLibrary.simpleMessage("ادخل الاسم"),
         "enteryourConfirmPassword":
             MessageLookupByLibrary.simpleMessage("أدخل تأكيد كلمة المرور"),
         "enteryourCurrentPassword":
@@ -133,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "highesPrice": MessageLookupByLibrary.simpleMessage("السعر الاكثر"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "inStock": MessageLookupByLibrary.simpleMessage("متوفر"),
+        "itIsAGift": MessageLookupByLibrary.simpleMessage("إنها هدية"),
         "jewellery": MessageLookupByLibrary.simpleMessage("المجوهرات"),
         "katbKetab": MessageLookupByLibrary.simpleMessage("كتب كتاب"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -150,6 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myEmail":
             MessageLookupByLibrary.simpleMessage("ahmedxasaad@gmail.com"),
         "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
+        "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "newOffer": MessageLookupByLibrary.simpleMessage("عرض جديد 😍"),
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
@@ -163,9 +175,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
+        "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
         "permissionDenied": MessageLookupByLibrary.simpleMessage("إذن مرفوض"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "pinkRoses": MessageLookupByLibrary.simpleMessage("ورود وردية:15"),
+        "placeOrder": MessageLookupByLibrary.simpleMessage("اطلب"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("الرجاء إدخال"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("يرجى ملء جميع الحقول"),
