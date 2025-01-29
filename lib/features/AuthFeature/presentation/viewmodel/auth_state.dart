@@ -28,3 +28,12 @@ class verfiyEmailState_error extends AuthState {
   final String error;
   verfiyEmailState_error({required this.error});
 }
+
+class google_auth_success extends AuthState {}
+
+class google_auth_error extends AuthState {
+  final String error;
+  google_auth_error({required this.error});
+}
+
+class google_auth_loading extends AuthState {}

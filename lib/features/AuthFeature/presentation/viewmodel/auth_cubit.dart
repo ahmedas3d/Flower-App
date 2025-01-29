@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import 'auth_state.dart';
 
@@ -8,7 +9,8 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
   final dio = Dio(); // Dio for HTTP requests
-  FirebaseAuth user = FirebaseAuth.instance;
+  FirebaseAuth _user = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   late String _email;
   late String _password;
   void signUp({
@@ -44,7 +46,7 @@ class AuthCubit extends Cubit<AuthState> {
         print('Signup successful: ${response.data}');
         print("using firebase to create acoount");
         try {
-          await user.createUserWithEmailAndPassword(
+          await _user.createUserWithEmailAndPassword(
               email: _email, password: _password);
         } catch (e) {
           emit(SignUpErrorState(error: "firebase error: ${e.toString()}"));
@@ -108,7 +110,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> checker_email() async {
     try {
-      user.currentUser!.reload();
+      _user.currentUser!.reload();
       if (FirebaseAuth.instance.currentUser!.emailVerified) {
         emit(verfiyEmailState_success());
       } else {
@@ -124,11 +126,24 @@ class AuthCubit extends Cubit<AuthState> {
     _password = textpassword;
   }
 
-  String getemail() {
-    return _email;
-  }
+  void signInWithGoogle() async {
+    emit(google_auth_loading());
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
-  String getpassword() {
-    return _password;
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+
+      // Create a new credential
+      GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      emit(google_auth_success());
+    } catch (e) {
+      emit(google_auth_error(error: e.toString()));
+    }
   }
 }

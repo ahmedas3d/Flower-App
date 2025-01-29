@@ -85,122 +85,149 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ],
       ),
-      body: BlocListener<AuthCubit, AuthState>(
-        listener: (context, state) {
-          if (state is SignInLoadingState) {
-            setState(() {
-              _isLoading = true;
-            });
-          } else if (state is SignInSuccessState) {
-            setState(() {
-              _isLoading = false;
-            });
-            Navigator.pushReplacementNamed(context, AppRoutes.bottomNavBar);
-          } else if (state is SignInErrorState) {
-            setState(() {
-              _isLoading = false;
-            });
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(state.error),
-                backgroundColor: AppColors.primaryColor,
-              ),
-            );
-          }
-        },
-        child: ModalProgressHUD(
-          inAsyncCall: _isLoading,
-          progressIndicator: const CircularProgressIndicator(
-            color: AppColors.primaryColor,
-          ),
-          child: SingleChildScrollView(
-            child: Form(
-              key: _formLoginKey,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-                child: Column(
-                  children: [
-                    customTextField(
-                      controller: email,
-                      label: S.of(context).email,
-                      hint: S.of(context).enteryourEmail,
-                    ),
-                    const SizedBox(height: 20),
-                    customTextField(
-                      controller: password,
-                      label: S.of(context).password,
-                      hint: S.of(context).enteryourPassword,
-                      visibleIcon: Icons.visibility_off,
-                      hiddenIcon: Icons.visibility,
-                      isObscured: _isObscured,
-                      onPressed: () {
-                        setState(() {
-                          _isObscured = !_isObscured;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Checkbox(
-                              value: rememberPassword,
-                              onChanged: (bool? value) {
-                                if (value != null) {
-                                  setState(() {
-                                    rememberPassword = value;
-                                  });
-                                }
-                              },
-                              activeColor: AppColors.primaryColor,
-                            ),
-                            Text(
-                              S.of(context).rememberpassword,
-                              style: TextStyle(
-                                color: AppColors.textColor1,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ],
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, AppRoutes.forgotPasswordScreen);
-                          },
-                          child: Text(
-                            S.of(context).forgotpassword,
+      body: ModalProgressHUD(
+        inAsyncCall: _isLoading,
+        progressIndicator: const CircularProgressIndicator(
+          color: AppColors.primaryColor,
+        ),
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formLoginKey,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+              child: Column(
+                children: [
+                  customTextField(
+                    controller: email,
+                    label: S.of(context).email,
+                    hint: S.of(context).enteryourEmail,
+                  ),
+                  const SizedBox(height: 20),
+                  customTextField(
+                    controller: password,
+                    label: S.of(context).password,
+                    hint: S.of(context).enteryourPassword,
+                    visibleIcon: Icons.visibility_off,
+                    hiddenIcon: Icons.visibility,
+                    isObscured: _isObscured,
+                    onPressed: () {
+                      setState(() {
+                        _isObscured = !_isObscured;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Checkbox(
+                            value: rememberPassword,
+                            onChanged: (bool? value) {
+                              if (value != null) {
+                                setState(() {
+                                  rememberPassword = value;
+                                });
+                              }
+                            },
+                            activeColor: AppColors.primaryColor,
+                          ),
+                          Text(
+                            S.of(context).rememberpassword,
                             style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: AppColors.greyColor,
+                              color: AppColors.textColor1,
                               fontSize: 13,
                             ),
                           ),
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, AppRoutes.forgotPasswordScreen);
+                        },
+                        child: Text(
+                          S.of(context).forgotpassword,
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: AppColors.greyColor,
+                            fontSize: 13,
+                          ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(height: 35),
-                    socialButton(
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 35),
+                  BlocListener<AuthCubit, AuthState>(
+                    listener: (context, state) {
+                      if (state is google_auth_loading) {
+                        setState(() {
+                          _isLoading = true;
+                        });
+                      } else if (state is google_auth_success) {
+                        setState(() {
+                          _isLoading = false;
+                        });
+                        Navigator.pushReplacementNamed(
+                            context, AppRoutes.homeScreen);
+                      } else if (state is google_auth_error) {
+                        setState(() {
+                          _isLoading = false;
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(state.error),
+                            backgroundColor: AppColors.primaryColor,
+                          ),
+                        );
+                      }
+                    },
+                    child: socialButton(
                       title: S.of(context).google,
-                      onTap: () {},
+                      onTap: () {
+                        context.read<AuthCubit>().signInWithGoogle();
+                      },
                       color: Colors.white,
                       textColor: AppColors.textColor1,
                       icon: FontAwesomeIcons.google,
                       borderColor: Colors.grey[300],
                     ),
-                    const SizedBox(height: 8),
-                    socialButton(
-                      title: S.of(context).facebook,
-                      onTap: () {},
-                      color: Colors.blue[800]!,
-                      textColor: AppColors.textColor2,
-                      icon: FontAwesomeIcons.facebook,
-                    ),
-                    const SizedBox(height: 8),
-                    customButton(
+                  ),
+                  const SizedBox(height: 8),
+                  socialButton(
+                    title: S.of(context).facebook,
+                    onTap: () {},
+                    color: Colors.blue[800]!,
+                    textColor: AppColors.textColor2,
+                    icon: FontAwesomeIcons.facebook,
+                  ),
+                  const SizedBox(height: 8),
+                  BlocListener<AuthCubit, AuthState>(
+                    listener: (context, state) {
+                      if (state is SignInLoadingState) {
+                        setState(() {
+                          _isLoading = true;
+                        });
+                      } else if (state is SignInSuccessState) {
+                        setState(() {
+                          _isLoading = false;
+                        });
+                        Navigator.pushReplacementNamed(
+                            context, AppRoutes.bottomNavBar);
+                      } else if (state is SignInErrorState) {
+                        setState(() {
+                          _isLoading = false;
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(state.error),
+                            backgroundColor: AppColors.primaryColor,
+                          ),
+                        );
+                      }
+                    },
+                    child: customButton(
                       title: S.of(context).login,
                       onTap: () {
                         if (_formLoginKey.currentState!.validate()) {
@@ -220,44 +247,43 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: AppColors.primaryColor,
                       textColor: AppColors.textColor2,
                     ),
-                    const SizedBox(height: 8),
-                    customButton(
-                      title: S.of(context).continuewithguest,
-                      onTap: () {
-                        Navigator.pushReplacementNamed(
-                            context, AppRoutes.bottomNavBar);
-                      },
-                      color: AppColors.backgroundColor,
-                      textColor: AppColors.textColor3,
-                      borderColor: AppColors.textColor3,
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          S.of(context).donthaveanaccount,
+                  ),
+                  const SizedBox(height: 8),
+                  customButton(
+                    title: S.of(context).continuewithguest,
+                    onTap: () {
+                      Navigator.pushReplacementNamed(
+                          context, AppRoutes.bottomNavBar);
+                    },
+                    color: AppColors.backgroundColor,
+                    textColor: AppColors.textColor3,
+                    borderColor: AppColors.textColor3,
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        S.of(context).donthaveanaccount,
+                        style: TextStyle(
+                            fontSize: 15, color: AppColors.textColor1),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, AppRoutes.signUpScreen);
+                        },
+                        child: Text(
+                          S.of(context).signup,
                           style: TextStyle(
-                              fontSize: 15, color: AppColors.textColor1),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, AppRoutes.signUpScreen);
-                          },
-                          child: Text(
-                            S.of(context).signup,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: AppColors.primaryColor,
-                              decoration: TextDecoration.underline,
-                            ),
+                            fontSize: 16,
+                            color: AppColors.primaryColor,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),
