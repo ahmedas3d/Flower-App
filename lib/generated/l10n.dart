@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `LogIn`
+  /// `Sign In`
   String get login {
     return Intl.message(
-      'LogIn',
+      'Sign In',
       name: 'login',
       desc: '',
       args: [],
@@ -770,11 +770,21 @@ class S {
     );
   }
 
-  /// `Logout Successfully`
+  /// `Log Out Successfully`
   String get logoutSuccessfully {
     return Intl.message(
-      'Logout Successfully',
+      'Log Out Successfully',
       name: 'logoutSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See you soon`
+  String get seeYouSoon {
+    return Intl.message(
+      'See you soon',
+      name: 'seeYouSoon',
       desc: '',
       args: [],
     );
@@ -1365,6 +1375,16 @@ class S {
     return Intl.message(
       'Resend',
       name: 'resend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Time`
+  String get deliveryTime {
+    return Intl.message(
+      'Delivery Time',
+      name: 'deliveryTime',
       desc: '',
       args: [],
     );

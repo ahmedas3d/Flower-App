@@ -20,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _screens = [
     HomeScreen(),
     CategoriesScreen(),
-    NoProductInCart(),
+    CartScreen(),
     ProfileScreen(),
   ];
 

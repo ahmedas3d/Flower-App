@@ -1,9 +1,11 @@
+import 'dart:io';
+
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_state.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../core/routes/routes.dart';
 import '../../viewmodel/auth_cubit.dart';
 
@@ -25,12 +27,30 @@ class EmailVerifyScreen extends StatelessWidget {
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is verfiyEmailState_success) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'Hi There!',
+                  message: 'Welcome to Flower App',
+                  contentType: ContentType.success,
+                ),
+              ),
+            );
             Navigator.pushNamed(context, AppRoutes.bottomNavBar);
           } else if (state is verfiyEmailState_error) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text(state.error),
-                backgroundColor: AppColors.errorColor,
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'Hi There!',
+                  message: state.error,
+                  contentType: ContentType.failure,
+                ),
               ),
             );
           }

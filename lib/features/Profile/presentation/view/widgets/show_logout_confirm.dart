@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
@@ -41,11 +42,14 @@ void showLogoutConfirmation(BuildContext context) {
                     AppRoutes.loginScreen, (route) => false);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text(
-                      S.of(context).logoutSuccessfully,
-                      style: TextStyle(color: Colors.white),
+                    elevation: 0,
+                    behavior: SnackBarBehavior.floating,
+                    backgroundColor: Colors.transparent,
+                    content: AwesomeSnackbarContent(
+                      title: S.of(context).seeYouSoon,
+                      message: S.of(context).logoutSuccessfully,
+                      contentType: ContentType.success,
                     ),
-                    backgroundColor: AppColors.greenColor,
                   ),
                 );
               },

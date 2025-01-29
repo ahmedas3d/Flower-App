@@ -2,7 +2,7 @@
   "@@locale": "en",
   "arabic": "Arabic",
   "english": "English",
-  "login": "LogIn",
+  "login": "Sign In",
   "flowers": "Flowers",
   "email": "Email",
   "enteryourEmail": "Enter your email",
@@ -72,7 +72,8 @@
   "confirmLogout": "Confirm Logout",
   "areYouSureYouWantToLogout": "Are you sure you want to logout?",
   "cancel": "Cancel",
-  "logoutSuccessfully": "Logout Successfully",
+  "logoutSuccessfully": "Log Out Successfully",
+  "seeYouSoon": "See you soon",
   "editProfile": "Edit Profile",
   "chooseFromGallery": "Choose from Gallery",
   "useCamera": "Camera",
@@ -131,5 +132,6 @@
   "sendCodeIntoYourEmail": "Please enter your code that send to your\n email address.",
   "checkYourEmail": "Check your email url",
   "didntReceiveCode": "Didn't receive code? ",
-  "resend": "Resend"
+  "resend": "Resend",
+  "deliveryTime": "Delivery Time"
 }

@@ -74,6 +74,7 @@
   "logout": "تسجيل الخروج",
   "cancel": "إلغاء",
   "logoutSuccessfully": "تم تسجيل الخروج بنجاح",
+  "seeYouSoon": "الي اللقاء",
   "editProfile": "تعديل الملف الشخصي",
   "chooseFromGallery": "اختر من المعرض",
   "useCamera": "استخدم الكاميرا",
@@ -132,5 +133,6 @@
   "sendCodeIntoYourEmail": "يرجى ادخال الرمز الذي تم ارساله لعنوان البريد الالكتروني الخاص بك.",
   "checkYourEmail": "قم بالتحقق من البريد الالكتروني",
   "didntReceiveCode": "لم يتم ارسال الرمز؟ ",
-  "resend": "اعادة الارسال"
+  "resend": "اعادة الارسال",
+  "deliveryTime": "وقت التسليم"
 }

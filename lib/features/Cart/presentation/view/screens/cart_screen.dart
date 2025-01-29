@@ -28,7 +28,7 @@ class _CartScreenState extends State<CartScreen> {
             Text(
               S.of(context).cart,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textColor1,
               ),

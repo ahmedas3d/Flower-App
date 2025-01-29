@@ -1,3 +1,4 @@
+import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flower_app/core/constants.dart';
@@ -49,7 +50,7 @@ class CheckoutSummary extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                // إجراءات الدفع
+                Navigator.pushNamed(context, AppRoutes.checkOutScreen);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryColor,

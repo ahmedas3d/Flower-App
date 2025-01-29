@@ -72,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كلمة المرور الحالية"),
         "deletePhoto": MessageLookupByLibrary.simpleMessage("حذف الصورة"),
         "deliverTo": MessageLookupByLibrary.simpleMessage("توصيل إلى"),
+        "deliveryTime": MessageLookupByLibrary.simpleMessage("وقت التسليم"),
         "descoverSomethingNow":
             MessageLookupByLibrary.simpleMessage("اكتشف شيئًا الآن"),
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
@@ -179,6 +180,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sacedAddresses":
             MessageLookupByLibrary.simpleMessage("العناوين المحفوظة"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
+        "seeYouSoon": MessageLookupByLibrary.simpleMessage("الي اللقاء"),
         "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
             "يرجى ادخال الرمز الذي تم ارساله لعنوان البريد الالكتروني الخاص بك."),
         "signup": MessageLookupByLibrary.simpleMessage("إنشاء حساب "),

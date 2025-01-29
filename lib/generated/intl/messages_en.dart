@@ -73,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deletePhoto": MessageLookupByLibrary.simpleMessage("Delete Photo"),
         "deliverTo": MessageLookupByLibrary.simpleMessage("Deliver to"),
         "deliveryFee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
+        "deliveryTime": MessageLookupByLibrary.simpleMessage("Delivery Time"),
         "descoverSomethingNow":
             MessageLookupByLibrary.simpleMessage("Discover something now"),
         "description": MessageLookupByLibrary.simpleMessage("Description:"),
@@ -136,12 +137,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "lastname": MessageLookupByLibrary.simpleMessage("Last Name"),
-        "login": MessageLookupByLibrary.simpleMessage("LogIn"),
+        "login": MessageLookupByLibrary.simpleMessage("Sign In"),
         "loginHere": MessageLookupByLibrary.simpleMessage("Login here"),
         "loginRequired": MessageLookupByLibrary.simpleMessage("Login Required"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "logoutSuccessfully":
-            MessageLookupByLibrary.simpleMessage("Logout Successfully"),
+            MessageLookupByLibrary.simpleMessage("Log Out Successfully"),
         "lowesPrice": MessageLookupByLibrary.simpleMessage("Lowes Price"),
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "myEmail":
@@ -178,6 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sacedAddresses":
             MessageLookupByLibrary.simpleMessage("Saved Addresses"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "seeYouSoon": MessageLookupByLibrary.simpleMessage("See you soon"),
         "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
             "Please enter your code that send to your\n email address."),
         "signup": MessageLookupByLibrary.simpleMessage(" Sign Up"),
