@@ -24,6 +24,7 @@ class _MyOrderScreenState extends State<MyOrderScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         title: Text(S.of(context).myOrders),
         backgroundColor: Colors.white,
         elevation: 0,

@@ -6,6 +6,7 @@ import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_u
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/BestSeller/view/screens/best_seller_screen.dart';
 import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
+import 'package:flower_app/features/Checkout/presentation/view/screens/check_out_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
 import 'package:flower_app/features/Occasion/view/screens/occasion_screen.dart';
@@ -45,6 +46,7 @@ class AppRoutes {
   static const String cartScreen = '/cartScreen';
   static const String aboutScreen = '/aboutScreen';
   static const String tremsAndConditionView = '/tremsAndConditionView';
+  static const String checkOutScreen = '/checkOutScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -104,6 +106,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => AboutScreen());
       case tremsAndConditionView:
         return MaterialPageRoute(builder: (_) => TermsAndConditionsView());
+      case checkOutScreen:
+        return MaterialPageRoute(builder: (_) => CheckOutScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

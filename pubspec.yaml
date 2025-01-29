@@ -53,7 +53,11 @@ dependencies:
   firebase_auth: ^5.4.1
   lottie:
   font_awesome_flutter: ^10.8.0
+<<<<<<< HEAD
   google_sign_in: ^6.2.2
+=======
+  awesome_snackbar_content: ^0.1.5
+>>>>>>> 09d7920a7cd58a8da2b6eef46c45bf36b6bee2c4
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -82,10 +86,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: IM FELL English
-      fonts:
-        - asset: assets/fonts/IMFellEnglish-Italic.ttf
-        - asset: assets/fonts/IMFellEnglish-Regular.ttf
     - family: Almarai
       fonts:
         - asset: assets/fonts/Almarai-Bold.ttf

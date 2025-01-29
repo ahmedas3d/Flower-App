@@ -1,3 +1,5 @@
+import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/Cart/presentation/view/widgets/checkout_summry.dart';
 import 'package:flower_app/features/Home/view/widgets/custom_row_address.dart';
 import 'package:flower_app/generated/l10n.dart';
@@ -28,7 +30,7 @@ class _CartScreenState extends State<CartScreen> {
             Text(
               S.of(context).cart,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textColor1,
               ),
@@ -63,6 +65,19 @@ class _CartScreenState extends State<CartScreen> {
             ),
             CheckoutSummary(
                 total: total), // تمرير الـ Total إلى CheckoutSummary
+
+            // Checkout Button
+            customButton(
+              title: S.of(context).checkout,
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.checkOutScreen);
+              },
+              color: AppColors.primaryColor,
+              textColor: Colors.white,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
           ],
         ),
       ),

@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `LogIn`
+  /// `Sign In`
   String get login {
     return Intl.message(
-      'LogIn',
+      'Sign In',
       name: 'login',
       desc: '',
       args: [],
@@ -770,11 +770,21 @@ class S {
     );
   }
 
-  /// `Logout Successfully`
+  /// `Log Out Successfully`
   String get logoutSuccessfully {
     return Intl.message(
-      'Logout Successfully',
+      'Log Out Successfully',
       name: 'logoutSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See you soon`
+  String get seeYouSoon {
+    return Intl.message(
+      'See you soon',
+      name: 'seeYouSoon',
       desc: '',
       args: [],
     );
@@ -1365,6 +1375,116 @@ class S {
     return Intl.message(
       'Resend',
       name: 'resend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Time`
+  String get deliveryTime {
+    return Intl.message(
+      'Delivery Time',
+      name: 'deliveryTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Address`
+  String get deliveryAddress {
+    return Intl.message(
+      'Delivery Address',
+      name: 'deliveryAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment Method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash on delivery`
+  String get cashOnDelivery {
+    return Intl.message(
+      'Cash on delivery',
+      name: 'cashOnDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with cash when receiving order`
+  String get cashOnDeliveryDescription {
+    return Intl.message(
+      'Pay with cash when receiving order',
+      name: 'cashOnDeliveryDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit Card`
+  String get creditCard {
+    return Intl.message(
+      'Credit Card',
+      name: 'creditCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay using credit/debit card`
+  String get creditCardDescription {
+    return Intl.message(
+      'Pay using credit/debit card',
+      name: 'creditCardDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enterYourName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterYourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It is a gift`
+  String get itIsAGift {
+    return Intl.message(
+      'It is a gift',
+      name: 'itIsAGift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place Order`
+  String get placeOrder {
+    return Intl.message(
+      'Place Order',
+      name: 'placeOrder',
       desc: '',
       args: [],
     );

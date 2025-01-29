@@ -20,14 +20,6 @@ class CheckoutSummary extends StatelessWidget {
           topLeft: Radius.circular(isSmallScreen ? 0 : 10),
           topRight: Radius.circular(isSmallScreen ? 0 : 10),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Column(
         children: [
@@ -44,30 +36,6 @@ class CheckoutSummary extends StatelessWidget {
           _buildSummaryRow(S.of(context).total, "EGP ${total + 10}",
               isTotal: true),
           const SizedBox(height: 20),
-          // Checkout Button
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                // إجراءات الدفع
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryColor,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              child: Text(
-                S.of(context).checkout,
-                style: TextStyle(
-                  fontSize: isSmallScreen ? 14 : 16,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.backgroundColor,
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );

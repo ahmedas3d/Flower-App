@@ -19,7 +19,7 @@ Widget socialButton({
         borderRadius: BorderRadius.circular(25),
         border: Border.all(
           color: borderColor ?? Colors.transparent,
-          width: 2,
+          width: 1,
         ),
       ),
       child: Row(
