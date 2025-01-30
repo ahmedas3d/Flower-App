@@ -1549,6 +1549,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Your order placed successfully!`
+  String get orderSuccess {
+    return Intl.message(
+      'Your order placed successfully!',
+      name: 'orderSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preparing your order`
+  String get preparingYourOrder {
+    return Intl.message(
+      'Preparing your order',
+      name: 'preparingYourOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Out for delivery`
+  String get outForDelivery {
+    return Intl.message(
+      'Out for delivery',
+      name: 'outForDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Map`
+  String get showMap {
+    return Intl.message(
+      'Show Map',
+      name: 'showMap',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

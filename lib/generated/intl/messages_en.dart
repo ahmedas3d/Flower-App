@@ -178,6 +178,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "occasion": MessageLookupByLibrary.simpleMessage("Occasion"),
         "old": MessageLookupByLibrary.simpleMessage("Old"),
+        "orderSuccess": MessageLookupByLibrary.simpleMessage(
+            "Your order placed successfully!"),
+        "outForDelivery":
+            MessageLookupByLibrary.simpleMessage("Out for delivery"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
@@ -194,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please fill all fields"),
         "pleaseLogIn": MessageLookupByLibrary.simpleMessage(
             "Please log in to access your profile."),
+        "preparingYourOrder":
+            MessageLookupByLibrary.simpleMessage("Preparing your order"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "recipientName": MessageLookupByLibrary.simpleMessage("Recipient Name"),
@@ -208,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
             "Please enter your code that send to your\n email address."),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "showMap": MessageLookupByLibrary.simpleMessage("Show Map"),
         "signup": MessageLookupByLibrary.simpleMessage(" Sign Up"),
         "sitting": MessageLookupByLibrary.simpleMessage("Sitting"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort by"),

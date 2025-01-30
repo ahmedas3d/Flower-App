@@ -180,6 +180,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "occasion": MessageLookupByLibrary.simpleMessage("المناسبة"),
         "old": MessageLookupByLibrary.simpleMessage("قديم"),
+        "orderSuccess":
+            MessageLookupByLibrary.simpleMessage("تم تقديم الطلب بنجاح!"),
+        "outForDelivery": MessageLookupByLibrary.simpleMessage("خارج للتسليم"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
@@ -192,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("الرجاء إدخال"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("يرجى ملء جميع الحقول"),
+        "preparingYourOrder":
+            MessageLookupByLibrary.simpleMessage("جاري تحضير الطلب"),
         "price": MessageLookupByLibrary.simpleMessage("السعر"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "recipientName": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
@@ -207,6 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
             "يرجى ادخال الرمز الذي تم ارساله لعنوان البريد الالكتروني الخاص بك."),
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+        "showMap": MessageLookupByLibrary.simpleMessage("اظهار الخريطة"),
         "signup": MessageLookupByLibrary.simpleMessage("إنشاء حساب "),
         "sitting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sortBy": MessageLookupByLibrary.simpleMessage("ترتيب حسب"),

@@ -85,7 +85,7 @@ class AddressContainer extends StatelessWidget {
                         ),
                         Spacer(),
                         Icon(
-                          Icons.delete_outline,
+                          Icons.delete,
                           color: Colors.red,
                           size: 22,
                         ),

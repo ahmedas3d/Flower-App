@@ -91,8 +91,11 @@ class CheckOutScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            CheckoutSummary(
-              total: 100,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: CheckoutSummary(
+                total: 100,
+              ),
             ),
             const SizedBox(
               height: 10,

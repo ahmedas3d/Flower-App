@@ -149,5 +149,9 @@
   "settings": "Settings",
   "permissionRequired": "Permission Required",
   "locationPermissionDenied": "Location permission is required to get your current location.",
-  "locationPermissionPermanentlyDenied": "Location permissions are permanently denied. Please enable them in app settings."
+  "locationPermissionPermanentlyDenied": "Location permissions are permanently denied. Please enable them in app settings.",
+  "orderSuccess": "Your order placed successfully!",
+  "preparingYourOrder": "Preparing your order",
+  "outForDelivery": "Out for delivery",
+  "showMap": "Show Map"
 }
