@@ -100,6 +100,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailVerify": MessageLookupByLibrary.simpleMessage("Email Verify"),
         "emptyCart": MessageLookupByLibrary.simpleMessage(
             "Your cart is empty! Start shopping now."),
+        "enableLocationMessage": MessageLookupByLibrary.simpleMessage(
+            "Please enable location services to use this feature."),
         "engagement": MessageLookupByLibrary.simpleMessage("Engagement"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "enterYourAddress":
@@ -149,6 +151,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "lastname": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "locationPermissionDenied": MessageLookupByLibrary.simpleMessage(
+            "Location permission is required to get your current location."),
+        "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
+            "Location permissions are permanently denied. Please enable them in app settings."),
+        "locationRequired":
+            MessageLookupByLibrary.simpleMessage("Location Required"),
         "login": MessageLookupByLibrary.simpleMessage("Sign In"),
         "loginHere": MessageLookupByLibrary.simpleMessage("Login here"),
         "loginRequired": MessageLookupByLibrary.simpleMessage("Login Required"),
@@ -176,6 +184,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method"),
         "permissionDenied":
             MessageLookupByLibrary.simpleMessage("Permission Denied"),
+        "permissionRequired":
+            MessageLookupByLibrary.simpleMessage("Permission Required"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "pinkRoses": MessageLookupByLibrary.simpleMessage("Pink roses:15"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("Place Order"),
@@ -197,6 +207,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "seeYouSoon": MessageLookupByLibrary.simpleMessage("See you soon"),
         "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
             "Please enter your code that send to your\n email address."),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signup": MessageLookupByLibrary.simpleMessage(" Sign Up"),
         "sitting": MessageLookupByLibrary.simpleMessage("Sitting"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort by"),

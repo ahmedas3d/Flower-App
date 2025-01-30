@@ -1489,6 +1489,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Location Required`
+  String get locationRequired {
+    return Intl.message(
+      'Location Required',
+      name: 'locationRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enable location services to use this feature.`
+  String get enableLocationMessage {
+    return Intl.message(
+      'Please enable location services to use this feature.',
+      name: 'enableLocationMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permission Required`
+  String get permissionRequired {
+    return Intl.message(
+      'Permission Required',
+      name: 'permissionRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permission is required to get your current location.`
+  String get locationPermissionDenied {
+    return Intl.message(
+      'Location permission is required to get your current location.',
+      name: 'locationPermissionDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permissions are permanently denied. Please enable them in app settings.`
+  String get locationPermissionPermanentlyDenied {
+    return Intl.message(
+      'Location permissions are permanently denied. Please enable them in app settings.',
+      name: 'locationPermissionPermanentlyDenied',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

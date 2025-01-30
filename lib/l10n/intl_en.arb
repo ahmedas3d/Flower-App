@@ -143,5 +143,11 @@
   "name": "Name",
   "enterYourName": "Enter your name",
   "itIsAGift": "It is a gift",
-  "placeOrder": "Place Order"
+  "placeOrder": "Place Order",
+  "locationRequired": "Location Required",
+  "enableLocationMessage": "Please enable location services to use this feature.",
+  "settings": "Settings",
+  "permissionRequired": "Permission Required",
+  "locationPermissionDenied": "Location permission is required to get your current location.",
+  "locationPermissionPermanentlyDenied": "Location permissions are permanently denied. Please enable them in app settings."
 }

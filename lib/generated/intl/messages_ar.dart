@@ -101,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تحقق من البريد الالكتروني"),
         "emptyCart": MessageLookupByLibrary.simpleMessage(
             "سلة التسوق الخاصة بك فارغة! ابدأ التسوق الآن."),
+        "enableLocationMessage": MessageLookupByLibrary.simpleMessage(
+            "يرجى تمكين خدمات الموقع لاستخدام هذه الميزة."),
         "engagement": MessageLookupByLibrary.simpleMessage("ارتباط"),
         "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "enterYourAddress":
@@ -149,6 +151,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "lastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
         "lastname": MessageLookupByLibrary.simpleMessage("الاسم الاخير"),
+        "locationPermissionDenied": MessageLookupByLibrary.simpleMessage(
+            "مطلوب إذن الموقع للحصول على موقعك الحالي."),
+        "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
+            "تم رفض أذونات الموقع بشكل دائم. يرجى تمكينها في إعدادات التطبيق."),
+        "locationRequired":
+            MessageLookupByLibrary.simpleMessage("الموقع مطلوب"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginHere": MessageLookupByLibrary.simpleMessage("تسجيل الدخول هنا"),
         "loginRequired":
@@ -177,6 +185,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
         "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
         "permissionDenied": MessageLookupByLibrary.simpleMessage("إذن مرفوض"),
+        "permissionRequired": MessageLookupByLibrary.simpleMessage("مطلوب إذن"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "pinkRoses": MessageLookupByLibrary.simpleMessage("ورود وردية:15"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("اطلب"),
@@ -197,6 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "seeYouSoon": MessageLookupByLibrary.simpleMessage("الي اللقاء"),
         "sendCodeIntoYourEmail": MessageLookupByLibrary.simpleMessage(
             "يرجى ادخال الرمز الذي تم ارساله لعنوان البريد الالكتروني الخاص بك."),
+        "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
         "signup": MessageLookupByLibrary.simpleMessage("إنشاء حساب "),
         "sitting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sortBy": MessageLookupByLibrary.simpleMessage("ترتيب حسب"),
