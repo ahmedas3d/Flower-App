@@ -21,11 +21,8 @@ import 'package:flower_app/features/Profile/presentation/view/screens/profile_sc
 import 'package:flower_app/features/Profile/presentation/view/screens/saved_address.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/terms_and_conditions.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
-<<<<<<< HEAD
-=======
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/order_placed_successfully.dart';
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/show_map_screen.dart';
->>>>>>> 269ee0648674daf2a8c5709673431b18c454b066
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/track_orders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

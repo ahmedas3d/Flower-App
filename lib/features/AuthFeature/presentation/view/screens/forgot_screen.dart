@@ -1,14 +1,13 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
-<<<<<<< HEAD
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_state.dart';
-=======
 import 'package:flower_app/generated/l10n.dart';
->>>>>>> 269ee0648674daf2a8c5709673431b18c454b066
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../core/routes/routes.dart';
 
 class ForgotScreen extends StatefulWidget {
   const ForgotScreen({super.key});
@@ -67,7 +66,6 @@ class _ForgotScreenState extends State<ForgotScreen> {
                 hint: S.of(context).enteryourEmail,
               ),
               const SizedBox(height: 35),
-<<<<<<< HEAD
               BlocListener<AuthCubit, AuthState>(
                 listener: (context, state) {
                   if (state is resetPassword_loading) {
@@ -86,16 +84,6 @@ class _ForgotScreenState extends State<ForgotScreen> {
                         content: Text(state.error),
                       ),
                     );
-=======
-              customButton(
-                title: S.of(context).confirm,
-                color: AppColors.primaryColor,
-                textColor: AppColors.textColor2,
-                onTap: () {
-                  if (_formForgotKey.currentState!.validate()) {
-                    Navigator.pushReplacementNamed(
-                        context, AppRoutes.emailVerificationScreen);
->>>>>>> 269ee0648674daf2a8c5709673431b18c454b066
                   }
                 },
                 child: Builder(builder: (context) {
@@ -105,7 +93,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
                     );
                   }
                   return customButton(
-                    title: 'Confirm',
+                    title: S.of(context).confirm,
                     color: AppColors.primaryColor,
                     textColor: AppColors.textColor2,
                     onTap: () {
@@ -123,7 +111,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
                     },
                   );
                 }),
-              )
+              ),
             ],
           ),
         ),
