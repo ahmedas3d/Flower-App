@@ -1,6 +1,7 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
@@ -20,8 +21,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        title: const Text(
-          'Password',
+        title: Text(
+          S.of(context).resetPassword,
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
@@ -32,8 +33,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           key: _formResetPasswordKey,
           child: Column(
             children: [
-              const Text(
-                'Reset Password',
+              Text(
+                S.of(context).resetPassword,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -43,8 +44,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'Password must not be empty and must contain\n 6 characters with upper case letter and one\n number at least ',
+              Text(
+                S.of(context).passwordDescription,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 14,
@@ -56,8 +57,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
               customTextField(
                 controller: password,
-                label: 'New Password',
-                hint: 'Enter your password',
+                label: S.of(context).newPassword,
+                hint: S.of(context).enteryourNewPassword,
                 visibleIcon: Icons.visibility_off,
                 hiddenIcon: Icons.visibility,
                 isObscured: _isObscured,
@@ -72,8 +73,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
               customTextField(
                 controller: confirmPassword,
-                label: 'Confirm Password',
-                hint: 'Confirm password',
+                label: S.of(context).confirmPassword,
+                hint: S.of(context).enteryourConfirmPassword,
                 visibleIcon: Icons.visibility_off,
                 hiddenIcon: Icons.visibility,
                 isObscured: _isObscured,
@@ -87,7 +88,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 height: 35,
               ),
               customButton(
-                title: 'Confirm',
+                title: S.of(context).confirm,
                 onTap: () {},
                 color: AppColors.primaryColor,
                 textColor: AppColors.textColor2,

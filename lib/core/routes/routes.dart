@@ -22,6 +22,7 @@ import 'package:flower_app/features/Profile/presentation/view/screens/saved_addr
 import 'package:flower_app/features/Profile/presentation/view/screens/terms_and_conditions.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/order_placed_successfully.dart';
+import 'package:flower_app/features/TrackOrder/presentation/view/screens/show_map_screen.dart';
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/track_orders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,6 +51,7 @@ class AppRoutes {
   static const String tremsAndConditionView = '/tremsAndConditionView';
   static const String checkOutScreen = '/checkOutScreen';
   static const String trackOrders = '/trackOrders';
+  static const String trackingScreen = '/trackingScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -113,6 +115,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => CheckOutScreen());
       case trackOrders:
         return MaterialPageRoute(builder: (_) => TrackOrders());
+      case trackingScreen:
+        return MaterialPageRoute(builder: (_) => TrackingScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

@@ -153,5 +153,12 @@
   "orderSuccess": "Your order placed successfully!",
   "preparingYourOrder": "Preparing your order",
   "outForDelivery": "Out for delivery",
-  "showMap": "Show Map"
+  "showMap": "Show Map",
+  "forgetPassword": "Forget Password?",
+  "pleaseEnterYourEmail": "Please enter your email associated to\n your account",
+  "confirm": "Confirm",
+  "passwordDescription": "Password must not be empty and must contain\n 6 characters with upper case letter and one\n number at least",
+  "orderdelivered": "Order delivered enjoy your order",
+  "reorder": "Reorder",
+  "rate": "Rate"
 }

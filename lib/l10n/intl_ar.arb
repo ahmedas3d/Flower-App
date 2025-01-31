@@ -154,5 +154,12 @@
   "orderSuccess": "تم تقديم الطلب بنجاح!",
   "preparingYourOrder": "جاري تحضير الطلب",
   "outForDelivery": "خارج للتسليم",
-  "showMap": "اظهار الخريطة"
+  "showMap": "اظهار الخريطة",
+  "forgetPassword": " نسيت كلمة المرور؟",
+  "pleaseEnterYourEmail": "الرجاء إدخال بريدك الإلكتروني المرتبط\n بحسابك",
+  "confirm": "تاكيد",
+  "passwordDescription": "كلمة المرور يجب ان تكون فارغة ويجب ان تحتوي على\n 6 حروف كبيرة وواحدة على الاقل",
+  "orderdelivered": "تم تسليم الطلب استمتع بطلبك",
+  "reorder": "اعادة الطلب",
+  "rate": "تقييم"
 }

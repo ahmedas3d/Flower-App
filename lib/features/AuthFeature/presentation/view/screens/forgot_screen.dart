@@ -2,6 +2,7 @@ import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
+import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ForgotScreen extends StatefulWidget {
@@ -20,8 +21,9 @@ class _ForgotScreenState extends State<ForgotScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        title: const Text(
-          'Password',
+        backgroundColor: AppColors.backgroundColor,
+        title: Text(
+          S.of(context).forgetPassword,
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
@@ -32,8 +34,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
           key: _formForgotKey,
           child: Column(
             children: [
-              const Text(
-                'Forget Password',
+              Text(
+                S.of(context).forgetPassword,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -43,8 +45,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'Please enter your email associated to\n your account',
+              Text(
+                S.of(context).pleaseEnterYourEmail,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
@@ -56,12 +58,12 @@ class _ForgotScreenState extends State<ForgotScreen> {
               ),
               customTextField(
                 controller: email,
-                label: 'Email',
-                hint: 'Enter your Email',
+                label: S.of(context).email,
+                hint: S.of(context).enteryourEmail,
               ),
               const SizedBox(height: 35),
               customButton(
-                title: 'Confirm',
+                title: S.of(context).confirm,
                 color: AppColors.primaryColor,
                 textColor: AppColors.textColor2,
                 onTap: () {

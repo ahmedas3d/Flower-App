@@ -65,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "completed": MessageLookupByLibrary.simpleMessage("Completed"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmLogout": MessageLookupByLibrary.simpleMessage("Confirm Logout"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -132,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "firstname": MessageLookupByLibrary.simpleMessage("First Name"),
         "flowers": MessageLookupByLibrary.simpleMessage("Flowers"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "forgotpassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
         "gender": MessageLookupByLibrary.simpleMessage("Gender"),
@@ -180,9 +183,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "old": MessageLookupByLibrary.simpleMessage("Old"),
         "orderSuccess": MessageLookupByLibrary.simpleMessage(
             "Your order placed successfully!"),
+        "orderdelivered": MessageLookupByLibrary.simpleMessage(
+            "Order delivered enjoy your order"),
         "outForDelivery":
             MessageLookupByLibrary.simpleMessage("Out for delivery"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordDescription": MessageLookupByLibrary.simpleMessage(
+            "Password must not be empty and must contain\n 6 characters with upper case letter and one\n number at least"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method"),
@@ -194,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pinkRoses": MessageLookupByLibrary.simpleMessage("Pink roses:15"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("Place Order"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Please Enter"),
+        "pleaseEnterYourEmail": MessageLookupByLibrary.simpleMessage(
+            "Please enter your email associated to\n your account"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("Please fill all fields"),
         "pleaseLogIn": MessageLookupByLibrary.simpleMessage(
@@ -202,9 +211,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Preparing your order"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "rate": MessageLookupByLibrary.simpleMessage("Rate"),
         "recipientName": MessageLookupByLibrary.simpleMessage("Recipient Name"),
         "rememberOrder": MessageLookupByLibrary.simpleMessage("Remember ⏰"),
         "rememberpassword": MessageLookupByLibrary.simpleMessage("Remember me"),
+        "reorder": MessageLookupByLibrary.simpleMessage("Reorder"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "sacedAddresses":
