@@ -70,32 +70,11 @@ class AuthCubit extends Cubit<AuthState> {
     emit(SignInLoadingState()); // Emit loading state
 
     try {
-      var response = await dio.post(
-        'https://flower.elevateegy.com/api/v1/auth/signin', // Example API endpoint for login
-        data: {
-          "email": email,
-          "password": password,
-        },
-        options: Options(
-          headers: {
-            "Content-Type": "application/json", // Ensure proper content type
-          },
-        ),
-      );
-
-      if (response.statusCode == 200) {
-        emit(SignInSuccessState()); // Emit success state on successful login
-      } else {
-        //using the error message from the server
-        emit(SignInErrorState(error: response.data['message']));
-      }
-      //catch errors with Dio
-    } on DioError catch (e) {
-      print('DioError: ${e.response?.data ?? e.message}');
-      emit(SignInErrorState(error: e.response?.data.toString() ?? e.message));
+      await _user.signInWithEmailAndPassword(email: email, password: password);
+      emit(SignInSuccessState());
+    } on FirebaseAuthException catch (e) {
+      emit(SignInErrorState(error: e.message ?? e.toString()));
     } catch (e) {
-      // Handle generic errors
-      print('Error: $e');
       emit(SignInErrorState(error: e.toString()));
     }
   }
@@ -147,7 +126,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> _resetPassword({required String email}) async {
+  Future<void> resetPassword({required String email}) async {
     // if (_emailController.text.isEmpty) {
     //   ScaffoldMessenger.of(context).showSnackBar(
     //     SnackBar(content: Text("يرجى إدخال البريد الإلكتروني")),

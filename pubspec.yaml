@@ -35,12 +35,9 @@ dependencies:
   font_awesome_flutter: ^10.8.0
   google_sign_in: ^6.2.2
   awesome_snackbar_content: ^0.1.5
-<<<<<<< HEAD
-=======
   flutter_map: ^7.0.2
   geolocator: ^13.0.2
   latlong2: ^0.9.1
->>>>>>> e9c8d4bd175526318d91b3685d67f32454f25d92
 
 dev_dependencies:
   flutter_lints: ^5.0.0

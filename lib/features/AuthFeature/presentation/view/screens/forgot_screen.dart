@@ -1,8 +1,10 @@
 import 'package:flower_app/core/constants.dart';
-import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
+import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
+import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ForgotScreen extends StatefulWidget {
   const ForgotScreen({super.key});
@@ -14,7 +16,7 @@ class ForgotScreen extends StatefulWidget {
 class _ForgotScreenState extends State<ForgotScreen> {
   TextEditingController email = TextEditingController();
   final GlobalKey<FormState> _formForgotKey = GlobalKey<FormState>();
-
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,16 +62,51 @@ class _ForgotScreenState extends State<ForgotScreen> {
                 hint: 'Enter your Email',
               ),
               const SizedBox(height: 35),
-              customButton(
-                title: 'Confirm',
-                color: AppColors.primaryColor,
-                textColor: AppColors.textColor2,
-                onTap: () {
-                  if (_formForgotKey.currentState!.validate()) {
-                    Navigator.pushReplacementNamed(
-                        context, AppRoutes.emailVerificationScreen);
+              BlocListener<AuthCubit, AuthState>(
+                listener: (context, state) {
+                  if (state is resetPassword_loading) {
+                    loading = true;
+                  } else if (state is resetPassword_success) {
+                    loading = false;
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Please check your email'),
+                      ),
+                    );
+                  } else if (state is resetPassword_error) {
+                    loading = false;
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(state.error),
+                      ),
+                    );
                   }
                 },
+                child: Builder(builder: (context) {
+                  if (loading) {
+                    return const CircularProgressIndicator(
+                      color: AppColors.primaryColor,
+                    );
+                  }
+                  return customButton(
+                    title: 'Confirm',
+                    color: AppColors.primaryColor,
+                    textColor: AppColors.textColor2,
+                    onTap: () {
+                      if (_formForgotKey.currentState!.validate()) {
+                        context
+                            .read<AuthCubit>()
+                            .resetPassword(email: email.text);
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Please enter your email'),
+                          ),
+                        );
+                      }
+                    },
+                  );
+                }),
               )
             ],
           ),

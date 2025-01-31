@@ -21,7 +21,6 @@ import 'package:flower_app/features/Profile/presentation/view/screens/profile_sc
 import 'package:flower_app/features/Profile/presentation/view/screens/saved_address.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/terms_and_conditions.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
-import 'package:flower_app/features/TrackOrder/presentation/view/screens/order_placed_successfully.dart';
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/track_orders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -70,7 +69,11 @@ class AppRoutes {
                   child: SignUpScreen(),
                 ));
       case forgotPasswordScreen:
-        return MaterialPageRoute(builder: (_) => const ForgotScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child: ForgotScreen(),
+                ));
       case emailVerificationScreen:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
