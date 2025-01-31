@@ -69,6 +69,7 @@ class PreparingYourOrder extends StatelessWidget {
               const SizedBox(height: 15),
               // checkout summary
               CheckoutSummary(total: 100),
+              const SizedBox(height: 20),
             ],
           ),
         ),

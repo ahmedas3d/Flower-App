@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اختر من المعرض"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),
         "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
+        "confirm": MessageLookupByLibrary.simpleMessage("تاكيد"),
         "confirmLogout":
             MessageLookupByLibrary.simpleMessage("تأكيد تسجيل الخروج"),
         "confirmPassword":
@@ -132,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
         "firstname": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
         "flowers": MessageLookupByLibrary.simpleMessage("الزهور"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage(" نسيت كلمة المرور؟"),
         "forgotpassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
@@ -182,8 +185,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "old": MessageLookupByLibrary.simpleMessage("قديم"),
         "orderSuccess":
             MessageLookupByLibrary.simpleMessage("تم تقديم الطلب بنجاح!"),
+        "orderdelivered":
+            MessageLookupByLibrary.simpleMessage("تم تسليم الطلب استمتع بطلبك"),
         "outForDelivery": MessageLookupByLibrary.simpleMessage("خارج للتسليم"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "passwordDescription": MessageLookupByLibrary.simpleMessage(
+            "كلمة المرور يجب ان تكون فارغة ويجب ان تحتوي على\n 6 حروف كبيرة وواحدة على الاقل"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
         "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
@@ -193,15 +200,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "pinkRoses": MessageLookupByLibrary.simpleMessage("ورود وردية:15"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("اطلب"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("الرجاء إدخال"),
+        "pleaseEnterYourEmail": MessageLookupByLibrary.simpleMessage(
+            "الرجاء إدخال بريدك الإلكتروني المرتبط\n بحسابك"),
         "pleaseFillAllFields":
             MessageLookupByLibrary.simpleMessage("يرجى ملء جميع الحقول"),
         "preparingYourOrder":
             MessageLookupByLibrary.simpleMessage("جاري تحضير الطلب"),
         "price": MessageLookupByLibrary.simpleMessage("السعر"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "rate": MessageLookupByLibrary.simpleMessage("تقييم"),
         "recipientName": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
         "rememberOrder": MessageLookupByLibrary.simpleMessage("تذكر الطلب ⏰"),
         "rememberpassword": MessageLookupByLibrary.simpleMessage("تذكرني"),
+        "reorder": MessageLookupByLibrary.simpleMessage("اعادة الطلب"),
         "resend": MessageLookupByLibrary.simpleMessage("اعادة الارسال"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),

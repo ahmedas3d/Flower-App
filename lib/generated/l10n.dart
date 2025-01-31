@@ -1589,6 +1589,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Forget Password?`
+  String get forgetPassword {
+    return Intl.message(
+      'Forget Password?',
+      name: 'forgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email associated to\n your account`
+  String get pleaseEnterYourEmail {
+    return Intl.message(
+      'Please enter your email associated to\n your account',
+      name: 'pleaseEnterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must not be empty and must contain\n 6 characters with upper case letter and one\n number at least`
+  String get passwordDescription {
+    return Intl.message(
+      'Password must not be empty and must contain\n 6 characters with upper case letter and one\n number at least',
+      name: 'passwordDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order delivered enjoy your order`
+  String get orderdelivered {
+    return Intl.message(
+      'Order delivered enjoy your order',
+      name: 'orderdelivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reorder`
+  String get reorder {
+    return Intl.message(
+      'Reorder',
+      name: 'reorder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rate`
+  String get rate {
+    return Intl.message(
+      'Rate',
+      name: 'rate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

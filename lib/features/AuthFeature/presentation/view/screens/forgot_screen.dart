@@ -1,8 +1,12 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
+<<<<<<< HEAD
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_state.dart';
+=======
+import 'package:flower_app/generated/l10n.dart';
+>>>>>>> 269ee0648674daf2a8c5709673431b18c454b066
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,8 +26,9 @@ class _ForgotScreenState extends State<ForgotScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        title: const Text(
-          'Password',
+        backgroundColor: AppColors.backgroundColor,
+        title: Text(
+          S.of(context).forgetPassword,
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
@@ -34,8 +39,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
           key: _formForgotKey,
           child: Column(
             children: [
-              const Text(
-                'Forget Password',
+              Text(
+                S.of(context).forgetPassword,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -45,8 +50,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'Please enter your email associated to\n your account',
+              Text(
+                S.of(context).pleaseEnterYourEmail,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
@@ -58,10 +63,11 @@ class _ForgotScreenState extends State<ForgotScreen> {
               ),
               customTextField(
                 controller: email,
-                label: 'Email',
-                hint: 'Enter your Email',
+                label: S.of(context).email,
+                hint: S.of(context).enteryourEmail,
               ),
               const SizedBox(height: 35),
+<<<<<<< HEAD
               BlocListener<AuthCubit, AuthState>(
                 listener: (context, state) {
                   if (state is resetPassword_loading) {
@@ -80,6 +86,16 @@ class _ForgotScreenState extends State<ForgotScreen> {
                         content: Text(state.error),
                       ),
                     );
+=======
+              customButton(
+                title: S.of(context).confirm,
+                color: AppColors.primaryColor,
+                textColor: AppColors.textColor2,
+                onTap: () {
+                  if (_formForgotKey.currentState!.validate()) {
+                    Navigator.pushReplacementNamed(
+                        context, AppRoutes.emailVerificationScreen);
+>>>>>>> 269ee0648674daf2a8c5709673431b18c454b066
                   }
                 },
                 child: Builder(builder: (context) {

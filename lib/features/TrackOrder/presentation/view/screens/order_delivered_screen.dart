@@ -1,5 +1,4 @@
 import 'package:flower_app/core/constants.dart';
-import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/Cart/presentation/view/widgets/checkout_summry.dart';
 import 'package:flower_app/features/TrackOrder/presentation/view/widgets/address_container_track.dart';
@@ -9,8 +8,8 @@ import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class OutForDelivery extends StatelessWidget {
-  OutForDelivery({super.key});
+class OrderDeliveredScreen extends StatelessWidget {
+  OrderDeliveredScreen({super.key});
 
   final List<Map<String, String>> items = [
     {
@@ -50,7 +49,7 @@ class OutForDelivery extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                S.of(context).outForDelivery,
+                S.of(context).orderdelivered,
                 style: TextStyle(
                   color: AppColors.textColor1,
                   fontSize: 18,
@@ -58,7 +57,7 @@ class OutForDelivery extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               StepsOrders(
-                isGreenList: [true, true, true, false],
+                isGreenList: [true, true, true, true],
               ),
               const SizedBox(height: 20),
               // العنوان وطريقة الدفع أولاً
@@ -71,34 +70,31 @@ class OutForDelivery extends StatelessWidget {
               const SizedBox(height: 15),
               // checkout summary
               CheckoutSummary(total: 100),
-              BottomAppBar(
-                color: AppColors.backgroundColor,
-                elevation: 0,
-                child: Row(
-                  spacing: 20,
-                  children: [
-                    Icon(
-                      Icons.call,
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.45,
+                    child: customButton(
+                      title: S.of(context).reorder,
+                      onTap: () {},
                       color: AppColors.primaryColor,
+                      textColor: AppColors.backgroundColor,
                     ),
-                    Icon(
-                      Icons.message,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.45,
+                    child: customButton(
+                      title: S.of(context).reorder,
+                      onTap: () {},
                       color: AppColors.primaryColor,
+                      textColor: AppColors.backgroundColor,
                     ),
-                    Expanded(
-                      child: customButton(
-                        title: S.of(context).showMap,
-                        onTap: () {
-                          Navigator.pushNamed(
-                              context, AppRoutes.trackingScreen);
-                        },
-                        color: AppColors.primaryColor,
-                        textColor: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              )
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
