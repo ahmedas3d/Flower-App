@@ -37,3 +37,12 @@ class google_auth_error extends AuthState {
 }
 
 class google_auth_loading extends AuthState {}
+
+class resetPassword_success extends AuthState {}
+
+class resetPassword_error extends AuthState {
+  final String error;
+  resetPassword_error({required this.error});
+}
+
+class resetPassword_loading extends AuthState {}

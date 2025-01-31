@@ -195,14 +195,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  socialButton(
-                    title: S.of(context).facebook,
-                    onTap: () {},
-                    color: Colors.blue[800]!,
-                    textColor: AppColors.textColor2,
-                    icon: FontAwesomeIcons.facebook,
-                  ),
-                  const SizedBox(height: 8),
                   BlocListener<AuthCubit, AuthState>(
                     listener: (context, state) {
                       if (state is SignInLoadingState) {

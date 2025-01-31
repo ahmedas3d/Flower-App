@@ -146,4 +146,22 @@ class AuthCubit extends Cubit<AuthState> {
       emit(google_auth_error(error: e.toString()));
     }
   }
+
+  Future<void> _resetPassword({required String email}) async {
+    // if (_emailController.text.isEmpty) {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     SnackBar(content: Text("يرجى إدخال البريد الإلكتروني")),
+    //   );
+    //   return;
+    // }
+    emit(resetPassword_loading());
+    try {
+      await _user.sendPasswordResetEmail(email: email);
+      emit(resetPassword_success());
+      //show success message
+    } catch (e) {
+      emit(resetPassword_error(error: e.toString()));
+      //show error message
+    }
+  }
 }

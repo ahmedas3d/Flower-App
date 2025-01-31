@@ -1489,6 +1489,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Location Required`
+  String get locationRequired {
+    return Intl.message(
+      'Location Required',
+      name: 'locationRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enable location services to use this feature.`
+  String get enableLocationMessage {
+    return Intl.message(
+      'Please enable location services to use this feature.',
+      name: 'enableLocationMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permission Required`
+  String get permissionRequired {
+    return Intl.message(
+      'Permission Required',
+      name: 'permissionRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permission is required to get your current location.`
+  String get locationPermissionDenied {
+    return Intl.message(
+      'Location permission is required to get your current location.',
+      name: 'locationPermissionDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permissions are permanently denied. Please enable them in app settings.`
+  String get locationPermissionPermanentlyDenied {
+    return Intl.message(
+      'Location permissions are permanently denied. Please enable them in app settings.',
+      name: 'locationPermissionPermanentlyDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your order placed successfully!`
+  String get orderSuccess {
+    return Intl.message(
+      'Your order placed successfully!',
+      name: 'orderSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preparing your order`
+  String get preparingYourOrder {
+    return Intl.message(
+      'Preparing your order',
+      name: 'preparingYourOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Out for delivery`
+  String get outForDelivery {
+    return Intl.message(
+      'Out for delivery',
+      name: 'outForDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Map`
+  String get showMap {
+    return Intl.message(
+      'Show Map',
+      name: 'showMap',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

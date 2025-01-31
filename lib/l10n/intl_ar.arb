@@ -144,5 +144,15 @@
   "name": "الاسم",
   "enterYourName": "ادخل الاسم",
   "itIsAGift": "إنها هدية",
-  "placeOrder": "اطلب"
+  "placeOrder": "اطلب",
+  "locationRequired": "الموقع مطلوب",
+  "enableLocationMessage": "يرجى تمكين خدمات الموقع لاستخدام هذه الميزة.",
+  "settings": "الاعدادات",
+  "permissionRequired": "مطلوب إذن",
+  "locationPermissionDenied": "مطلوب إذن الموقع للحصول على موقعك الحالي.",
+  "locationPermissionPermanentlyDenied": "تم رفض أذونات الموقع بشكل دائم. يرجى تمكينها في إعدادات التطبيق.",
+  "orderSuccess": "تم تقديم الطلب بنجاح!",
+  "preparingYourOrder": "جاري تحضير الطلب",
+  "outForDelivery": "خارج للتسليم",
+  "showMap": "اظهار الخريطة"
 }
