@@ -1,11 +1,12 @@
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
-import 'package:flower_app/features/Cart/presentation/view/screens/no_product_in_cart.dart';
 import 'package:flower_app/features/Categories/view/screens/categories_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -21,7 +22,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
     HomeScreen(),
     CategoriesScreen(),
     CartScreen(),
-    ProfileScreen(),
+    BlocProvider(
+      create: (context) => AuthCubit(),
+      child: ProfileScreen(),
+    ),
   ];
 
   @override

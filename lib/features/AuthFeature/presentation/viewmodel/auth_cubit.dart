@@ -8,11 +8,12 @@ import 'auth_state.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
-  final dio = Dio(); // Dio for HTTP requests
-  FirebaseAuth _user = FirebaseAuth.instance;
+  final dio = Dio();
+  final FirebaseAuth _user = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   late String _email;
   late String _password;
+
   void signUp({
     required String firstName,
     required String lastName,
@@ -20,10 +21,10 @@ class AuthCubit extends Cubit<AuthState> {
     required String rePassword,
     required String gender,
   }) async {
-    emit(SignUpLoadingState()); // Emit loading state
+    emit(SignUpLoadingState());
 
     try {
-      var response = await Dio().post(
+      final response = await dio.post(
         'https://flower.elevateegy.com/api/v1/auth/signup',
         data: {
           "firstName": firstName,
@@ -34,113 +35,117 @@ class AuthCubit extends Cubit<AuthState> {
           "phone": '+20$phone',
           "gender": gender
         },
-        options: Options(
-          headers: {
-            "Content-Type": "application/json", // Ensure proper content type
-          },
-        ),
+        options: Options(headers: {"Content-Type": "application/json"}),
       );
 
-      // Handle successful response
       if (response.statusCode == 201) {
-        print('Signup successful: ${response.data}');
-        print("using firebase to create acoount");
         try {
           await _user.createUserWithEmailAndPassword(
-              email: _email, password: _password);
-        } catch (e) {
-          emit(SignUpErrorState(error: "firebase error: ${e.toString()}"));
+            email: _email,
+            password: _password,
+          );
+          emit(SignUpSuccessState());
+        } on FirebaseAuthException catch (e) {
+          emit(SignUpErrorState(error: "Firebase error: ${e.message}"));
         }
-        emit(SignUpSuccessState());
       } else {
         emit(SignUpErrorState(
             error: "Unexpected error: ${response.statusCode}"));
       }
     } on DioError catch (e) {
-      print('DioError: ${e.response?.data ?? e.message}');
       emit(SignUpErrorState(error: e.response?.data.toString() ?? e.message));
     } catch (e) {
-      // Handle generic errors
-      print('Error: $e');
       emit(SignUpErrorState(error: e.toString()));
     }
   }
 
   void signIn({required String email, required String password}) async {
-    emit(SignInLoadingState()); // Emit loading state
+    emit(SignInLoadingState());
 
     try {
       await _user.signInWithEmailAndPassword(email: email, password: password);
       emit(SignInSuccessState());
     } on FirebaseAuthException catch (e) {
-      emit(SignInErrorState(error: e.message ?? e.toString()));
+      emit(SignInErrorState(error: e.message ?? "Authentication failed"));
     } catch (e) {
       emit(SignInErrorState(error: e.toString()));
     }
   }
 
-  void signOut() {
-    emit(SignOutState()); // Emit sign-out state
-  }
-
-  Future<void> verify_email() async {
-    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
-  }
-
-  Future<void> checker_email() async {
+  void signOut() async {
     try {
-      _user.currentUser!.reload();
-      if (FirebaseAuth.instance.currentUser!.emailVerified) {
-        emit(verfiyEmailState_success());
-      } else {
-        emit(verfiyEmailState_error(error: "Please verify your email"));
-      }
-    } on Exception catch (e) {
-      emit(verfiyEmailState_error(error: e.toString()));
+      await _user.signOut();
+      await _googleSignIn.signOut();
+      emit(SignOutState());
+    } catch (e) {
+      emit(SignOutErrorState(error: e.toString()));
     }
   }
 
-  void setEmailandpassword(String textemail, String textpassword) {
-    _email = textemail;
-    _password = textpassword;
+  Future<void> verifyEmail() async {
+    try {
+      await _user.currentUser?.sendEmailVerification();
+      emit(VerifyEmailSentState());
+    } catch (e) {
+      emit(VerifyEmailErrorState(error: e.toString()));
+    }
+  }
+
+  void checkEmailVerification() async {
+    try {
+      await _user.currentUser?.reload();
+      final user = _user.currentUser;
+      if (user != null && user.emailVerified) {
+        emit(VerifyEmailSuccessState());
+      } else {
+        emit(VerifyEmailErrorState(error: "Email not verified"));
+      }
+    } catch (e) {
+      emit(VerifyEmailErrorState(error: e.toString()));
+    }
+  }
+
+  void setEmailAndPassword(String email, String password) {
+    _email = email;
+    _password = password;
   }
 
   void signInWithGoogle() async {
-    emit(google_auth_loading());
+    emit(GoogleAuthLoadingState());
+    // i need to clean the cache
+    await _googleSignIn.signOut();
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-
       final GoogleSignInAuthentication? googleAuth =
           await googleUser?.authentication;
 
-      // Create a new credential
-      GoogleAuthProvider.credential(
+      final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
         idToken: googleAuth?.idToken,
       );
 
-      // Once signed in, return the UserCredential
-      emit(google_auth_success());
+      await _user.signInWithCredential(credential);
+      emit(GoogleAuthSuccessState());
     } catch (e) {
-      emit(google_auth_error(error: e.toString()));
+      emit(GoogleAuthErrorState(error: e.toString()));
     }
   }
 
   Future<void> resetPassword({required String email}) async {
-    // if (_emailController.text.isEmpty) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(content: Text("يرجى إدخال البريد الإلكتروني")),
-    //   );
-    //   return;
-    // }
-    emit(resetPassword_loading());
+    emit(ResetPasswordLoadingState());
     try {
       await _user.sendPasswordResetEmail(email: email);
-      emit(resetPassword_success());
-      //show success message
+      emit(ResetPasswordSuccessState());
     } catch (e) {
-      emit(resetPassword_error(error: e.toString()));
-      //show error message
+      emit(ResetPasswordErrorState(error: e.toString()));
     }
+  }
+
+  String? getCurrentUserEmail() {
+    return _user.currentUser?.email;
+  }
+
+  User? getCurrentUser() {
+    return _user.currentUser;
   }
 }

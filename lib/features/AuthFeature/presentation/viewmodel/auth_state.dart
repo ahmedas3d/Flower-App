@@ -2,6 +2,7 @@ abstract class AuthState {}
 
 class AuthInitial extends AuthState {}
 
+// Sign Up States
 class SignUpLoadingState extends AuthState {}
 
 class SignUpSuccessState extends AuthState {}
@@ -11,6 +12,7 @@ class SignUpErrorState extends AuthState {
   SignUpErrorState({required this.error});
 }
 
+// Sign In States
 class SignInLoadingState extends AuthState {}
 
 class SignInSuccessState extends AuthState {}
@@ -20,29 +22,42 @@ class SignInErrorState extends AuthState {
   SignInErrorState({required this.error});
 }
 
+// Sign Out States
 class SignOutState extends AuthState {}
 
-class verfiyEmailState_success extends AuthState {}
-
-class verfiyEmailState_error extends AuthState {
+class SignOutErrorState extends AuthState {
   final String error;
-  verfiyEmailState_error({required this.error});
+  SignOutErrorState({required this.error});
 }
 
-class google_auth_success extends AuthState {}
+// Email Verification States
+class VerifyEmailLoadingState extends AuthState {}
 
-class google_auth_error extends AuthState {
+class VerifyEmailSentState extends AuthState {}
+
+class VerifyEmailSuccessState extends AuthState {}
+
+class VerifyEmailErrorState extends AuthState {
   final String error;
-  google_auth_error({required this.error});
+  VerifyEmailErrorState({required this.error});
 }
 
-class google_auth_loading extends AuthState {}
+// Google Sign-In States
+class GoogleAuthLoadingState extends AuthState {}
 
-class resetPassword_success extends AuthState {}
+class GoogleAuthSuccessState extends AuthState {}
 
-class resetPassword_error extends AuthState {
+class GoogleAuthErrorState extends AuthState {
   final String error;
-  resetPassword_error({required this.error});
+  GoogleAuthErrorState({required this.error});
 }
 
-class resetPassword_loading extends AuthState {}
+// Password Reset States
+class ResetPasswordLoadingState extends AuthState {}
+
+class ResetPasswordSuccessState extends AuthState {}
+
+class ResetPasswordErrorState extends AuthState {
+  final String error;
+  ResetPasswordErrorState({required this.error});
+}

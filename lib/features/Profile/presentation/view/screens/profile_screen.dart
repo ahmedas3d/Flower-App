@@ -1,12 +1,15 @@
 import 'dart:io';
+
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/helper/photo_helper.dart';
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/Profile/presentation/view/widgets/notification_row.dart';
 import 'package:flower_app/features/Profile/presentation/view/widgets/row_settings.dart';
 import 'package:flower_app/features/Profile/presentation/view/widgets/show_logout_confirm.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -170,7 +173,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'R7r8D@example.com',
+                    context.read<AuthCubit>().getCurrentUserEmail() ?? '',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,

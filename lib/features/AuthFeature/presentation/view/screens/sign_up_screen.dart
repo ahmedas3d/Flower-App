@@ -74,12 +74,12 @@ class SignUpScreen extends StatelessWidget {
             loading = true;
           } else if (state is SignUpSuccessState) {
             loading = false;
-            context.read<AuthCubit>().setEmailandpassword(
+            context.read<AuthCubit>().setEmailAndPassword(
                   email.text,
                   password.text,
                 );
 
-            context.read<AuthCubit>().verify_email();
+            context.read<AuthCubit>().verifyEmail();
             Navigator.pushReplacementNamed(
                 context, AppRoutes.emailVerificationScreen);
           } else if (state is SignUpErrorState) {
@@ -256,7 +256,7 @@ class SignUpScreen extends StatelessWidget {
                           } else {
                             context
                                 .read<AuthCubit>()
-                                .setEmailandpassword(email.text, password.text);
+                                .setEmailAndPassword(email.text, password.text);
                             context.read<AuthCubit>().signUp(
                                   firstName: firstName.text,
                                   lastName: lastName.text,

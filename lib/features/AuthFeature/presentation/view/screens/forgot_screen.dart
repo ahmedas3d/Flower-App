@@ -7,8 +7,6 @@ import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/routes/routes.dart';
-
 class ForgotScreen extends StatefulWidget {
   const ForgotScreen({super.key});
 
@@ -68,16 +66,16 @@ class _ForgotScreenState extends State<ForgotScreen> {
               const SizedBox(height: 35),
               BlocListener<AuthCubit, AuthState>(
                 listener: (context, state) {
-                  if (state is resetPassword_loading) {
+                  if (state is ResetPasswordLoadingState) {
                     loading = true;
-                  } else if (state is resetPassword_success) {
+                  } else if (state is ResetPasswordSuccessState) {
                     loading = false;
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('Please check your email'),
                       ),
                     );
-                  } else if (state is resetPassword_error) {
+                  } else if (state is ResetPasswordErrorState) {
                     loading = false;
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(

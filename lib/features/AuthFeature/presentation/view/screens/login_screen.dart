@@ -161,17 +161,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 35),
                   BlocListener<AuthCubit, AuthState>(
                     listener: (context, state) {
-                      if (state is google_auth_loading) {
+                      if (state is GoogleAuthLoadingState) {
                         setState(() {
                           _isLoading = true;
                         });
-                      } else if (state is google_auth_success) {
+                      } else if (state is GoogleAuthSuccessState) {
                         setState(() {
                           _isLoading = false;
                         });
                         Navigator.pushReplacementNamed(
-                            context, AppRoutes.homeScreen);
-                      } else if (state is google_auth_error) {
+                            context, AppRoutes.bottomNavBar);
+                      } else if (state is GoogleAuthErrorState) {
                         setState(() {
                           _isLoading = false;
                         });
