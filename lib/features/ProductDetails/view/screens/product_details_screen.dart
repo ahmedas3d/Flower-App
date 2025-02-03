@@ -1,10 +1,12 @@
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/features/Home/data/models/get_all_product_model.dart';
 import 'package:flower_app/features/ProductDetails/view/widgets/specifications.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
-  const ProductDetailsScreen({super.key});
+  const ProductDetailsScreen({super.key, required this.product});
+  final ProductModel product;
 
   @override
   _ProductDetailsScreenState createState() => _ProductDetailsScreenState();
@@ -34,25 +36,24 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 25),
-                      child: Image.asset(
-                        'assets/images/product.png',
+                      child: Image.network(
+                        widget.product.images[0],
                         fit: BoxFit.cover,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 25),
-                      child: Image.asset(
-                        'assets/images/product.png',
+                      child: Image.network(
+                        widget.product.images[1],
                         fit: BoxFit.cover,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 25),
-                      child: Image.asset(
-                        'assets/images/product.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                        padding: const EdgeInsets.only(top: 25),
+                        child: Image.network(
+                          widget.product.images[2],
+                          fit: BoxFit.cover,
+                        )),
                   ],
                 ),
               ),
@@ -87,7 +88,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             ],
           ),
           SizedBox(height: 10),
-          Specifications(),
+          Specifications(
+            product: widget.product,
+          ),
         ],
       ),
     );

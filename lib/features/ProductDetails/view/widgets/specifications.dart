@@ -1,10 +1,12 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
+import 'package:flower_app/features/Home/data/models/get_all_product_model.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class Specifications extends StatelessWidget {
-  const Specifications({super.key});
+  const Specifications({super.key, required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class Specifications extends StatelessWidget {
           Row(
             children: [
               Text(
-                'EGP 1,500',
+                product.price.toString(),
                 style: TextStyle(
                   fontSize: 20,
                   color: AppColors.textColor1,
@@ -58,7 +60,7 @@ class Specifications extends StatelessWidget {
           ),
           SizedBox(height: 15),
           Text(
-            S.of(context).description,
+            S.of(context).description.substring(2, 10),
             style: TextStyle(
               fontSize: 16,
               color: AppColors.textColor1,
@@ -66,7 +68,7 @@ class Specifications extends StatelessWidget {
             ),
           ),
           Text(
-            S.of(context).descriptionText,
+            product.description,
             style: TextStyle(
               fontSize: 14,
               color: AppColors.greyColor,

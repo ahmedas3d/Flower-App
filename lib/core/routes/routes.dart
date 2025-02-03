@@ -91,8 +91,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const BottomNavBar());
       case bestSellerScreen:
         return MaterialPageRoute(builder: (_) => const BestSellerScreen());
-      case productDetails:
-        return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
+      // case productDetails:
+      //   return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
       case occasionScreen:
         return MaterialPageRoute(builder: (_) => const OccasionScreen());
       case profileScreen:

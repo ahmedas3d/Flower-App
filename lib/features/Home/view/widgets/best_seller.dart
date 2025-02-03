@@ -1,26 +1,29 @@
 import 'package:flower_app/core/constants.dart';
-import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/features/Home/data/models/get_all_product_model.dart';
 import 'package:flower_app/features/Home/viewmodel/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../ProductDetails/view/screens/product_details_screen.dart';
+
 class BestSellers extends StatelessWidget {
   const BestSellers({
     super.key,
-    required this.image,
-    required this.title,
-    required this.price,
+    required this.product,
   });
 
-  final String image;
-  final String title;
-  final String price;
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, AppRoutes.productDetails);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductDetailsScreen(product: product),
+          ),
+        );
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,21 +34,21 @@ class BestSellers extends StatelessWidget {
             width: 131,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(image),
+                image: NetworkImage(product.imageCover),
                 fit: BoxFit.cover,
               ),
             ),
           ),
           SizedBox(height: 5),
           Text(
-            title,
+            product.title.substring(0, 10),
             style: TextStyle(
               fontSize: 12,
               color: AppColors.textColor1,
             ),
           ),
           Text(
-            '$price EGP',
+            '${product.price} EGP',
             style: TextStyle(
               fontSize: 14,
               color: AppColors.textColor1,
@@ -72,6 +75,7 @@ class _BestSellerListState extends State<BestSellerList> {
     context.read<HomeCubit>().getAllProducts();
   }
 
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
@@ -85,9 +89,7 @@ class _BestSellerListState extends State<BestSellerList> {
               itemCount: state.products.length,
               itemBuilder: (context, index) {
                 return BestSellers(
-                  image: state.products[index].imageCover,
-                  title: state.products[index].title.substring(0, 10),
-                  price: state.products[index].price.toString(),
+                  product: state.products[index],
                 );
               },
             ),
