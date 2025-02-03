@@ -74,12 +74,7 @@ class SignUpScreen extends StatelessWidget {
             loading = true;
           } else if (state is SignUpSuccessState) {
             loading = false;
-            context.read<AuthCubit>().setEmailAndPassword(
-                  email.text,
-                  password.text,
-                );
 
-            context.read<AuthCubit>().verifyEmail();
             Navigator.pushReplacementNamed(
                 context, AppRoutes.emailVerificationScreen);
           } else if (state is SignUpErrorState) {

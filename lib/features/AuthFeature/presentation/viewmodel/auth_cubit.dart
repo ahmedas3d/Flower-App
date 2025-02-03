@@ -3,12 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../data/service/authapi.dart';
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
-  final dio = Dio();
   final FirebaseAuth _user = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   late String _email;
@@ -24,19 +24,15 @@ class AuthCubit extends Cubit<AuthState> {
     emit(SignUpLoadingState());
 
     try {
-      final response = await dio.post(
-        'https://flower.elevateegy.com/api/v1/auth/signup',
-        data: {
-          "firstName": firstName,
-          "lastName": lastName,
-          "email": _email,
-          "password": _password,
-          "rePassword": rePassword,
-          "phone": '+20$phone',
-          "gender": gender
-        },
-        options: Options(headers: {"Content-Type": "application/json"}),
-      );
+      final response = await Authapi(
+        _email,
+        _password,
+        firstName,
+        lastName,
+        phone,
+        rePassword,
+        gender,
+      ).signUp();
 
       if (response.statusCode == 201) {
         try {

@@ -8,11 +8,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/routes/routes.dart';
 import '../../viewmodel/auth_cubit.dart';
 
-class EmailVerifyScreen extends StatelessWidget {
+class EmailVerifyScreen extends StatefulWidget {
   const EmailVerifyScreen({super.key});
 
   @override
+  State<EmailVerifyScreen> createState() => _EmailVerifyScreenState();
+}
+
+class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
   @override
+  @override
+  void initState() {
+    super.initState();
+    context.read<AuthCubit>().verifyEmail();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,

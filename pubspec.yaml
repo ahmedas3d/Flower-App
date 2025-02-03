@@ -8,39 +8,39 @@ environment:
   sdk: ^3.5.3
 
 dependencies:
+  awesome_snackbar_content: ^0.1.5
   bloc: ^8.1.4
+  connectivity_checker: ^1.1.0
   cupertino_icons: ^1.0.8
   dio: ^4.0.0
+  either_dart: ^1.0.0
+  firebase_auth: ^5.4.1
+  firebase_core: ^3.10.1
+  firebase_data_connect: ^0.1.2+7
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.0
   flutter_launcher_icons: ^0.14.1
   flutter_localization: ^0.3.0
-  flutter_translate: ^4.1.0
+  flutter_map: ^7.0.2
+  flutter_polyline_points: ^2.1.0
   flutter_svg: ^2.0.16
+  flutter_translate: ^4.1.0
+  font_awesome_flutter: ^10.8.0
+  geolocator: ^13.0.2
+  google_sign_in: ^6.2.2
   http: ^1.2.2
+  image_picker: ^1.1.2
   intl: ^0.19.0
+  intl_utils: null
+  latlong2: ^0.9.1
+  lottie: null
   modal_progress_hud_nsn: ^0.5.1
+  permission_handler: ^11.3.1
   provider_base_tools: ^0.1.6
   responsive_framework: ^1.5.1
   shared_preferences: ^2.3.5
   smooth_page_indicator: ^1.2.0+3
-  image_picker: ^1.1.2
-  permission_handler: ^11.3.1
-  intl_utils:
-  firebase_core: ^3.10.1
-  firebase_data_connect: ^0.1.2+7
-  firebase_auth: ^5.4.1
-  lottie:
-  font_awesome_flutter: ^10.8.0
-  google_sign_in: ^6.2.2
-  awesome_snackbar_content: ^0.1.5
-  # package map and tracking
-  flutter_map: ^7.0.2
-  geolocator: ^13.0.2
-  latlong2: ^0.9.1
-  flutter_polyline_points: ^2.1.0
-  connectivity_checker: ^1.1.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
