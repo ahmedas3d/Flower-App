@@ -1,18 +1,18 @@
-import 'dart:ui';
-
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/features/Home/viewmodel/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BestSellers extends StatelessWidget {
   const BestSellers({
     super.key,
-    required this.imageAsset,
+    required this.image,
     required this.title,
     required this.price,
   });
 
-  final String imageAsset;
+  final String image;
   final String title;
   final String price;
 
@@ -26,11 +26,12 @@ class BestSellers extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
+            margin: const EdgeInsets.only(right: 12),
             height: 151,
             width: 131,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(imageAsset),
+                image: NetworkImage(image),
                 fit: BoxFit.cover,
               ),
             ),
@@ -57,45 +58,48 @@ class BestSellers extends StatelessWidget {
   }
 }
 
-class BestSellerList extends StatelessWidget {
-  BestSellerList({super.key});
-
-  final List<Map<String, String>> items = [
-    {
-      'image': 'assets/images/best-seller1.jpg',
-      'title': 'Sunny ',
-      'price': '600',
-    },
-    {
-      'image': 'assets/images/best-seller2.jpg',
-      'title': 'Red roses',
-      'price': '600',
-    },
-    {
-      'image': 'assets/images/best-seller3.jpg',
-      'title': 'Spring vase',
-      'price': '600',
-    },
-  ];
+class BestSellerList extends StatefulWidget {
+  const BestSellerList({super.key});
 
   @override
+  State<BestSellerList> createState() => _BestSellerListState();
+}
+
+class _BestSellerListState extends State<BestSellerList> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<HomeCubit>().getAllProducts();
+  }
+
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: BestSellers(
-              imageAsset: items[index]['image']!,
-              title: items[index]['title']!,
-              price: items[index]['price']!,
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        if (state is HomeLoading) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is HomeLoaded) {
+          return SizedBox(
+            height: 200,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: state.products.length,
+              itemBuilder: (context, index) {
+                return BestSellers(
+                  image: state.products[index].imageCover,
+                  title: state.products[index].title.substring(0, 10),
+                  price: state.products[index].price.toString(),
+                );
+              },
             ),
           );
-        },
-      ),
+        } else if (state is HomeError) {
+          return Center(
+            child: Text(state.error),
+          );
+        } else {
+          return const SizedBox.shrink();
+        }
+      },
     );
   }
 }

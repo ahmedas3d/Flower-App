@@ -3,6 +3,7 @@ import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubi
 import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
 import 'package:flower_app/features/Categories/view/screens/categories_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
+import 'package:flower_app/features/Home/viewmodel/home_cubit.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    HomeScreen(),
+    BlocProvider(
+      create: (context) => HomeCubit(),
+      child: HomeScreen(),
+    ),
     CategoriesScreen(),
     CartScreen(),
     BlocProvider(
