@@ -1,6 +1,6 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
-import 'package:flower_app/features/Home/data/models/get_all_product_model.dart';
+import 'package:flower_app/features/Home/data/models/product/get_all_product_model.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 

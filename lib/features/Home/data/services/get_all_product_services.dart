@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flower_app/features/Home/data/models/get_all_product_model.dart';
+import 'package:flower_app/features/Home/data/models/product/get_all_product_model.dart';
 
 class homeServiceAPI {
   static final dio = Dio();
