@@ -1,17 +1,16 @@
-import 'dart:ui';
-
 import 'package:flower_app/core/constants.dart';
-import 'package:flower_app/generated/l10n.dart';
+import 'package:flower_app/features/Home/viewmodel/occasioncubit/occasions_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Occasion extends StatelessWidget {
   const Occasion({
     super.key,
-    required this.imageAsset,
+    required this.occasionImageUrl,
     required this.title,
   });
 
-  final String imageAsset;
+  final String occasionImageUrl;
   final String title;
 
   @override
@@ -24,7 +23,8 @@ class Occasion extends StatelessWidget {
           width: 131,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(imageAsset),
+              image: NetworkImage(
+                  'https://flower.elevateegy.com/uploads/' + occasionImageUrl),
               fit: BoxFit.cover,
             ),
           ),
@@ -43,41 +43,51 @@ class Occasion extends StatelessWidget {
   }
 }
 
-class OccasionList extends StatelessWidget {
-  OccasionList({super.key});
-
-  List<Map<String, String>> items(BuildContext context) => [
-        {
-          'image': 'assets/images/occasion1.jpg',
-          'title': S.of(context).wedding,
-        },
-        {
-          'image': 'assets/images/occasion.jpg',
-          'title': S.of(context).birthday,
-        },
-        {
-          'image': 'assets/images/occasion2.jpg',
-          'title': S.of(context).graduation,
-        },
-      ];
+class OccasionList extends StatefulWidget {
+  const OccasionList({super.key});
 
   @override
+  State<OccasionList> createState() => _OccasionListState();
+}
+
+class _OccasionListState extends State<OccasionList> {
+  @override
+  @override
+  void initState() {
+    super.initState();
+    context.read<OccasionsCubit>().getAllOccasions();
+  }
+
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 180,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: items(context).length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: Occasion(
-              imageAsset: items(context)[index]['image']!,
-              title: items(context)[index]['title']!,
+    return BlocBuilder<OccasionsCubit, OccasionsState>(
+      builder: (context, state) {
+        if (state is OccasionsError) {
+          return Center(
+            child: Text(state.error),
+          );
+        }
+        if (state is OccasionsLoaded) {
+          return SizedBox(
+            height: 180,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: state.occasions.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: Occasion(
+                    occasionImageUrl: state.occasions[index].image,
+                    title: state.occasions[index].name,
+                  ),
+                );
+              },
             ),
           );
-        },
-      ),
+        }
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
   }
 }
