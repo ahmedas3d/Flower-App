@@ -91,7 +91,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 20,
               fit: BoxFit.contain,
             ),
-            Text(
+            const Text(
               'Flowery',
               style: TextStyle(
                 fontSize: 24,
@@ -149,7 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'John Doe',
                     style: TextStyle(
                       fontSize: 18,
@@ -161,7 +161,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     onTap: () {
                       Navigator.of(context).pushNamed(AppRoutes.profileEdit);
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.edit,
                       size: 20,
                       color: AppColors.primaryColor,
@@ -174,7 +174,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Text(
                     context.read<AuthCubit>().getCurrentUserEmail() ?? '',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: AppColors.greyColor,
@@ -217,7 +217,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 1.5,
               ),
               const SizedBox(height: 15),
-              LanguageRow(),
+              const LanguageRow(),
               const SizedBox(height: 15),
               RowSettings(
                 title: S.of(context).aboutUs,

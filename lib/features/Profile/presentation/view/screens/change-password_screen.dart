@@ -31,7 +31,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 label: S.of(context).currentpassword,
                 hint: S.of(context).enteryourCurrentPassword,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               customTextField(
@@ -39,7 +39,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 label: S.of(context).newPassword,
                 hint: S.of(context).enteryourNewPassword,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               customTextField(
@@ -47,7 +47,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 label: S.of(context).confirmPassword,
                 hint: S.of(context).confirmPassword,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               customButton(

@@ -1,12 +1,25 @@
 import 'package:flower_app/core/constants.dart';
-import 'package:flower_app/features/Categories/view/widgets/all_categories.dart';
 import 'package:flower_app/features/Categories/view/widgets/filter_menu.dart';
 import 'package:flower_app/features/Categories/view/widgets/list_all_categories.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key});
+
+  @override
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabControllerCategories;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabControllerCategories = TabController(length: 5, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +39,21 @@ class CategoriesScreen extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: S.of(context).search,
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                           fontSize: 14,
                           color: Colors.grey,
                         ),
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: 3,
-                          horizontal: 8,
-                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 3, horizontal: 8),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey),
+                          borderSide: const BorderSide(color: Colors.grey),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: AppColors.primaryColor),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        prefixIcon: Icon(
+                        prefixIcon: const Icon(
                           Icons.search,
                           size: 20,
                           color: Colors.grey,
@@ -68,7 +79,7 @@ class CategoriesScreen extends StatelessWidget {
                             return Container(
                               decoration: BoxDecoration(
                                 color: AppColors.backgroundColor,
-                                borderRadius: BorderRadius.vertical(
+                                borderRadius: const BorderRadius.vertical(
                                   top: Radius.circular(20),
                                 ),
                               ),
@@ -95,13 +106,40 @@ class CategoriesScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 65,
-              width: double.infinity,
-              child: AllCategories(),
+            TabBar(
+              tabAlignment: TabAlignment.center,
+              controller: _tabControllerCategories,
+              isScrollable: true,
+              indicatorWeight: 0.1,
+              indicatorColor: Colors.pink,
+              labelColor: Colors.pink,
+              indicatorSize: TabBarIndicatorSize.label,
+              unselectedLabelColor: Colors.grey,
+              labelStyle: const TextStyle(
+                fontSize: 16,
+                fontFamily: "Almarai",
+                fontWeight: FontWeight.w500,
+              ),
+              tabs: [
+                Tab(text: S.of(context).flowers),
+                Tab(text: S.of(context).gifts),
+                Tab(text: S.of(context).cards),
+                Tab(text: S.of(context).jewellery),
+                Tab(text: "Jewellery"),
+              ],
             ),
+            SizedBox(height: 10),
             Expanded(
-              child: CategoriesList(),
+              child: TabBarView(
+                controller: _tabControllerCategories,
+                children: [
+                  CategoriesList(),
+                  CategoriesList(),
+                  CategoriesList(),
+                  CategoriesList(),
+                  CategoriesList(),
+                ],
+              ),
             ),
           ],
         ),

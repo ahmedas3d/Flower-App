@@ -80,7 +80,9 @@ class _BestSellerListState extends State<BestSellerList> {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         if (state is HomeLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ));
         } else if (state is HomeLoaded) {
           return SizedBox(
             height: 200,

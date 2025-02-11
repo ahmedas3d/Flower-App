@@ -22,7 +22,7 @@ class NoLogin extends StatelessWidget {
               ),
               Text(
                 S.of(context).loginRequired,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.black, // يمكنك تغيير اللون حسب التصميم
@@ -32,7 +32,7 @@ class NoLogin extends StatelessWidget {
               // نص توضيحي إضافي
               Text(
                 S.of(context).pleaseLogIn,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.grey, // يمكنك تغيير اللون حسب التصميم
                 ),
@@ -55,7 +55,7 @@ class NoLogin extends StatelessWidget {
                 ),
                 child: Text(
                   S.of(context).login,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.white, // لون النص على الزر
                     fontWeight: FontWeight.bold,

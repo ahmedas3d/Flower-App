@@ -88,8 +88,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             ],
           ),
           SizedBox(height: 10),
-          Specifications(
-            product: widget.product,
+          Expanded(
+            child: Specifications(
+              product: widget.product,
+            ),
           ),
         ],
       ),
