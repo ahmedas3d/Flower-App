@@ -1,21 +1,27 @@
-import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flower_app/blocobserve.dart';
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/core/utils/product_trager/product_trager_cubit.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/utils/service/service_locator.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  setupServiceLocator();
   Bloc.observer = myblocobsever();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const FlowerApp());
+  runApp(BlocProvider(
+    create: (context) => ProductTragerCubit(),
+    child: const FlowerApp(),
+  ));
 }
 
 class FlowerApp extends StatefulWidget {

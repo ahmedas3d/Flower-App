@@ -1,18 +1,19 @@
-part of 'product_trager_cubit.dart';
+import 'package:flower_app/features/Home/data/models/product/get_all_product_model.dart';
 
-@immutable
 abstract class ProductTragerState {}
 
 class ProductTragerInitial extends ProductTragerState {}
 
 class ProductTragerLoading extends ProductTragerState {}
 
-class ProductTragerSuccess extends ProductTragerState {}
+class ProductTragerSuccess extends ProductTragerState {
+  final List<ProductModel> products;
+
+  ProductTragerSuccess({required this.products});
+}
 
 class ProductTragerError extends ProductTragerState {
   final String message;
 
-  ProductTragerError({
-    required this.message,
-  });
+  ProductTragerError({required this.message});
 }

@@ -22,18 +22,20 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   int total = 0; // الـ Total يتم تحديثه هنا
   int itemsCount = 0; // عدد العناصر في السلة
-
+  List<ProductModel> items = [];
   @override
-  List<ProductModel> productTrager = [];
   void initState() {
-    // TODO: implement initState
     super.initState();
-    productTrager = context.read<ProductTragerCubit>().productTrager;
+    items = context.read<ProductTragerCubit>().productTrager;
+    print('Items in cart: ${items.length}');
+    for (var i in items) {
+      print(i.title);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return productTrager.isEmpty
+    return items.isEmpty
         ? const NoProductInCart()
         : Scaffold(
             backgroundColor: AppColors.backgroundColor,

@@ -6,4 +6,9 @@ class myblocobsever extends BlocObserver {
     print('${bloc.runtimeType} $change');
     super.onChange(bloc, change);
   }
+
+  void onClose(BlocBase bloc) {
+    print('${bloc.runtimeType} closed');
+    super.onClose(bloc);
+  }
 }

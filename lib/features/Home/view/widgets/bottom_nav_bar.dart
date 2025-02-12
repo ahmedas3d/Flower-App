@@ -1,5 +1,4 @@
 import 'package:flower_app/core/constants.dart';
-import 'package:flower_app/core/utils/product_trager/product_trager_cubit.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
 import 'package:flower_app/features/Categories/view/screens/categories_screen.dart';
@@ -32,8 +31,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BlocProvider<OccasionsCubit>(
           create: (context) => OccasionsCubit(),
         ),
-        BlocProvider<ProductTragerCubit>(
-            create: (context) => ProductTragerCubit()),
       ],
       child: const HomeScreen(),
     ),
@@ -45,10 +42,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       },
       child: const CategoriesScreen(),
     ),
-    BlocProvider<ProductTragerCubit>(
-      create: (context) => ProductTragerCubit(),
-      child: const CartScreen(),
-    ),
+    const CartScreen(),
     BlocProvider(
       create: (context) => AuthCubit(),
       child: ProfileScreen(),
