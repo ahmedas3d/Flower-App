@@ -7,21 +7,20 @@ import '../../data/model/categorie.dart';
 
 part 'categorics_state.dart';
 
-class CategoricsCubit extends Cubit<CategoricsState> {
-  CategoricsCubit() : super(CategoricsInitial());
+class FlowerCategoriesCubit extends Cubit<FlowerCategoriesState> {
+  FlowerCategoriesCubit() : super(CategoricsInitial());
   final GetAllCategores getAllCategores = GetAllCategores();
+  List<FlowerCategory> res_categorics = [];
   Future<void> getAllCategories() async {
     emit(CategoricsLoading());
     final response = await getAllCategores.getAllCategores();
     if (response.statusCode == 200) {
-      final List<FlowerCategory> categorics =
-          (response.data['categories'] as List)
-              .map((e) => FlowerCategory.fromJson(e as Map<String, dynamic>))
-              .toList();
-      for (var i in categorics) {
+      for (var i in response.data['categories']) {
         print(i);
+        FlowerCategory flowerCategory = FlowerCategory.fromJson(i);
+        res_categorics.add(flowerCategory);
       }
-      emit(CategoricsLoaded(categorics: categorics));
+      emit(CategoricsLoaded(categorics: res_categorics));
     } else {
       emit(CategoricsError(response.statusCode.toString()));
     }

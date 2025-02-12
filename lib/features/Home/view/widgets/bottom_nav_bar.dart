@@ -2,6 +2,7 @@ import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
 import 'package:flower_app/features/Categories/view/screens/categories_screen.dart';
+import 'package:flower_app/features/Categories/viewmodel/categorics/categorics_cubit.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/viewmodel/homecubit/home_cubit.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/profile_screen.dart';
@@ -31,10 +32,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
           create: (context) => OccasionsCubit(),
         ),
       ],
-      child: HomeScreen(),
+      child: const HomeScreen(),
     ),
-    CategoriesScreen(),
-    CartScreen(),
+    BlocProvider<FlowerCategoriesCubit>(
+      create: (context) {
+        final cubit = FlowerCategoriesCubit();
+        cubit.getAllCategories();
+        return cubit;
+      },
+      child: CategoriesScreen(),
+    ),
+    const CartScreen(),
     BlocProvider(
       create: (context) => AuthCubit(),
       child: ProfileScreen(),
@@ -61,19 +69,19 @@ class _BottomNavBarState extends State<BottomNavBar> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             label: S.of(context).home,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.category),
+            icon: const Icon(Icons.category),
             label: S.of(context).categories,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             label: S.of(context).cart,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             label: S.of(context).profile,
           ),
         ],

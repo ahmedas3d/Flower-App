@@ -1,18 +1,18 @@
 part of 'categorics_cubit.dart';
 
 @immutable
-abstract class CategoricsState {}
+abstract class FlowerCategoriesState {}
 
-class CategoricsInitial extends CategoricsState {}
+class CategoricsInitial extends FlowerCategoriesState {}
 
-class CategoricsLoading extends CategoricsState {}
+class CategoricsLoading extends FlowerCategoriesState {}
 
-class CategoricsLoaded extends CategoricsState {
+class CategoricsLoaded extends FlowerCategoriesState {
   final List<FlowerCategory> categorics;
   CategoricsLoaded({required this.categorics});
 }
 
-class CategoricsError extends CategoricsState {
+class CategoricsError extends FlowerCategoriesState {
   final String message;
   CategoricsError(this.message);
 }

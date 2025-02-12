@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: Padding(
-        padding: EdgeInsets.only(top: 40, left: 12),
+        padding: const EdgeInsets.only(top: 40, left: 12),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -33,41 +33,41 @@ class HomeScreen extends StatelessWidget {
                       height: 20,
                       fit: BoxFit.contain,
                     ),
-                    Text(
+                    const Text(
                       'Flowery',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontFamily: 'IM FELL English',
                         color: AppColors.primaryColor,
                       ),
                     ),
-                    SizedBox(width: 12),
-                    Expanded(
-                      child: customSearchField(),
+                    const SizedBox(width: 12),
+                    const Expanded(
+                      child: const customSearchField(),
                     ),
                   ],
                 ),
               ),
-              CustomRowAddress(),
-              SizedBox(height: 8),
+              const CustomRowAddress(),
+              const SizedBox(height: 8),
               customTitle(
                 title: S.of(context).descoverSomethingNow,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               DiscoverList(),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               customTitle(
                 title: S.of(context).categories,
                 onTap: () {},
                 viewAll: S.of(context).viewAll,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               CategoriesList(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               customTitle(
@@ -77,11 +77,11 @@ class HomeScreen extends StatelessWidget {
                 },
                 viewAll: S.of(context).viewAll,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              BestSellerList(),
-              SizedBox(
+              const BestSellerList(),
+              const SizedBox(
                 height: 10,
               ),
               customTitle(
@@ -91,11 +91,11 @@ class HomeScreen extends StatelessWidget {
                 },
                 viewAll: S.of(context).viewAll,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              OccasionList(),
-              SizedBox(
+              const OccasionList(),
+              const SizedBox(
                 height: 10,
               ),
             ],
