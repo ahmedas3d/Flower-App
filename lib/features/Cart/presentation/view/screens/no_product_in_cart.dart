@@ -22,7 +22,7 @@ class NoProductInCart extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 S.of(context).noProductInCart,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textColor1,
@@ -31,7 +31,7 @@ class NoProductInCart extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 S.of(context).emptyCart,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: AppColors.textColor3,
                 ),

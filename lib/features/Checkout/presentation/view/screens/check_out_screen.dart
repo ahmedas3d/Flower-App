@@ -21,7 +21,7 @@ class CheckOutScreen extends StatelessWidget {
         titleSpacing: 0,
         title: Text(
           S.of(context).checkout,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -32,68 +32,68 @@ class CheckOutScreen extends StatelessWidget {
         child: Column(
           children: [
             //--------------> Delivery Time Section <-------------//
-            DeliveryTimeSection(),
+            const DeliveryTimeSection(),
             const SizedBox(
               height: 20,
             ),
             Container(
               width: double.infinity,
               height: 30,
-              decoration: BoxDecoration(
-                color: Color(0xffEAEAEA),
+              decoration: const BoxDecoration(
+                color: const Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
             //--------------> Delivery Address Section <-------------//
-            DeliveryAddressSection(),
+            const DeliveryAddressSection(),
             const SizedBox(
               height: 20,
             ),
             Container(
               width: double.infinity,
               height: 30,
-              decoration: BoxDecoration(
-                color: Color(0xffEAEAEA),
+              decoration: const BoxDecoration(
+                color: const Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
             //--------------> Payment Section <-------------//
-            PaymentMethodSection(),
+            const PaymentMethodSection(),
             const SizedBox(
               height: 20,
             ),
             Container(
               width: double.infinity,
               height: 30,
-              decoration: BoxDecoration(
-                color: Color(0xffEAEAEA),
+              decoration: const BoxDecoration(
+                color: const Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
             //--------------> Gift Section <-------------//
-            GiftInfoSection(),
+            const GiftInfoSection(),
             const SizedBox(
               height: 20,
             ),
             Container(
               width: double.infinity,
               height: 30,
-              decoration: BoxDecoration(
-                color: Color(0xffEAEAEA),
+              decoration: const BoxDecoration(
+                color: const Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            Padding(
+            const Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: CheckoutSummary(
+              child: const CheckoutSummary(
                 total: 100,
               ),
             ),

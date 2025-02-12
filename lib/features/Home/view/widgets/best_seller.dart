@@ -39,17 +39,16 @@ class BestSellers extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 5),
           Text(
             product.title.substring(0, 10),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               color: AppColors.textColor1,
             ),
           ),
           Text(
             '${product.price} EGP',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
               color: AppColors.textColor1,
               fontWeight: FontWeight.bold,
@@ -80,7 +79,8 @@ class _BestSellerListState extends State<BestSellerList> {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         if (state is HomeLoading) {
-          return const Center(child: CircularProgressIndicator(
+          return const Center(
+              child: CircularProgressIndicator(
             color: AppColors.primaryColor,
           ));
         } else if (state is HomeLoaded) {
