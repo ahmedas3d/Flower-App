@@ -21,6 +21,11 @@ class _CategoriesScreenState extends State<CategoriesScreen>
     _tabControllerCategories = TabController(length: 5, vsync: this);
   }
 
+  void dispose() {
+    _tabControllerCategories.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +55,8 @@ class _CategoriesScreenState extends State<CategoriesScreen>
                           borderRadius: BorderRadius.circular(10),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.primaryColor),
+                          borderSide:
+                              const BorderSide(color: AppColors.primaryColor),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         prefixIcon: const Icon(
@@ -77,7 +83,7 @@ class _CategoriesScreenState extends State<CategoriesScreen>
                           builder: (BuildContext context,
                               ScrollController scrollController) {
                             return Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: AppColors.backgroundColor,
                                 borderRadius: const BorderRadius.vertical(
                                   top: Radius.circular(20),
@@ -125,25 +131,40 @@ class _CategoriesScreenState extends State<CategoriesScreen>
                 Tab(text: S.of(context).gifts),
                 Tab(text: S.of(context).cards),
                 Tab(text: S.of(context).jewellery),
-                Tab(text: "Jewellery"),
+                const Tab(text: "Jewellery"),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Expanded(
-              child: TabBarView(
-                controller: _tabControllerCategories,
-                children: [
-                  CategoriesList(),
-                  CategoriesList(),
-                  CategoriesList(),
-                  CategoriesList(),
-                  CategoriesList(),
-                ],
-              ),
+              child: producsts_with_categorie_id(
+                  tabControllerCategories: _tabControllerCategories),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class producsts_with_categorie_id extends StatelessWidget {
+  const producsts_with_categorie_id({
+    super.key,
+    required TabController tabControllerCategories,
+  }) : _tabControllerCategories = tabControllerCategories;
+
+  final TabController _tabControllerCategories;
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBarView(
+      controller: _tabControllerCategories,
+      children: [
+        CategoriesList(),
+        CategoriesList(),
+        CategoriesList(),
+        CategoriesList(),
+        CategoriesList(),
+      ],
     );
   }
 }
