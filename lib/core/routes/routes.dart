@@ -27,8 +27,6 @@ import 'package:flower_app/features/TrackOrder/presentation/view/screens/track_o
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../utils/product_trager/product_trager_cubit.dart';
-
 class AppRoutes {
   static const String splash = '/';
   static const String loginScreen = '/loginScreen';
@@ -97,9 +95,6 @@ class AppRoutes {
                   ),
                   BlocProvider<OccasionsCubit>(
                     create: (context) => OccasionsCubit()..getAllOccasions(),
-                  ),
-                  BlocProvider<ProductTragerCubit>(
-                    create: (context) => ProductTragerCubit(),
                   ),
                 ], child: const BottomNavBar()));
       case bestSellerScreen:

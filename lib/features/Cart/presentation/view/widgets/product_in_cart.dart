@@ -72,7 +72,7 @@ class _ProductInCartState extends State<ProductInCart> {
               image: order.imageCover,
               name: order.title,
               price: order.price,
-              description: order.description,
+              description: order.description.substring(0, 6),
               quantity: order.quantity,
               onQuantityChanged: (newQuantity) {
                 _updateQuantity(index, newQuantity);

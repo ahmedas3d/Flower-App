@@ -18,6 +18,7 @@ class BestSellers extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        print("go to product details");
         Navigator.push(
           context,
           MaterialPageRoute(

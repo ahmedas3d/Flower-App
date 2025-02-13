@@ -18,7 +18,10 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const FlowerApp());
+  runApp(BlocProvider<ProductTragerCubit>(
+    create: (context) => ProductTragerCubit(),
+    child: const FlowerApp(),
+  ));
 }
 
 class FlowerApp extends StatefulWidget {

@@ -16,6 +16,7 @@ class OccasionsCubit extends Cubit<OccasionsState> {
     if (occasions.isLeft) {
       emit(OccasionsError(error: occasions.left));
     } else {
+      print("OccasionsCubit: getAllOccasions");
       emit(OccasionsLoaded(occasions: occasions.right));
     }
   }
