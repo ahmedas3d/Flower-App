@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/utils/product_trager/product_trager_cubit.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
@@ -66,7 +67,7 @@ class Specifications extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             Text(
-              S.of(context).description.substring(2, 10),
+              S.of(context).description.toString(),
               style: const TextStyle(
                 fontSize: 16,
                 color: AppColors.textColor1,
@@ -114,8 +115,18 @@ class Specifications extends StatelessWidget {
                   );
                 } else if (state is ProductTragerSuccess) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: const Text("add to cart successfully"),
+                    SnackBar(
+                      elevation: 0,
+                      behavior: SnackBarBehavior.floating,
+                      backgroundColor: Colors.transparent,
+                      content: AwesomeSnackbarContent(
+                        title: '',
+                        message: S.of(context).addToCartSuccessfully,
+                        messageTextStyle: const TextStyle(
+                          fontSize: 18,
+                        ),
+                        contentType: ContentType.success,
+                      ),
                     ),
                   );
                 }

@@ -160,5 +160,6 @@
   "passwordDescription": "Password must not be empty and must contain\n 6 characters with upper case letter and one\n number at least",
   "orderdelivered": "Order delivered enjoy your order",
   "reorder": "Reorder",
-  "rate": "Rate"
+  "rate": "Rate",
+  "addToCartSuccessfully": "Add to cart successfully"
 }

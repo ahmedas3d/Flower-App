@@ -45,7 +45,6 @@ class _CartScreenState extends State<CartScreen> {
         : Scaffold(
             backgroundColor: AppColors.backgroundColor,
             appBar: AppBar(
-              elevation: 0,
               backgroundColor: AppColors.backgroundColor,
               title: Row(
                 children: [

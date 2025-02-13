@@ -19,7 +19,7 @@ class Occasion extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 150,
+          height: 145,
           width: 131,
           decoration: BoxDecoration(
             image: DecorationImage(

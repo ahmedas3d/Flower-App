@@ -19,81 +19,91 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: 430,
-                width: double.infinity,
-                color: AppColors.pinkLight,
-              ),
-              SizedBox(
-                height: 430,
-                width: double.infinity,
-                child: PageView(
-                  controller: _pageController,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 25),
-                      child: Image.network(
-                        widget.product.images[0],
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 25),
-                      child: Image.network(
-                        widget.product.images[1],
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
+      body: Padding(
+        padding: const EdgeInsets.only(top: 8),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  height: 430,
+                  width: double.infinity,
+                  color: AppColors.pinkLight,
+                ),
+                SizedBox(
+                  height: 430,
+                  width: double.infinity,
+                  child: PageView(
+                    controller: _pageController,
+                    children: [
+                      Padding(
                         padding: const EdgeInsets.only(top: 25),
                         child: Image.network(
-                          widget.product.images[2],
+                          widget.product.images[0],
                           fit: BoxFit.cover,
-                        )),
-                  ],
-                ),
-              ),
-              Positioned(
-                top: 40,
-                left: 20,
-                child: InkWell(
-                  onTap: () => Navigator.pop(context),
-                  child: const Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.textColor1,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 25),
+                        child: Image.network(
+                          widget.product.images[1],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.only(top: 25),
+                          child: Image.network(
+                            widget.product.images[2],
+                            fit: BoxFit.cover,
+                          )),
+                    ],
                   ),
                 ),
-              ),
-              Positioned(
-                bottom: 10,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: SmoothPageIndicator(
-                    controller: _pageController,
-                    count: 3,
-                    effect: const ExpandingDotsEffect(
-                      dotHeight: 8,
-                      dotWidth: 8,
-                      activeDotColor: AppColors.primaryColor,
-                      dotColor: AppColors.greyColor,
+                Positioned(
+                  top: 40,
+                  left: 20,
+                  child: InkWell(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: AppColors.backgroundColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Icon(
+                        Icons.arrow_back,
+                        color: AppColors.textColor1,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: Specifications(
-              product: widget.product,
+                Positioned(
+                  bottom: 10,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: SmoothPageIndicator(
+                      controller: _pageController,
+                      count: 3,
+                      effect: const ExpandingDotsEffect(
+                        dotHeight: 8,
+                        dotWidth: 8,
+                        activeDotColor: AppColors.primaryColor,
+                        dotColor: AppColors.greyColor,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+            const SizedBox(height: 10),
+            Expanded(
+              child: Specifications(
+                product: widget.product,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

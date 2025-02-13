@@ -142,11 +142,14 @@ class ProductItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      name,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: AppColors.textColor1,
+                    Expanded(
+                      child: Text(
+                        name,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: AppColors.textColor1,
+                        ),
                       ),
                     ),
                     IconButton(
