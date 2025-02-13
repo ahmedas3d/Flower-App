@@ -37,31 +37,31 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text(
           S.of(context).login,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: DropdownButton<String>(
               borderRadius: Localizations.localeOf(context).languageCode == 'ar'
-                  ? BorderRadius.only(
+                  ? const BorderRadius.only(
                       topRight: Radius.circular(10),
                       bottomRight: Radius.circular(10),
                     )
-                  : BorderRadius.only(
+                  : const BorderRadius.only(
                       topLeft: Radius.circular(10),
                       bottomLeft: Radius.circular(10),
                     ),
               value: Localizations.localeOf(context).languageCode,
               icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
-              underline: SizedBox(),
+              underline: const SizedBox(),
               dropdownColor: AppColors.backgroundColor,
               onChanged: (String? value) {
                 if (value != null) {
                   if (value == 'ar') {
-                    FlowerApp.setLocale(context, Locale('ar'));
+                    FlowerApp.setLocale(context, const Locale('ar'));
                   } else {
-                    FlowerApp.setLocale(context, Locale('en'));
+                    FlowerApp.setLocale(context, const Locale('en'));
                   }
                 }
               },
@@ -70,14 +70,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   value: 'ar',
                   child: Text(
                     S.of(context).arabic,
-                    style: TextStyle(color: AppColors.textColor1, fontSize: 14),
+                    style: const TextStyle(
+                        color: AppColors.textColor1, fontSize: 14),
                   ),
                 ),
                 DropdownMenuItem<String>(
                   value: 'en',
                   child: Text(
                     S.of(context).english,
-                    style: TextStyle(color: AppColors.textColor1, fontSize: 14),
+                    style: const TextStyle(
+                        color: AppColors.textColor1, fontSize: 14),
                   ),
                 ),
               ],
@@ -135,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           Text(
                             S.of(context).rememberpassword,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: AppColors.textColor1,
                               fontSize: 13,
                             ),
@@ -149,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text(
                           S.of(context).forgotpassword,
-                          style: TextStyle(
+                          style: const TextStyle(
                             decoration: TextDecoration.underline,
                             color: AppColors.greyColor,
                             fontSize: 13,
@@ -257,7 +259,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Text(
                         S.of(context).donthaveanaccount,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 15, color: AppColors.textColor1),
                       ),
                       GestureDetector(
@@ -266,7 +268,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text(
                           S.of(context).signup,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             color: AppColors.primaryColor,
                             decoration: TextDecoration.underline,

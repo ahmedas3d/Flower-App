@@ -21,7 +21,7 @@ class OccasionScreen extends StatelessWidget {
               title: S.of(context).occasion,
               subTitle: S.of(context).bloom,
             ),
-            SizedBox(
+            const SizedBox(
               height: 65,
               width: double.infinity,
               child: AllOccasionList(),

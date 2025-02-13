@@ -1,4 +1,5 @@
 import 'package:flower_app/core/constants.dart';
+import 'package:flower_app/features/Categories/view/widgets/all_categories.dart';
 import 'package:flower_app/features/Categories/view/widgets/filter_menu.dart';
 import 'package:flower_app/features/Categories/view/widgets/list_all_categories.dart';
 import 'package:flower_app/generated/l10n.dart';
@@ -112,29 +113,11 @@ class _CategoriesScreenState extends State<CategoriesScreen>
                 ),
               ],
             ),
-            TabBar(
-              tabAlignment: TabAlignment.center,
-              controller: _tabControllerCategories,
-              isScrollable: true,
-              indicatorWeight: 0.1,
-              indicatorColor: Colors.pink,
-              labelColor: Colors.pink,
-              indicatorSize: TabBarIndicatorSize.label,
-              unselectedLabelColor: Colors.grey,
-              labelStyle: const TextStyle(
-                fontSize: 16,
-                fontFamily: "Almarai",
-                fontWeight: FontWeight.w500,
-              ),
-              tabs: [
-                Tab(text: S.of(context).flowers),
-                Tab(text: S.of(context).gifts),
-                Tab(text: S.of(context).cards),
-                Tab(text: S.of(context).jewellery),
-                const Tab(text: "Jewellery"),
-              ],
+            const SizedBox(
+              height: 60,
+              width: double.infinity,
+              child: AllCategories(),
             ),
-            const SizedBox(height: 10),
             Expanded(
               child: producsts_with_categorie_id(
                   tabControllerCategories: _tabControllerCategories),

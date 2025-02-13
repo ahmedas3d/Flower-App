@@ -13,12 +13,10 @@ class _AllCategoriesState extends State<AllCategories> {
 
   final List<String> categories = [
     'All',
-    'Hand Bouquet',
-    'Vases',
-    'Boxes',
+    'Flowers',
+    'Gifts',
+    'Cards',
     'Jewelry',
-    'Gift',
-    'Cards'
   ];
 
   @override
@@ -40,7 +38,7 @@ class _AllCategoriesState extends State<AllCategories> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: Text(
                     categories[index],
                     style: TextStyle(
