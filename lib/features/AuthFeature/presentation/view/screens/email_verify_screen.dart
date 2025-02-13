@@ -30,14 +30,14 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
         title: Text(
           S.of(context).emailVerify,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is VerifyEmailSuccessState) {
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
+              const SnackBar(
                 elevation: 0,
                 behavior: SnackBarBehavior.floating,
                 backgroundColor: Colors.transparent,
@@ -70,7 +70,7 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
             children: [
               Text(
                 S.of(context).emailVerification,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textColor1,
@@ -82,7 +82,7 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
               Text(
                 S.of(context).sendCodeIntoYourEmail,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: AppColors.greyColor,
                 ),
@@ -104,7 +104,7 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         S.of(context).checkYourEmail,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           color: AppColors.textColor2,
                         ),
@@ -119,7 +119,8 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
                 children: [
                   Text(
                     S.of(context).didntReceiveCode,
-                    style: TextStyle(fontSize: 15, color: AppColors.textColor1),
+                    style: const TextStyle(
+                        fontSize: 15, color: AppColors.textColor1),
                   ),
                   GestureDetector(
                     onTap: () {
@@ -127,7 +128,7 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
                     },
                     child: Text(
                       S.of(context).resend,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.primaryColor,
                         decoration: TextDecoration.underline,

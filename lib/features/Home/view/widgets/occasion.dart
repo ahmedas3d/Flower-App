@@ -29,10 +29,10 @@ class Occasion extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             color: AppColors.textColor1,
             fontWeight: FontWeight.bold,
@@ -74,7 +74,7 @@ class _OccasionListState extends State<OccasionList> {
               itemCount: state.occasions.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: Occasion(
                     occasionImageUrl: state.occasions[index].image,
                     title: state.occasions[index].name,
@@ -85,7 +85,9 @@ class _OccasionListState extends State<OccasionList> {
           );
         }
         return const Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ),
         );
       },
     );
