@@ -71,7 +71,7 @@ class _BestSellerListState extends State<BestSellerList> {
   @override
   void initState() {
     super.initState();
-    context.read<HomeCubit>().getAllProducts();
+    // context.read<HomeCubit>().getAllProducts();
   }
 
   @override

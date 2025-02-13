@@ -9,8 +9,9 @@ import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.d
 import 'package:flower_app/features/Checkout/presentation/view/screens/check_out_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
+import 'package:flower_app/features/Home/viewmodel/homecubit/home_cubit.dart';
+import 'package:flower_app/features/Home/viewmodel/occasioncubit/occasions_cubit.dart';
 import 'package:flower_app/features/Occasion/view/screens/occasion_screen.dart';
-import 'package:flower_app/features/ProductDetails/view/screens/product_details_screen.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/about_us.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/add_address.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/change-password_screen.dart';
@@ -21,11 +22,12 @@ import 'package:flower_app/features/Profile/presentation/view/screens/profile_sc
 import 'package:flower_app/features/Profile/presentation/view/screens/saved_address.dart';
 import 'package:flower_app/features/Profile/presentation/view/screens/terms_and_conditions.dart';
 import 'package:flower_app/features/SplashScreen/view/screen/splash_screen.dart';
-import 'package:flower_app/features/TrackOrder/presentation/view/screens/order_placed_successfully.dart';
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/show_map_screen.dart';
 import 'package:flower_app/features/TrackOrder/presentation/view/screens/track_orders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../utils/product_trager/product_trager_cubit.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -61,7 +63,7 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
                   create: (context) => AuthCubit(),
-                  child: LoginScreen(),
+                  child: const LoginScreen(),
                 ));
       case splash:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
@@ -75,7 +77,7 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
                   create: (context) => AuthCubit(),
-                  child: ForgotScreen(),
+                  child: const ForgotScreen(),
                 ));
       case emailVerificationScreen:
         return MaterialPageRoute(
@@ -88,7 +90,18 @@ class AppRoutes {
       case homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case bottomNavBar:
-        return MaterialPageRoute(builder: (_) => const BottomNavBar());
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(providers: [
+                  BlocProvider<HomeCubit>(
+                    create: (context) => HomeCubit()..getAllProducts(),
+                  ),
+                  BlocProvider<OccasionsCubit>(
+                    create: (context) => OccasionsCubit()..getAllOccasions(),
+                  ),
+                  BlocProvider<ProductTragerCubit>(
+                    create: (context) => ProductTragerCubit(),
+                  ),
+                ], child: const BottomNavBar()));
       case bestSellerScreen:
         return MaterialPageRoute(builder: (_) => const BestSellerScreen());
       // case productDetails:
@@ -98,29 +111,30 @@ class AppRoutes {
       case profileScreen:
         return MaterialPageRoute(builder: (_) => ProfileScreen());
       case profileEdit:
-        return MaterialPageRoute(builder: (_) => ProfileEditScreen());
+        return MaterialPageRoute(builder: (_) => const ProfileEditScreen());
       case changePassword:
         return MaterialPageRoute(builder: (_) => ChangePasswordScreen());
       case notificationScreen:
-        return MaterialPageRoute(builder: (_) => NotificationScreen());
+        return MaterialPageRoute(builder: (_) => const NotificationScreen());
       case myOrderScreen:
-        return MaterialPageRoute(builder: (_) => MyOrderScreen());
+        return MaterialPageRoute(builder: (_) => const MyOrderScreen());
       case savedAddress:
-        return MaterialPageRoute(builder: (_) => SavedAddress());
+        return MaterialPageRoute(builder: (_) => const SavedAddress());
       case addAddress:
-        return MaterialPageRoute(builder: (_) => AddAddress());
+        return MaterialPageRoute(builder: (_) => const AddAddress());
       case cartScreen:
-        return MaterialPageRoute(builder: (_) => CartScreen());
+        return MaterialPageRoute(builder: (_) => const CartScreen());
       case aboutScreen:
-        return MaterialPageRoute(builder: (_) => AboutScreen());
+        return MaterialPageRoute(builder: (_) => const AboutScreen());
       case tremsAndConditionView:
-        return MaterialPageRoute(builder: (_) => TermsAndConditionsView());
+        return MaterialPageRoute(
+            builder: (_) => const TermsAndConditionsView());
       case checkOutScreen:
-        return MaterialPageRoute(builder: (_) => CheckOutScreen());
+        return MaterialPageRoute(builder: (_) => const CheckOutScreen());
       case trackOrders:
-        return MaterialPageRoute(builder: (_) => TrackOrders());
+        return MaterialPageRoute(builder: (_) => const TrackOrders());
       case trackingScreen:
-        return MaterialPageRoute(builder: (_) => TrackingScreen());
+        return MaterialPageRoute(builder: (_) => const TrackingScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

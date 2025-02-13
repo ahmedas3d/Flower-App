@@ -65,7 +65,7 @@ class SignUpScreen extends StatelessWidget {
         automaticallyImplyLeading: true,
         title: Text(
           S.of(context).signup,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: BlocListener<AuthCubit, AuthState>(
@@ -149,7 +149,7 @@ class SignUpScreen extends StatelessWidget {
                       children: [
                         Text(
                           S.of(context).gender,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: AppColors.greyColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -175,7 +175,7 @@ class SignUpScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   S.of(context).male,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: AppColors.greyColor,
                                     fontSize: 16,
                                   ),
@@ -193,7 +193,7 @@ class SignUpScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   S.of(context).female,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: AppColors.greyColor,
                                     fontSize: 16,
                                   ),
@@ -212,14 +212,14 @@ class SignUpScreen extends StatelessWidget {
                       children: [
                         Text(
                           S.of(context).creatingAnAccountYouAgreeToOur,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: AppColors.greyColor,
                             fontSize: 13,
                           ),
                         ),
                         Text(
                           S.of(context).termsAndConditions,
-                          style: TextStyle(
+                          style: const TextStyle(
                             decoration: TextDecoration.underline,
                             fontSize: 13,
                           ),
@@ -273,7 +273,7 @@ class SignUpScreen extends StatelessWidget {
                       children: [
                         Text(
                           S.of(context).alreadyHaveAnAccount,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 15, color: AppColors.textColor1),
                         ),
                         GestureDetector(
@@ -281,8 +281,8 @@ class SignUpScreen extends StatelessWidget {
                             Navigator.pop(context);
                           },
                           child: Text(
-                            " " + S.of(context).login,
-                            style: TextStyle(
+                            " ${S.of(context).login}",
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primaryColor,
                               decoration: TextDecoration.underline,

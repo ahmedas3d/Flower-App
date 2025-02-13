@@ -29,10 +29,10 @@ class Occasion extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 5),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             color: AppColors.textColor1,
             fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class _OccasionListState extends State<OccasionList> {
   @override
   void initState() {
     super.initState();
-    context.read<OccasionsCubit>().getAllOccasions();
+    // context.read<OccasionsCubit>().getAllOccasions();
   }
 
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _OccasionListState extends State<OccasionList> {
               itemCount: state.occasions.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: Occasion(
                     occasionImageUrl: state.occasions[index].image,
                     title: state.occasions[index].name,
