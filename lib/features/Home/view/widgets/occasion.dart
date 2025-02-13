@@ -30,6 +30,7 @@ class Occasion extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
+        const SizedBox(height: 8),
         Text(
           title,
           style: const TextStyle(
@@ -85,7 +86,9 @@ class _OccasionListState extends State<OccasionList> {
           );
         }
         return const Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ),
         );
       },
     );

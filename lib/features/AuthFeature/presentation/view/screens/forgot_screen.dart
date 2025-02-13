@@ -27,7 +27,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
         title: Text(
           S.of(context).forgetPassword,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
@@ -38,7 +38,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
             children: [
               Text(
                 S.of(context).forgetPassword,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textColor1,
@@ -50,7 +50,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
               Text(
                 S.of(context).pleaseEnterYourEmail,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: AppColors.greyColor,
                 ),

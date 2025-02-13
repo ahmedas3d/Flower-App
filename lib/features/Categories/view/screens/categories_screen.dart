@@ -5,27 +5,8 @@ import 'package:flower_app/features/Categories/view/widgets/list_all_categories.
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-class CategoriesScreen extends StatefulWidget {
+class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
-
-  @override
-  State<CategoriesScreen> createState() => _CategoriesScreenState();
-}
-
-class _CategoriesScreenState extends State<CategoriesScreen>
-    with SingleTickerProviderStateMixin {
-  late TabController _tabControllerCategories;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabControllerCategories = TabController(length: 5, vsync: this);
-  }
-
-  void dispose() {
-    _tabControllerCategories.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -119,35 +100,11 @@ class _CategoriesScreenState extends State<CategoriesScreen>
               child: AllCategories(),
             ),
             Expanded(
-              child: producsts_with_categorie_id(
-                  tabControllerCategories: _tabControllerCategories),
+              child: CategoriesList(),
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class producsts_with_categorie_id extends StatelessWidget {
-  const producsts_with_categorie_id({
-    super.key,
-    required TabController tabControllerCategories,
-  }) : _tabControllerCategories = tabControllerCategories;
-
-  final TabController _tabControllerCategories;
-
-  @override
-  Widget build(BuildContext context) {
-    return TabBarView(
-      controller: _tabControllerCategories,
-      children: [
-        CategoriesList(),
-        CategoriesList(),
-        CategoriesList(),
-        CategoriesList(),
-        CategoriesList(),
-      ],
     );
   }
 }
