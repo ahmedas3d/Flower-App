@@ -4,80 +4,81 @@ import 'package:flutter/material.dart';
 import '../../../../Home/data/models/product/get_all_product_model.dart';
 
 class ProductInCart extends StatefulWidget {
-  final Function(int) onTotalChanged; // دالة لتحديث الـ Total
-  final Function(int) onItemsCountChanged; // دالة لتحديث عدد العناصر
+  final Function(int) onTotalChanged;
+  final Function(int) onItemsCountChanged;
   final List<ProductModel> products;
+  final int deliveryFee;
+
   const ProductInCart({
     super.key,
     required this.onTotalChanged,
     required this.onItemsCountChanged,
     required this.products,
+    required this.deliveryFee,
   });
+
   @override
   State<ProductInCart> createState() => _ProductInCartState();
 }
 
 class _ProductInCartState extends State<ProductInCart> {
-  // قائمة بيانات الطلبات
-  // final List<Map<String, dynamic>> orders = [
-  //   {
-  //     "name": "Bouquet of Roses",
-  //     "price": 1500, // السعر كرقم لتسهيل العمليات الحسابية
-  //     "description": "15 Pink Rose Bouquet",
-  //     "quantity": 1, // الكمية الافتراضية
-  //   },
-  //   {
-  //     "name": "Lily Bouquet",
-  //     "price": 2000, // السعر كرقم لتسهيل العمليات الحسابية
-  //     "description": "15 Pink Rose Bouquet",
-  //     "quantity": 1, // الكمية الافتراضية
-  //   },
-  // ];
+  @override
+  void initState() {
+    super.initState();
+    for (var product in widget.products) {
+      product.quantity = 1;
+    }
+  }
 
-  // دالة لتحديث الكمية
   void _updateQuantity(int index, int newQuantity) {
     setState(() {
-      // products[index]["quantity"] = newQuantity;
-      widget.onTotalChanged(total); // تحديث الـ Total عند تغيير الكمية
-      widget.onItemsCountChanged(itemsCount); // تحديث عدد العناصر
+      widget.products[index].quantity = newQuantity > 0 ? newQuantity : 1;
+      widget.onTotalChanged(total);
+      widget.onItemsCountChanged(itemsCount);
     });
   }
 
-  // حساب الـ Total
-  int get total {
-    return 1;
-    //orders.fold(
-    // 0, (sum, order) => sum + (order["price"] * order["quantity"] as int));
+  void _removeProduct(int index) {
+    setState(() {
+      widget.products.removeAt(index);
+      widget.onTotalChanged(total);
+      widget.onItemsCountChanged(itemsCount);
+    });
   }
 
-  // حساب عدد العناصر
+  int get total {
+    int subtotal = widget.products.fold(
+      0,
+      (sum, product) => sum + (product.price * product.quantity),
+    );
+    return subtotal + widget.deliveryFee;
+  }
+
   int get itemsCount {
-    return 1;
-    // return orders.fold(0, (sum, order) => sum + order["quantity"] as int);
+    return widget.products.fold(0, (sum, product) => sum + product.quantity);
   }
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isSmallScreen = screenWidth < 600; // تحديد الشاشات الصغيرة
-
     return Expanded(
       child: ListView.builder(
         itemCount: widget.products.length,
         itemBuilder: (context, index) {
-          final order = widget.products[index];
+          final product = widget.products[index];
           return Padding(
             padding: const EdgeInsets.only(bottom: 15),
             child: ProductItem(
-              image: order.imageCover,
-              name: order.title,
-              price: order.price,
-              description: order.description.substring(0, 6),
-              quantity: order.quantity,
+              image: product.imageCover,
+              name: product.title,
+              price: product.price,
+              description: product.description.substring(0, 6),
+              quantity: product.quantity,
               onQuantityChanged: (newQuantity) {
                 _updateQuantity(index, newQuantity);
               },
-              isSmallScreen: isSmallScreen, // تمرير حالة الشاشة
+              onRemove: () {
+                _removeProduct(index);
+              },
             ),
           );
         },
@@ -93,7 +94,7 @@ class ProductItem extends StatelessWidget {
   final String description;
   final int quantity;
   final Function(int) onQuantityChanged;
-  final bool isSmallScreen;
+  final VoidCallback onRemove;
 
   const ProductItem({
     super.key,
@@ -103,13 +104,13 @@ class ProductItem extends StatelessWidget {
     required this.description,
     required this.quantity,
     required this.onQuantityChanged,
-    required this.isSmallScreen,
+    required this.onRemove,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: isSmallScreen ? 125 : 150,
+      height: 150,
       width: double.infinity,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -119,8 +120,8 @@ class ProductItem extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            height: isSmallScreen ? 95 : 120,
-            width: isSmallScreen ? 95 : 120,
+            height: 100,
+            width: 90,
             decoration: BoxDecoration(
               color: AppColors.pinkLight,
               borderRadius: BorderRadius.circular(10),
@@ -148,10 +149,13 @@ class ProductItem extends StatelessWidget {
                         color: AppColors.textColor1,
                       ),
                     ),
-                    const Icon(
-                      Icons.delete,
-                      color: AppColors.errorColor,
-                      size: 20,
+                    IconButton(
+                      icon: const Icon(
+                        Icons.delete,
+                        color: AppColors.errorColor,
+                        size: 20,
+                      ),
+                      onPressed: onRemove,
                     ),
                   ],
                 ),
@@ -168,9 +172,9 @@ class ProductItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "EGP ${(price * quantity).toString()}",
-                      style: TextStyle(
-                        fontSize: isSmallScreen ? 14 : 18,
+                      "EGP ${price.toString()}",
+                      style: const TextStyle(
+                        fontSize: 16,
                         color: AppColors.textColor1,
                         fontWeight: FontWeight.bold,
                       ),
@@ -187,8 +191,8 @@ class ProductItem extends StatelessWidget {
                         ),
                         Text(
                           quantity.toString(),
-                          style: TextStyle(
-                            fontSize: isSmallScreen ? 14 : 16,
+                          style: const TextStyle(
+                            fontSize: 16,
                             color: AppColors.textColor1,
                           ),
                         ),

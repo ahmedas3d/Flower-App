@@ -9,16 +9,13 @@ class CheckoutSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isSmallScreen = screenWidth < 600; // تحديد الشاشات الصغيرة
-
     return Container(
       // padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.backgroundColor,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(isSmallScreen ? 0 : 10),
-          topRight: Radius.circular(isSmallScreen ? 0 : 10),
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
         ),
       ),
       child: Column(

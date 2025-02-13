@@ -7,7 +7,7 @@ class ProductModel {
   final List<String> images;
   final int price;
   final int priceAfterDiscount;
-  final int quantity;
+  int quantity;
   final String category;
   final String occasion;
   final String createAt;
