@@ -1,41 +1,43 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../Home/data/models/product/get_all_product_model.dart';
+
 class ProductInCart extends StatefulWidget {
   final Function(int) onTotalChanged; // دالة لتحديث الـ Total
   final Function(int) onItemsCountChanged; // دالة لتحديث عدد العناصر
-
+  final List<ProductModel> products;
   const ProductInCart({
     super.key,
     required this.onTotalChanged,
     required this.onItemsCountChanged,
+    required this.products,
   });
-
   @override
   State<ProductInCart> createState() => _ProductInCartState();
 }
 
 class _ProductInCartState extends State<ProductInCart> {
   // قائمة بيانات الطلبات
-  final List<Map<String, dynamic>> orders = [
-    {
-      "name": "Bouquet of Roses",
-      "price": 1500, // السعر كرقم لتسهيل العمليات الحسابية
-      "description": "15 Pink Rose Bouquet",
-      "quantity": 1, // الكمية الافتراضية
-    },
-    {
-      "name": "Lily Bouquet",
-      "price": 2000, // السعر كرقم لتسهيل العمليات الحسابية
-      "description": "15 Pink Rose Bouquet",
-      "quantity": 1, // الكمية الافتراضية
-    },
-  ];
+  // final List<Map<String, dynamic>> orders = [
+  //   {
+  //     "name": "Bouquet of Roses",
+  //     "price": 1500, // السعر كرقم لتسهيل العمليات الحسابية
+  //     "description": "15 Pink Rose Bouquet",
+  //     "quantity": 1, // الكمية الافتراضية
+  //   },
+  //   {
+  //     "name": "Lily Bouquet",
+  //     "price": 2000, // السعر كرقم لتسهيل العمليات الحسابية
+  //     "description": "15 Pink Rose Bouquet",
+  //     "quantity": 1, // الكمية الافتراضية
+  //   },
+  // ];
 
   // دالة لتحديث الكمية
   void _updateQuantity(int index, int newQuantity) {
     setState(() {
-      orders[index]["quantity"] = newQuantity;
+      // products[index]["quantity"] = newQuantity;
       widget.onTotalChanged(total); // تحديث الـ Total عند تغيير الكمية
       widget.onItemsCountChanged(itemsCount); // تحديث عدد العناصر
     });
@@ -43,13 +45,15 @@ class _ProductInCartState extends State<ProductInCart> {
 
   // حساب الـ Total
   int get total {
-    return orders.fold(
-        0, (sum, order) => sum + (order["price"] * order["quantity"] as int));
+    return 1;
+    //orders.fold(
+    // 0, (sum, order) => sum + (order["price"] * order["quantity"] as int));
   }
 
   // حساب عدد العناصر
   int get itemsCount {
-    return orders.fold(0, (sum, order) => sum + order["quantity"] as int);
+    return 1;
+    // return orders.fold(0, (sum, order) => sum + order["quantity"] as int);
   }
 
   @override
@@ -59,16 +63,17 @@ class _ProductInCartState extends State<ProductInCart> {
 
     return Expanded(
       child: ListView.builder(
-        itemCount: orders.length,
+        itemCount: widget.products.length,
         itemBuilder: (context, index) {
-          final order = orders[index];
+          final order = widget.products[index];
           return Padding(
             padding: const EdgeInsets.only(bottom: 15),
             child: ProductItem(
-              name: order["name"]!,
-              price: order["price"]!,
-              description: order["description"]!,
-              quantity: order["quantity"]!,
+              image: order.imageCover,
+              name: order.title,
+              price: order.price,
+              description: order.description,
+              quantity: order.quantity,
               onQuantityChanged: (newQuantity) {
                 _updateQuantity(index, newQuantity);
               },
@@ -83,6 +88,7 @@ class _ProductInCartState extends State<ProductInCart> {
 
 class ProductItem extends StatelessWidget {
   final String name;
+  final String image;
   final int price;
   final String description;
   final int quantity;
@@ -91,6 +97,7 @@ class ProductItem extends StatelessWidget {
 
   const ProductItem({
     super.key,
+    required this.image,
     required this.name,
     required this.price,
     required this.description,
@@ -119,8 +126,8 @@ class ProductItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Center(
-              child: Image.asset(
-                'assets/images/best-seller4.png',
+              child: Image.network(
+                image,
                 fit: BoxFit.contain,
               ),
             ),
@@ -136,12 +143,12 @@ class ProductItem extends StatelessWidget {
                   children: [
                     Text(
                       name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.textColor1,
                       ),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.delete,
                       color: AppColors.errorColor,
                       size: 20,
@@ -151,7 +158,7 @@ class ProductItem extends StatelessWidget {
                 const SizedBox(height: 3),
                 Text(
                   description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textColor3,
                   ),

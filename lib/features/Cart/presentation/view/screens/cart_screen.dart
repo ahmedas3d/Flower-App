@@ -69,6 +69,7 @@ class _CartScreenState extends State<CartScreen> {
                 children: [
                   const CustomRowAddress(), // عنصر العنوان
                   ProductInCart(
+                    products: items,
                     onTotalChanged: (newTotal) {
                       setState(() {
                         total = newTotal; // تحديث الـ Total
