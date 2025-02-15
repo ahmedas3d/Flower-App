@@ -22,7 +22,7 @@ class SavedAddress extends StatelessWidget {
         itemCount: addressCount + 1,
         itemBuilder: (context, index) {
           if (index < addressCount) {
-            return AddressContainer();
+            return const AddressContainer();
           } else {
             return Padding(
               padding: const EdgeInsets.all(16.0),
@@ -71,20 +71,20 @@ class AddressContainer extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.location_on_outlined,
                           color: AppColors.textColor1,
                           size: 20,
                         ),
                         Text(
                           S.of(context).home,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             color: AppColors.textColor1,
                           ),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.delete,
                           color: Colors.red,
                           size: 22,
@@ -92,7 +92,7 @@ class AddressContainer extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 12),
-                    Text(
+                    const Text(
                       '2XVP+XC - Sheikh Zayed',
                       style: TextStyle(
                         fontSize: 14,

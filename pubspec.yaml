@@ -64,6 +64,10 @@ flutter:
         - asset: assets/fonts/Almarai-Light.ttf
         - asset: assets/fonts/Almarai-Regular.ttf
 
+    - family: IM FELL English
+      fonts:
+        - asset: assets/fonts/IMFellEnglish-Regular.ttf
+
 flutter_launcher_icons:
   android: true
   ios: true

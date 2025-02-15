@@ -11,21 +11,21 @@ class CustomRowAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
+        const Icon(
           Icons.location_on_outlined,
           size: 18,
           color: AppColors.greyColor,
         ),
         Text(
           '${S.of(context).deliverTo} ',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             color: AppColors.greyColor,
           ),
         ),
         Row(
           children: [
-            Text(
+            const Text(
               '2XVP+XC - Sheikh Zayed ',
               style: TextStyle(
                 fontSize: 14,
@@ -36,7 +36,7 @@ class CustomRowAddress extends StatelessWidget {
               onPressed: () {},
               iconSize: 24,
               color: AppColors.primaryColor,
-              icon: Icon(
+              icon: const Icon(
                 Icons.keyboard_arrow_down,
               ),
               padding: EdgeInsets.zero,

@@ -232,9 +232,9 @@ class _AddAddressState extends State<AddAddress> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
                               ),
-                              enabledBorder: OutlineInputBorder(
+                              enabledBorder: const OutlineInputBorder(
                                 borderRadius:
-                                    const BorderRadius.all(Radius.circular(10)),
+                                    BorderRadius.all(Radius.circular(10)),
                                 borderSide: BorderSide(
                                   color: AppColors.textColor3,
                                 ),
@@ -266,9 +266,9 @@ class _AddAddressState extends State<AddAddress> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
                               ),
-                              enabledBorder: OutlineInputBorder(
+                              enabledBorder: const OutlineInputBorder(
                                 borderRadius:
-                                    const BorderRadius.all(Radius.circular(10)),
+                                    BorderRadius.all(Radius.circular(10)),
                                 borderSide: BorderSide(
                                   color: AppColors.textColor3,
                                 ),

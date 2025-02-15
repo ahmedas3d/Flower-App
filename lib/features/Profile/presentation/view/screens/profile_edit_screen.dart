@@ -51,168 +51,165 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
         title: Text(S.of(context).editProfile),
         titleSpacing: 0,
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                  ClipOval(
-                    child: Container(
-                      height: 80,
-                      width: 80,
-                      color: AppColors.primaryColor,
-                      child: _avatarImagePath == null
-                          ? const Icon(
-                              Icons.person,
-                              size: 50,
-                              color: Colors.white,
-                            )
-                          : ClipOval(
-                              child: Image.file(
-                                File(_avatarImagePath!),
-                                height: 100,
-                                width: 100,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        _showImagePicker(context);
-                      },
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    ClipOval(
                       child: Container(
-                        height: 24,
-                        width: 24,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          border: Border.all(
+                        height: 80,
+                        width: 80,
+                        color: AppColors.primaryColor,
+                        child: _avatarImagePath == null
+                            ? const Icon(
+                                Icons.person,
+                                size: 50,
+                                color: Colors.white,
+                              )
+                            : ClipOval(
+                                child: Image.file(
+                                  File(_avatarImagePath!),
+                                  height: 100,
+                                  width: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          _showImagePicker(context);
+                        },
+                        child: Container(
+                          height: 24,
+                          width: 24,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: AppColors.primaryColor,
+                              width: 2,
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.camera_alt,
+                            size: 16,
                             color: AppColors.primaryColor,
-                            width: 2,
                           ),
                         ),
-                        child: Icon(
-                          Icons.camera_alt,
-                          size: 16,
-                          color: AppColors.primaryColor,
-                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 25),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SmallEditTextField(
-                    text: 'John',
-                    label: S.of(context).firstname,
-                  ),
-                  SmallEditTextField(
-                    text: 'Doe',
-                    label: S.of(context).lastname,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 25),
-              EditTextField(
-                text: 'R7r8D@example.com',
-                label: S.of(context).email,
-              ),
-              const SizedBox(height: 25),
-              EditTextField(
-                text: '+1234567890',
-                label: S.of(context).phoneNumber,
-              ),
-              const SizedBox(height: 25),
-              PasswordEditTextField(
-                text: '*********',
-                label: S.of(context).password,
-                onChangePressed: () {
-                  Navigator.of(context).pushNamed(AppRoutes.changePassword);
-                },
-              ),
-              const SizedBox(height: 25),
-              Row(
-                children: [
-                  Text(
-                    S.of(context).gender,
-                    style: TextStyle(
-                      color: AppColors.greyColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                  ],
+                ),
+                const SizedBox(height: 25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SmallEditTextField(
+                      text: 'John',
+                      label: S.of(context).firstname,
                     ),
-                  ),
-                  const Spacer(
-                    flex: 2,
-                  ),
-                  Row(
-                    children: [
-                      Checkbox(
-                        activeColor: AppColors.primaryColor,
-                        shape: const CircleBorder(),
-                        value: isMaleSelected,
-                        onChanged: (bool? newValue) {
-                          setState(() {
-                            isMaleSelected = newValue ?? false;
-                            // When Male is selected, unselect Female
-                            if (isMaleSelected) isFemaleSelected = false;
-                          });
-                        },
+                    SmallEditTextField(
+                      text: 'Doe',
+                      label: S.of(context).lastname,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                EditTextField(
+                  text: 'R7r8D@example.com',
+                  label: S.of(context).email,
+                ),
+                const SizedBox(height: 25),
+                EditTextField(
+                  text: '+1234567890',
+                  label: S.of(context).phoneNumber,
+                ),
+                const SizedBox(height: 25),
+                PasswordEditTextField(
+                  text: '*********',
+                  label: S.of(context).password,
+                  onChangePressed: () {
+                    Navigator.of(context).pushNamed(AppRoutes.changePassword);
+                  },
+                ),
+                const SizedBox(height: 25),
+                Row(
+                  children: [
+                    Text(
+                      S.of(context).gender,
+                      style: const TextStyle(
+                        color: AppColors.greyColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
-                      Text(
-                        S.of(context).male,
-                        style: TextStyle(
-                          color: AppColors.greyColor,
-                          fontSize: 16,
+                    ),
+                    const Spacer(
+                      flex: 2,
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          activeColor: AppColors.primaryColor,
+                          shape: const CircleBorder(),
+                          value: isMaleSelected,
+                          onChanged: (bool? newValue) {
+                            setState(() {
+                              isMaleSelected = newValue ?? false;
+                              // When Male is selected, unselect Female
+                              if (isMaleSelected) isFemaleSelected = false;
+                            });
+                          },
                         ),
-                      ),
-                      const SizedBox(width: 10),
-                      Checkbox(
-                        activeColor: AppColors.primaryColor,
-                        shape: const CircleBorder(),
-                        value: isFemaleSelected,
-                        onChanged: (bool? newValue) {
-                          setState(() {
-                            isFemaleSelected = newValue ?? false;
-                            // When Female is selected, unselect Male
-                            if (isFemaleSelected) isMaleSelected = false;
-                          });
-                        },
-                      ),
-                      Text(
-                        S.of(context).female,
-                        style: TextStyle(
-                          color: AppColors.greyColor,
-                          fontSize: 16,
+                        Text(
+                          S.of(context).male,
+                          style: const TextStyle(
+                            color: AppColors.greyColor,
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const Spacer(
-                flex: 1,
-              ),
-              customButton(
-                title: S.of(context).update,
-                onTap: () {},
-                color: AppColors.primaryColor,
-                textColor: Colors.white,
-              ),
-              const Spacer(
-                flex: 2,
-              ),
-            ],
+                        const SizedBox(width: 10),
+                        Checkbox(
+                          activeColor: AppColors.primaryColor,
+                          shape: const CircleBorder(),
+                          value: isFemaleSelected,
+                          onChanged: (bool? newValue) {
+                            setState(() {
+                              isFemaleSelected = newValue ?? false;
+                              // When Female is selected, unselect Male
+                              if (isFemaleSelected) isMaleSelected = false;
+                            });
+                          },
+                        ),
+                        Text(
+                          S.of(context).female,
+                          style: const TextStyle(
+                            color: AppColors.greyColor,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                customButton(
+                  title: S.of(context).update,
+                  onTap: () {},
+                  color: AppColors.primaryColor,
+                  textColor: Colors.white,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -222,13 +219,17 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
 // <----------------Methods for image picker and permission handling are added here---------------->
   Future<void> _showImagePicker(BuildContext context) async {
     showModalBottomSheet(
+      backgroundColor: AppColors.backgroundColor,
       context: context,
       builder: (context) {
         return SafeArea(
           child: Wrap(
             children: [
               ListTile(
-                leading: const Icon(Icons.photo_library),
+                leading: const Icon(
+                  Icons.photo_library,
+                  color: AppColors.primaryColor,
+                ),
                 title: Text(S.of(context).chooseFromGallery),
                 onTap: () async {
                   Navigator.of(context).pop();
@@ -236,7 +237,10 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.camera_alt),
+                leading: const Icon(
+                  Icons.camera_alt,
+                  color: AppColors.primaryColor,
+                ),
                 title: Text(S.of(context).useCamera),
                 onTap: () async {
                   Navigator.of(context).pop();
@@ -245,7 +249,10 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               ),
               // إضافة زر لمسح الصورة
               ListTile(
-                leading: const Icon(Icons.delete),
+                leading: const Icon(
+                  Icons.delete,
+                  color: AppColors.primaryColor,
+                ),
                 title: Text(S.of(context).deletePhoto),
                 onTap: () async {
                   Navigator.of(context).pop();
