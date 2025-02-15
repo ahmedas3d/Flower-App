@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart'; // تأكد من إضافة هذه الحزمة
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_button.dart';
 import 'package:flower_app/features/AuthFeature/presentation/view/widgets/custom_text_field.dart';
@@ -21,18 +22,98 @@ class _AddAddressState extends State<AddAddress> {
   final TextEditingController city = TextEditingController();
   final TextEditingController area = TextEditingController();
   final GlobalKey<FormState> _formaddressKey = GlobalKey<FormState>();
-  final List<String> cities = ['Cairo', 'Alexandria', 'Giza', 'Luxor'];
-  final List<String> areas = ['Downtown', 'Zamalek', 'Maadi', 'Nasr City'];
+  final List<String> cities = [
+    'Alexandria',
+    'Ismailia',
+    'Aswan',
+    'Asyut',
+    'Luxor',
+    'Red Sea',
+    'Beheira',
+    'Beni Suef',
+    'Port Said',
+    'South Sinai',
+    'Giza',
+    'Dakahlia',
+    'Damietta',
+    'Sohag',
+    'Suez',
+    'Sharqia',
+    'North Sinai',
+    'Gharbia',
+    'Faiyum',
+    'Cairo',
+    'Qalyubia',
+    'Qena',
+    'Kafr El Sheikh',
+    'Matrouh',
+    'Monufia',
+    'Minya',
+    'New Valley'
+  ];
+  final List<String> areas = [
+    'Downtown',
+    'Zamalek',
+    'Maadi',
+    'Nasr City',
+    'Heliopolis',
+    'Giza',
+    'Dokki',
+    'Mohandessin',
+    'Agouza',
+    'Shubra',
+    'Abbassia',
+    'Hadayek El Qobbah',
+    'Zaytoun',
+    'Ain Shams',
+    'Mataria',
+    'El Salam',
+    'Madinet El Salam',
+    'Fifth Settlement',
+    'New Cairo',
+    'Rehab',
+    'El Shorouk',
+    'El Marg',
+    '15th of May City',
+    'Helwan',
+    'Tebin',
+    'Dar El Salam',
+    'Bab El Shaaria',
+    'Sayeda Zeinab',
+    'El Khalifa',
+    'Mokattam',
+    'El Zaweya El Hamra',
+    'Boulaq',
+    'Garden City',
+    'Roxy',
+    'Shooting Club',
+    'Old Cairo',
+    'Fustat',
+    'Manial',
+    'El Waili',
+    'El Manyal',
+    'El Qalaa',
+    'El Khanka',
+    'Islamic Cairo',
+    'El Darasa',
+    'El Ghouriya',
+    'Bab El Louk',
+    'El Mansoura',
+    'El Zohour',
+    'El Zawia',
+    'El Manial',
+  ];
 
   LatLng? currentPosition;
   final MapController _mapController = MapController();
-
+  // Initialize state
   @override
   void initState() {
     super.initState();
     _checkLocationServiceAndPermissions();
   }
 
+  // Check location service and permissions
   Future<void> _checkLocationServiceAndPermissions() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
@@ -57,6 +138,7 @@ class _AddAddressState extends State<AddAddress> {
     _getCurrentLocation();
   }
 
+  // Show location service disabled alert
   Future<void> _showLocationServiceDisabledAlert() async {
     return showDialog(
       context: context,
@@ -81,6 +163,7 @@ class _AddAddressState extends State<AddAddress> {
     );
   }
 
+  // Show location permission denied alert
   Future<void> _showLocationPermissionDeniedAlert() async {
     return showDialog(
       context: context,
@@ -105,6 +188,7 @@ class _AddAddressState extends State<AddAddress> {
     );
   }
 
+  // Show location permission permanently denied alert
   Future<void> _showLocationPermissionPermanentlyDeniedAlert() async {
     return showDialog(
       barrierColor: AppColors.backgroundColor,
@@ -130,6 +214,7 @@ class _AddAddressState extends State<AddAddress> {
     );
   }
 
+  // Get current location
   Future<void> _getCurrentLocation() async {
     try {
       Position position = await Geolocator.getCurrentPosition();
@@ -137,8 +222,48 @@ class _AddAddressState extends State<AddAddress> {
         currentPosition = LatLng(position.latitude, position.longitude);
         _mapController.move(currentPosition!, 15);
       });
+
+      // Convert coordinates to address
+      await _convertCoordinatesToAddress(position.latitude, position.longitude);
     } catch (e) {
       print('Error getting location: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error getting location: $e'),
+        ),
+      );
+    }
+  }
+
+  // Convert coordinates to address
+  Future<void> _convertCoordinatesToAddress(
+      double latitude, double longitude) async {
+    try {
+      List<Placemark> placemarks =
+          await placemarkFromCoordinates(latitude, longitude);
+
+      if (placemarks.isNotEmpty) {
+        Placemark placemark = placemarks.first;
+        String fullAddress =
+            '${placemark.street}, ${placemark.locality}, ${placemark.administrativeArea}, ${placemark.country}';
+        setState(() {
+          address.text = fullAddress; // تعيين العنوان في حقل النص
+        });
+      } else {
+        print('No address found for the coordinates.');
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: const Text('No address found for the coordinates.'),
+          ),
+        );
+      }
+    } catch (e) {
+      print('Error converting coordinates to address: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error converting coordinates to address: $e'),
+        ),
+      );
     }
   }
 
@@ -220,6 +345,7 @@ class _AddAddressState extends State<AddAddress> {
                       children: [
                         Expanded(
                           child: DropdownButtonFormField<String>(
+                            menuMaxHeight: 200,
                             dropdownColor: AppColors.backgroundColor,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -251,9 +377,10 @@ class _AddAddressState extends State<AddAddress> {
                             },
                           ),
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: 8),
                         Expanded(
                           child: DropdownButtonFormField<String>(
+                            menuMaxHeight: 200,
                             dropdownColor: AppColors.backgroundColor,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
