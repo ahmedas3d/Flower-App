@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
-
+import 'package:flutter/material.dart';
 import '../../data/models/product/get_all_product_model.dart';
 import '../../data/services/get_all_product_services.dart';
 

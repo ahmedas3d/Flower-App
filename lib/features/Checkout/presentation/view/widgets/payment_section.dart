@@ -27,7 +27,7 @@ class _PaymentMethodSectionState extends State<PaymentMethodSection> {
         children: [
           Text(
             S.of(context).paymentMethod,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.bold,

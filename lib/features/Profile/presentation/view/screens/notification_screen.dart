@@ -19,7 +19,7 @@ class NotificationScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: 2,
         itemBuilder: (context, index) {
-          return Column(
+          return const Column(
             children: [
               NewOrder(),
               RememberOrder(),
@@ -63,7 +63,7 @@ class NewOrder extends StatelessWidget {
                 const SizedBox(width: 5),
                 Text(
                   S.of(context).newOffer,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.backgroundColor,
@@ -71,8 +71,8 @@ class NewOrder extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                 'Lorem ipsum dolor sit amet consectetur. Tristique et mauris sem congue in felis id nec. Amet sed morbi bibendum vestibulum.',
                 style: TextStyle(
@@ -119,7 +119,7 @@ class RememberOrder extends StatelessWidget {
                 const SizedBox(width: 5),
                 Text(
                   S.of(context).rememberOrder,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.backgroundColor,
@@ -127,8 +127,8 @@ class RememberOrder extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                 'Lorem ipsum dolor sit amet consectetur. Tristique et mauris sem congue in felis id nec. Amet sed morbi bibendum vestibulum.',
                 style: TextStyle(

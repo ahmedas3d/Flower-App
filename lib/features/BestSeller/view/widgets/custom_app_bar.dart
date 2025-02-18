@@ -27,10 +27,10 @@ class CustomAppBar extends StatelessWidget {
                   size: 20,
                 ),
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   color: AppColors.textColor1,
                   fontWeight: FontWeight.w500,
@@ -40,7 +40,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           Text(
             subTitle,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13,
             ),
           ),

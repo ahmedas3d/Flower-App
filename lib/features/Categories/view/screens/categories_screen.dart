@@ -67,12 +67,12 @@ class CategoriesScreen extends StatelessWidget {
                             return Container(
                               decoration: const BoxDecoration(
                                 color: AppColors.backgroundColor,
-                                borderRadius: const BorderRadius.vertical(
+                                borderRadius: BorderRadius.vertical(
                                   top: Radius.circular(20),
                                 ),
                               ),
                               padding: const EdgeInsets.all(16),
-                              child: FilterMenu(),
+                              child: const FilterMenu(),
                             );
                           },
                         );

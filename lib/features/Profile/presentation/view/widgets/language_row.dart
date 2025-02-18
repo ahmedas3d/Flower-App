@@ -10,7 +10,7 @@ class LanguageRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
+        const Icon(
           Icons.language,
           size: 18,
           color: AppColors.greyColor,
@@ -18,7 +18,7 @@ class LanguageRow extends StatelessWidget {
         const SizedBox(width: 3),
         Text(
           S.of(context).language,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             color: AppColors.greyColor,
           ),
@@ -26,25 +26,25 @@ class LanguageRow extends StatelessWidget {
         const Spacer(),
         DropdownButton<String>(
           borderRadius: Localizations.localeOf(context).languageCode == 'ar'
-              ? BorderRadius.only(
+              ? const BorderRadius.only(
                   topRight: Radius.circular(10),
                   bottomRight: Radius.circular(10),
                 )
-              : BorderRadius.only(
+              : const BorderRadius.only(
                   topLeft: Radius.circular(10),
                   bottomLeft: Radius.circular(10),
                 ),
           value: Localizations.localeOf(context).languageCode,
           icon:
               const Icon(Icons.arrow_drop_down, color: AppColors.primaryColor),
-          underline: SizedBox(),
+          underline: const SizedBox(),
           dropdownColor: AppColors.backgroundColor,
           onChanged: (String? value) {
             if (value != null) {
               if (value == 'ar') {
-                FlowerApp.setLocale(context, Locale('ar'));
+                FlowerApp.setLocale(context, const Locale('ar'));
               } else {
-                FlowerApp.setLocale(context, Locale('en'));
+                FlowerApp.setLocale(context, const Locale('en'));
               }
             }
           },
@@ -53,14 +53,16 @@ class LanguageRow extends StatelessWidget {
               value: 'ar',
               child: Text(
                 S.of(context).arabic,
-                style: TextStyle(color: AppColors.primaryColor, fontSize: 14),
+                style: const TextStyle(
+                    color: AppColors.primaryColor, fontSize: 14),
               ),
             ),
             DropdownMenuItem<String>(
               value: 'en',
               child: Text(
                 S.of(context).english,
-                style: TextStyle(color: AppColors.primaryColor, fontSize: 14),
+                style: const TextStyle(
+                    color: AppColors.primaryColor, fontSize: 14),
               ),
             ),
           ],

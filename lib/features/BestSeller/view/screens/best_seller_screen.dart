@@ -20,7 +20,7 @@ class BestSellerScreen extends StatelessWidget {
               title: S.of(context).bestSellers,
               subTitle: S.of(context).bloom,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: ProductsList(),
             ),

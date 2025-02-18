@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const Text(
                       'Flowery',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 24,
                         fontFamily: 'IM FELL English',
                         color: AppColors.primaryColor,
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 12),
                     const Expanded(
-                      child: const customSearchField(),
+                      child: customSearchField(),
                     ),
                   ],
                 ),
@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              DiscoverList(),
+              const DiscoverList(),
               const SizedBox(height: 8),
               customTitle(
                 title: S.of(context).categories,
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              CategoriesList(),
+              const CategoriesList(),
               const SizedBox(
                 height: 10,
               ),

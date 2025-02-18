@@ -36,7 +36,7 @@ class PasswordEditTextField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               S.of(context).change,
-              style: TextStyle(
+              style: const TextStyle(
                   color: AppColors.primaryColor, fontWeight: FontWeight.bold),
             ),
           ),

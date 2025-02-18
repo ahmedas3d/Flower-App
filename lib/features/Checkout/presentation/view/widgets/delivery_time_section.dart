@@ -19,13 +19,13 @@ class DeliveryTimeSection extends StatelessWidget {
             children: [
               Text(
                 S.of(context).deliveryTime,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 'Schedule',
                 style: TextStyle(
                   color: AppColors.primaryColor,
@@ -38,13 +38,13 @@ class DeliveryTimeSection extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Row(
+          const Row(
             children: [
               Icon(
                 Icons.watch_later_outlined,
                 size: 18,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 3,
               ),
               Text(
@@ -55,7 +55,7 @@ class DeliveryTimeSection extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 2,
               ),
               Text(

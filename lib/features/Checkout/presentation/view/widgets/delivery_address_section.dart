@@ -84,7 +84,7 @@ class _DeliveryAddressSectionState extends State<DeliveryAddressSection> {
                       children: [
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.location_on_outlined,
                               color: AppColors.textColor1,
                               size: 20,
@@ -92,7 +92,7 @@ class _DeliveryAddressSectionState extends State<DeliveryAddressSection> {
                             const SizedBox(width: 3),
                             Text(
                               address.title,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 16,
                                 color: AppColors.textColor1,
                               ),
@@ -112,7 +112,7 @@ class _DeliveryAddressSectionState extends State<DeliveryAddressSection> {
                         ),
                         Text(
                           address.address,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: AppColors.textColor3,
                           ),

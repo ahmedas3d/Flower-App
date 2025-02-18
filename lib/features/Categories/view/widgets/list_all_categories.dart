@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/generated/l10n.dart';
@@ -41,7 +39,7 @@ class ListAllCategories extends StatelessWidget {
               Container(
                 height: 135,
                 width: 180,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: AppColors.pinkLight,
                 ),
                 child: Center(
@@ -56,7 +54,7 @@ class ListAllCategories extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       color: AppColors.textColor1,
                     ),
@@ -65,16 +63,16 @@ class ListAllCategories extends StatelessWidget {
                     children: [
                       Text(
                         'EGP $price',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           color: AppColors.textColor1,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(
                         discount,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           color: AppColors.greyColor,
                           fontWeight: FontWeight.bold,
@@ -83,10 +81,10 @@ class ListAllCategories extends StatelessWidget {
                           decorationThickness: 2.0,
                         ),
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(
                         sale,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           color: AppColors.greenColor,
                         ),
@@ -95,7 +93,7 @@ class ListAllCategories extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Container(
                 height: 30,
                 width: 150,
@@ -106,15 +104,15 @@ class ListAllCategories extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.shopping_cart_outlined,
                       color: Colors.white,
                       size: 18,
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                     Text(
                       S.of(context).addToCart,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
@@ -197,7 +195,7 @@ class CategoriesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       padding: const EdgeInsets.only(bottom: 20),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,

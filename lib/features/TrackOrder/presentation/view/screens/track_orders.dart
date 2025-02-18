@@ -15,7 +15,7 @@ class TrackOrders extends StatelessWidget {
         titleSpacing: 0,
         title: Text(
           S.of(context).trackOrder,
-          style: TextStyle(
+          style: const TextStyle(
             color: AppColors.textColor1,
             fontSize: 18,
             fontWeight: FontWeight.bold,

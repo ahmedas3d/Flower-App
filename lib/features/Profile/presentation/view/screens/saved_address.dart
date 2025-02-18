@@ -9,7 +9,7 @@ class SavedAddress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final addressCount = 2;
+    const addressCount = 2;
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,

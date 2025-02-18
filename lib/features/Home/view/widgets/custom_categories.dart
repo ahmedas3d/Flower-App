@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +32,10 @@ class CustomCategories extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
             color: AppColors.textColor1,
             fontWeight: FontWeight.w500,
@@ -49,7 +47,7 @@ class CustomCategories extends StatelessWidget {
 }
 
 class CategoriesList extends StatelessWidget {
-  CategoriesList({super.key});
+  const CategoriesList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +80,7 @@ class CategoriesList extends StatelessWidget {
         itemCount: items.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: 10),
             child: CustomCategories(
               imageAsset: items[index]['image']!,
               title: items[index]['title']!,

@@ -4,7 +4,7 @@ import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class FilterMenu extends StatefulWidget {
-  FilterMenu({super.key});
+  const FilterMenu({super.key});
 
   @override
   State<FilterMenu> createState() => _FilterMenuState();
@@ -67,10 +67,10 @@ class _FilterMenuState extends State<FilterMenu> {
           ),
           SliderTheme(
             data: SliderTheme.of(context).copyWith(
-              thumbShape: RoundSliderThumbShape(
+              thumbShape: const RoundSliderThumbShape(
                 enabledThumbRadius: 8,
               ),
-              overlayShape: RoundSliderOverlayShape(
+              overlayShape: const RoundSliderOverlayShape(
                 overlayRadius: 16,
               ),
             ),
@@ -93,11 +93,11 @@ class _FilterMenuState extends State<FilterMenu> {
             children: [
               Text(
                 "\$${_currentRangeValues.start.round()}",
-                style: TextStyle(fontSize: 16, color: Colors.black),
+                style: const TextStyle(fontSize: 16, color: Colors.black),
               ),
               Text(
                 "\$${_currentRangeValues.end.round()}",
-                style: TextStyle(fontSize: 16, color: Colors.black),
+                style: const TextStyle(fontSize: 16, color: Colors.black),
               ),
             ],
           ),
@@ -116,7 +116,7 @@ class _FilterMenuState extends State<FilterMenu> {
 }
 
 class CustomRowFilter extends StatefulWidget {
-  CustomRowFilter({super.key, required this.title});
+  const CustomRowFilter({super.key, required this.title});
 
   final String title;
 

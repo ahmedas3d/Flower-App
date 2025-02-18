@@ -253,7 +253,7 @@ class _AddAddressState extends State<AddAddress> {
         print('No address found for the coordinates.');
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: const Text('No address found for the coordinates.'),
+            content: Text('No address found for the coordinates.'),
           ),
         );
       }

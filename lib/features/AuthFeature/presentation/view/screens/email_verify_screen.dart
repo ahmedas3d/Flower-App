@@ -41,7 +41,7 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
                 elevation: 0,
                 behavior: SnackBarBehavior.floating,
                 backgroundColor: Colors.transparent,
-                content: const AwesomeSnackbarContent(
+                content: AwesomeSnackbarContent(
                   title: 'Hi There!',
                   message: 'Welcome to Flower App',
                   contentType: ContentType.success,

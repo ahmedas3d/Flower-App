@@ -34,14 +34,14 @@ class _NotificationRowState extends State<NotificationRow> {
         ),
         Text(
           S.of(context).notifications,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
             color: AppColors.greyColor,
           ),
         ),
         const Spacer(),
-        Icon(
+        const Icon(
           Icons.arrow_forward_ios,
           size: 18,
           color: AppColors.greyColor,

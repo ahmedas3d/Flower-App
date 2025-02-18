@@ -91,7 +91,7 @@ class ActiveOrderItem extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textColor1,
                   ),
@@ -99,7 +99,7 @@ class ActiveOrderItem extends StatelessWidget {
                 const SizedBox(height: 5),
                 Text(
                   price,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     color: AppColors.textColor1,
                     fontWeight: FontWeight.bold,
@@ -108,7 +108,7 @@ class ActiveOrderItem extends StatelessWidget {
                 const SizedBox(height: 3),
                 Text(
                   'Order number# $orderNumber',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textColor3,
                   ),

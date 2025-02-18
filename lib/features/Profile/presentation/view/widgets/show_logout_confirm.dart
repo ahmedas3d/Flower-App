@@ -14,7 +14,7 @@ void showLogoutConfirmation(BuildContext context) {
         title: Text(
           textAlign: TextAlign.center,
           S.of(context).confirmLogout,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
@@ -22,7 +22,7 @@ void showLogoutConfirmation(BuildContext context) {
         content: Text(
           textAlign: TextAlign.center,
           S.of(context).areYouSureYouWantToLogout,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
           ),
         ),

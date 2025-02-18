@@ -21,7 +21,7 @@ class customTitle extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w500,
               color: AppColors.textColor1,
@@ -31,7 +31,7 @@ class customTitle extends StatelessWidget {
             onTap: onTap,
             child: Text(
               viewAll ?? '',
-              style: TextStyle(
+              style: const TextStyle(
                 decoration: TextDecoration.underline,
                 decorationColor: AppColors.primaryColor,
                 fontSize: 12,

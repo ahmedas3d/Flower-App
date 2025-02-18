@@ -28,7 +28,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 Container(
                   height: 430,
                   width: double.infinity,
-                  color: AppColors.pinkLight,
+                  color: AppColors.backgroundColor,
                 ),
                 SizedBox(
                   height: 430,

@@ -26,7 +26,7 @@ class AddressContainerTrack extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.location_on_outlined,
                   color: AppColors.textColor3,
                   size: 23,
@@ -36,7 +36,7 @@ class AddressContainerTrack extends StatelessWidget {
                 ),
                 Text(
                   S.of(context).home,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: AppColors.textColor1,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

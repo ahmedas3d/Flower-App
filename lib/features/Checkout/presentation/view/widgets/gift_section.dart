@@ -24,7 +24,7 @@ class _GiftInfoSectionState extends State<GiftInfoSection> {
           SwitchListTile(
             title: Text(
               S.of(context).itIsAGift,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 color: AppColors.textColor1,
                 fontWeight: FontWeight.bold,
@@ -58,12 +58,13 @@ class _GiftInfoSectionState extends State<GiftInfoSection> {
                       hintText: S.of(context).enterYourName,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: AppColors.textColor3),
+                        borderSide:
+                            const BorderSide(color: AppColors.textColor3),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 14),
                     ),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       color: AppColors.textColor1,
                     ),
@@ -77,12 +78,13 @@ class _GiftInfoSectionState extends State<GiftInfoSection> {
                       hintText: S.of(context).enteryourPhoneNumber,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: AppColors.textColor3),
+                        borderSide:
+                            const BorderSide(color: AppColors.textColor3),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 14),
                     ),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       color: AppColors.textColor1,
                     ),

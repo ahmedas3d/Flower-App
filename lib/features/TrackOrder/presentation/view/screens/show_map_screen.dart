@@ -15,9 +15,9 @@ class TrackingScreen extends StatefulWidget {
 }
 
 class _TrackingScreenState extends State<TrackingScreen> {
-  final LatLng flowerShop =
-      LatLng(30.5965, 32.2654); // محل الورد في الإسماعيلية
-  final LatLng customerLocation = LatLng(30.6021, 32.2719); // موقع العميل
+  LatLng flowerShop =
+      const LatLng(30.5965, 32.2654); // محل الورد في الإسماعيلية
+  LatLng customerLocation = const LatLng(30.6021, 32.2719); // موقع العميل
   List<LatLng> routePoints = []; // قائمة تحتوي على نقاط المسار
   int currentDriverIndex = 0; // لتتبع موقع السائق على المسار
 
@@ -53,7 +53,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
 
   // تحريك السائق تدريجياً على المسار
   void _startDriverMovement() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       if (currentDriverIndex < routePoints.length - 1) {
         setState(() {
           currentDriverIndex++;
@@ -95,14 +95,14 @@ class _TrackingScreenState extends State<TrackingScreen> {
                     point: flowerShop,
                     width: 40,
                     height: 40,
-                    child:
-                        Icon(Icons.local_florist, color: Colors.red, size: 35),
+                    child: const Icon(Icons.local_florist,
+                        color: Colors.red, size: 35),
                   ),
                   Marker(
                     point: customerLocation,
                     width: 40,
                     height: 40,
-                    child: Icon(Icons.location_on_outlined,
+                    child: const Icon(Icons.location_on_outlined,
                         color: Colors.green, size: 35),
                   ),
                   if (routePoints.isNotEmpty)
@@ -111,7 +111,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
                           currentDriverIndex], // السائق يتحرك على المسار
                       width: 50,
                       height: 50,
-                      child: Icon(Icons.delivery_dining,
+                      child: const Icon(Icons.delivery_dining,
                           color: Colors.orange, size: 35),
                     ),
                 ],
@@ -130,7 +130,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back),
+                icon: const Icon(Icons.arrow_back),
               ),
             ),
           ),
@@ -139,7 +139,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
             left: 15,
             right: 15,
             child: Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.9),
                 borderRadius: BorderRadius.circular(15),
@@ -154,30 +154,30 @@ class _TrackingScreenState extends State<TrackingScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Estimated arrival",
                     style: TextStyle(
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(height: 5),
-                  Text(
+                  const SizedBox(height: 5),
+                  const Text(
                     "03 Sep 2024, 11:00 AM",
                     style: TextStyle(
                       fontSize: 16,
                       color: AppColors.textColor1,
                     ),
                   ),
-                  Divider(height: 20),
+                  const Divider(height: 20),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.person_pin_circle,
                         color: Colors.orange,
                         size: 30,
                       ),
-                      SizedBox(width: 10),
-                      Column(
+                      const SizedBox(width: 10),
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -198,12 +198,13 @@ class _TrackingScreenState extends State<TrackingScreen> {
                       const SizedBox(width: 10),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.call, color: AppColors.primaryColor),
+                        icon: const Icon(Icons.call,
+                            color: AppColors.primaryColor),
                       ),
                       IconButton(
                         onPressed: () {},
-                        icon:
-                            Icon(Icons.message, color: AppColors.primaryColor),
+                        icon: const Icon(Icons.message,
+                            color: AppColors.primaryColor),
                       ),
                     ],
                   ),

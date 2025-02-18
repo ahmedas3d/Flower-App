@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:either_dart/either.dart';
 
 class Authapi {
   final String email;

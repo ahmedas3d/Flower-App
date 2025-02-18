@@ -29,7 +29,7 @@ class RowSettings extends StatelessWidget {
           const SizedBox(width: 3),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               color: AppColors.greyColor,
             ),

@@ -23,14 +23,14 @@ class PaymentContainerTrack extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            const Row(
               children: [
                 Icon(
                   Icons.paid,
                   color: AppColors.textColor3,
                   size: 23,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 5,
                 ),
                 Text(

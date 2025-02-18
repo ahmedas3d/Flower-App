@@ -51,13 +51,13 @@ class OutForDelivery extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 S.of(context).outForDelivery,
-                style: TextStyle(
+                style: const TextStyle(
                   color: AppColors.textColor1,
                   fontSize: 18,
                 ),
               ),
               const SizedBox(height: 15),
-              StepsOrders(
+              const StepsOrders(
                 isGreenList: [true, true, true, false],
               ),
               const SizedBox(height: 20),
@@ -70,18 +70,18 @@ class OutForDelivery extends StatelessWidget {
               _buildItemsSection(),
               const SizedBox(height: 15),
               // checkout summary
-              CheckoutSummary(total: 100),
+              const CheckoutSummary(total: 100),
               BottomAppBar(
                 color: AppColors.backgroundColor,
                 elevation: 0,
                 child: Row(
                   spacing: 20,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.call,
                       color: AppColors.primaryColor,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.message,
                       color: AppColors.primaryColor,
                     ),
@@ -117,14 +117,14 @@ class OutForDelivery extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            const Row(
               children: [
                 Icon(
                   Icons.shopping_cart_outlined,
                   color: AppColors.textColor3,
                   size: 23,
                 ),
-                const SizedBox(width: 5),
+                SizedBox(width: 5),
                 Text(
                   '3 Items',
                   style: TextStyle(
@@ -183,7 +183,7 @@ class OutForDelivery extends StatelessWidget {
                   ),
                   Text(
                     item['price']!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.greenColor,

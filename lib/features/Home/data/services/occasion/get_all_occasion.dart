@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
 import 'package:flower_app/features/Home/data/models/occasions/occasions.dart';
-import 'package:flower_app/features/Home/view/widgets/occasion.dart';
 
 class GetAllOccasion {
   final Dio dio = Dio();

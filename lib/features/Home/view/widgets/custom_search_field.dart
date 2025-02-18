@@ -11,24 +11,24 @@ class customSearchField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: 'Search',
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           fontSize: 14,
           fontFamily: 'Inter',
           color: Colors.grey,
         ),
-        contentPadding: EdgeInsets.symmetric(
+        contentPadding: const EdgeInsets.symmetric(
           vertical: 3,
           horizontal: 8,
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
           borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.primaryColor),
+          borderSide: const BorderSide(color: AppColors.primaryColor),
           borderRadius: BorderRadius.circular(10),
         ),
-        prefixIcon: Icon(
+        prefixIcon: const Icon(
           Icons.search,
           size: 20,
           color: Colors.grey,

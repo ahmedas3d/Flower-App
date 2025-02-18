@@ -40,7 +40,7 @@ class CheckOutScreen extends StatelessWidget {
               width: double.infinity,
               height: 30,
               decoration: const BoxDecoration(
-                color: const Color(0xffEAEAEA),
+                color: Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
@@ -55,7 +55,7 @@ class CheckOutScreen extends StatelessWidget {
               width: double.infinity,
               height: 30,
               decoration: const BoxDecoration(
-                color: const Color(0xffEAEAEA),
+                color: Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
@@ -70,7 +70,7 @@ class CheckOutScreen extends StatelessWidget {
               width: double.infinity,
               height: 30,
               decoration: const BoxDecoration(
-                color: const Color(0xffEAEAEA),
+                color: Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
@@ -85,15 +85,15 @@ class CheckOutScreen extends StatelessWidget {
               width: double.infinity,
               height: 30,
               decoration: const BoxDecoration(
-                color: const Color(0xffEAEAEA),
+                color: Color(0xffEAEAEA),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
             const Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: const CheckoutSummary(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: CheckoutSummary(
                 total: 100,
               ),
             ),

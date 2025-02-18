@@ -29,7 +29,7 @@ class CustomDiscoverCard extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(10),
             bottomRight: Radius.circular(10),
           ),
@@ -48,13 +48,13 @@ class CustomDiscoverCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         color: AppColors.textColor2,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Container(
                       height: 30,
                       width: 80,
@@ -66,7 +66,7 @@ class CustomDiscoverCard extends StatelessWidget {
                       child: Center(
                         child: Text(
                           S.of(context).giftNow,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
@@ -86,7 +86,7 @@ class CustomDiscoverCard extends StatelessWidget {
 }
 
 class DiscoverList extends StatelessWidget {
-  DiscoverList({super.key});
+  const DiscoverList({super.key});
 
   List<Map<String, String>> items(BuildContext context) => [
         {
@@ -108,7 +108,7 @@ class DiscoverList extends StatelessWidget {
         itemCount: items(context).length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: 10),
             child: CustomDiscoverCard(
               imageAsset: items(context)[index]['image']!,
               title: items(context)[index]['title']!,
