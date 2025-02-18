@@ -1,7 +1,9 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
+import 'package:flower_app/features/Categories/viewmodel/products_cubit.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListAllCategories extends StatelessWidget {
   const ListAllCategories({
@@ -43,7 +45,7 @@ class ListAllCategories extends StatelessWidget {
                   color: AppColors.pinkLight,
                 ),
                 child: Center(
-                  child: Image.asset(
+                  child: Image.network(
                     imageAsset,
                     fit: BoxFit.contain,
                   ),
@@ -131,84 +133,40 @@ class ListAllCategories extends StatelessWidget {
 
 class CategoriesList extends StatelessWidget {
   CategoriesList({super.key});
-
-  final List<Map<String, String>> items = [
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Red roses',
-      'price': '600',
-      'sale': '20%',
-      'discount': '800',
-    },
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Sunny Vase',
-      'price': '450',
-      'sale': '15%',
-      'discount': '530',
-    },
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Spring Flowers',
-      'price': '700',
-      'sale': '10%',
-      'discount': '780',
-    },
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Red roses',
-      'price': '600',
-      'sale': '20%',
-      'discount': '800',
-    },
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Sunny Vase',
-      'price': '450',
-      'sale': '15%',
-      'discount': '530',
-    },
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Spring Flowers',
-      'price': '700',
-      'sale': '10%',
-      'discount': '780',
-    },
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Red roses',
-      'price': '600',
-      'sale': '20%',
-      'discount': '800',
-    },
-    {
-      'image': 'assets/images/best-seller4.png',
-      'title': 'Sunny Vase',
-      'price': '450',
-      'sale': '15%',
-      'discount': '530',
-    },
-  ];
-
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.only(bottom: 20),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        childAspectRatio: 0.75,
-      ),
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return ListAllCategories(
-          imageAsset: items[index]['image']!,
-          title: items[index]['title']!,
-          price: items[index]['price']!,
-          sale: items[index]['sale']!,
-          discount: items[index]['discount']!,
+    return BlocBuilder<ProductsCubit, ProductsState>(
+      builder: (context, state) {
+        if (state is ProductsError) {
+          return const Center(
+            child: Text('Error'),
+          );
+        }
+        if (state is ProductsLoaded) {
+          final items = state.products;
+          return GridView.builder(
+            padding: const EdgeInsets.only(bottom: 20),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 0.75,
+            ),
+            itemCount: items.length,
+            itemBuilder: (context, index) {
+              return ListAllCategories(
+                imageAsset: items[index].images[0]!,
+                title: items[index].title,
+                price: items[index].price.toString(),
+                sale: items[index].price.toString(),
+                discount: items[index].price.toString(),
+              );
+            },
+          );
+        }
+        return const Center(
+          child: CircularProgressIndicator(),
         );
       },
     );

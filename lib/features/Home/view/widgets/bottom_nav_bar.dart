@@ -8,6 +8,8 @@ import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../Categories/viewmodel/products_cubit.dart' show ProductsCubit;
+
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
@@ -20,7 +22,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const CategoriesScreen(),
+    BlocProvider<ProductsCubit>(
+      create: (context) => ProductsCubit()..getAllProducts(),
+      child: const CategoriesScreen(),
+    ),
     const CartScreen(),
     BlocProvider(
       create: (context) => AuthCubit(),
