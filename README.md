@@ -74,8 +74,8 @@ The following technologies and skills were utilized in developing Flowery App:
 
 For any feedback or support, please contact:
 
-- **Email:** support@floweryapp.com
-- **Website:** [www.floweryapp.com](http://www.floweryapp.com)
+- **Email:** ahmedxasaad@gmail.com
+- **Email:** haazemsaidd@gmail.com
 
 ---
 
