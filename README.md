@@ -48,7 +48,6 @@ The following technologies and skills were utilized in developing Flowery App:
 - **Provider:** State management for efficient UI updates.
 - **REST API:** Backend integration for product data and order management.
 - **Git & GitHub:** Version control and collaboration.
-- **CI/CD Pipelines:** Automated build and deployment using GitHub Actions.
 - **Responsive Design:** Ensures optimal user experience on all devices.
 - **Google Play Store Optimization:** Feature graphics and descriptions tailored for better visibility.
 
@@ -66,8 +65,8 @@ The following technologies and skills were utilized in developing Flowery App:
 ---
 | Contributor                                                                                                      | GitHub Profile                              | Key Features                                  | 
 |------------------------------------------------------------------------------------------------------------------|--------------------------------------------|------------------------------------------------|
-| <kbd><a href="https://github.com/ahmedas3d" target="_blank"><img src="https://avatars.githubusercontent.com/u/109164014?v=4" alt="Ahmed Asaad" width="80" style="border-radius:50%;"></a></kbd><br>**Ahmed Asaad** | [Profile](https://github.com/ahmedas3d)   | Authentication, Shopping Cart, CI/CD Integration | 
-| <kbd><a href="https://github.com/hazzemSaid" target="_blank"><img src="https://avatars.githubusercontent.com/u/124845122?v=4" alt="Hazzem Said" width="80" style="border-radius:50%;"></a></kbd><br>**Hazzem Said** | [Profile](https://github.com/hazzemSaid)   | Search Functionality, Notifications           |
+| <kbd><a href="https://github.com/ahmedas3d" target="_blank"><img src="https://avatars.githubusercontent.com/u/109164014?v=4" alt="Ahmed Asaad" width="80" style="border-radius:50%;"></a></kbd><br>**Ahmed Asaad** | [Profile](https://github.com/ahmedas3d)   | UI design for the entire application                  | 
+| <kbd><a href="https://github.com/hazzemSaid" target="_blank"><img src="https://avatars.githubusercontent.com/u/124845122?v=4" alt="Hazzem Said" width="80" style="border-radius:50%;"></a></kbd><br>**Hazzem Said** | [Profile](https://github.com/hazzemSaid)   | Logic for the entire application              |
 
 
 ## Feedback and Support
