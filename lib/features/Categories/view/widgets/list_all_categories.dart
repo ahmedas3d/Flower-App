@@ -124,6 +124,7 @@ class _ListAllCategoriesState extends State<ListAllCategories> {
                     .add(widget.product);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
+                    backgroundColor: AppColors.greenColor,
                     content: Text('Product added to cart'),
                     duration: Duration(seconds: 1),
                   ),

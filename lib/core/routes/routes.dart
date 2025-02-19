@@ -6,6 +6,8 @@ import 'package:flower_app/features/AuthFeature/presentation/view/screens/sign_u
 import 'package:flower_app/features/AuthFeature/presentation/viewmodel/auth_cubit.dart';
 import 'package:flower_app/features/BestSeller/view/screens/best_seller_screen.dart';
 import 'package:flower_app/features/Cart/presentation/view/screens/cart_screen.dart';
+import 'package:flower_app/features/Categories/view/widgets/no_products_categories.dart';
+import 'package:flower_app/features/Categories/view/widgets/search_screen.dart';
 import 'package:flower_app/features/Checkout/presentation/view/screens/check_out_screen.dart';
 import 'package:flower_app/features/Home/view/screens/home_screen.dart';
 import 'package:flower_app/features/Home/view/widgets/bottom_nav_bar.dart';
@@ -52,6 +54,8 @@ class AppRoutes {
   static const String checkOutScreen = '/checkOutScreen';
   static const String trackOrders = '/trackOrders';
   static const String trackingScreen = '/trackingScreen';
+  static const String searchScreen = '/searchScreen';
+  static const String noProductsInCategories = '/noProductsInCategories';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -130,6 +134,11 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const TrackOrders());
       case trackingScreen:
         return MaterialPageRoute(builder: (_) => const TrackingScreen());
+      case searchScreen:
+        return MaterialPageRoute(builder: (_) => const SearchScreen());
+      case noProductsInCategories:
+        return MaterialPageRoute(
+            builder: (_) => const NoProductsInCategories());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

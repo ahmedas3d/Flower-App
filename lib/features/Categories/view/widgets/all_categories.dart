@@ -16,13 +16,13 @@ class _AllCategoriesState extends State<AllCategories> {
 
   final List<Map<String, String>> categories = [
     {'All': 'All'},
-    {'gits': '673c472f1159920171827c8a'},
+    {'Gits': '673c472f1159920171827c8a'},
     {'Flowers': '673c46fd1159920171827c85'},
-    {'cards': '673c47441159920171827c8d'},
+    {'Cards': '673c47441159920171827c8d'},
     {'Jewellery': '673c47591159920171827c90'},
-    {'perfumes': '673c47751159920171827c93'},
-    {'watches': '673c47881159920171827c96'},
-    {'chocolate': '673c479e1159920171827c99'},
+    {'Perfumes': '673c47751159920171827c93'},
+    {'Watches': '673c47881159920171827c96'},
+    {'Chocolate': '673c479e1159920171827c99'},
     {'Cakes': '673c4a551159920171827c9e'},
   ];
 
