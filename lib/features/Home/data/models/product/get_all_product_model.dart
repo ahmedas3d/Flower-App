@@ -7,6 +7,7 @@ class ProductModel {
   final List<String> images;
   final int price;
   final int priceAfterDiscount;
+  final int discount;
   int quantity;
   final String category;
   final String occasion;
@@ -24,6 +25,7 @@ class ProductModel {
     required this.images,
     required this.price,
     required this.priceAfterDiscount,
+    required this.discount,
     required this.quantity,
     required this.category,
     required this.occasion,
@@ -42,6 +44,7 @@ class ProductModel {
       images: List<String>.from(jsonData["images"]),
       price: jsonData["price"],
       priceAfterDiscount: jsonData["priceAfterDiscount"],
+      discount: jsonData["discount"],
       quantity: jsonData["quantity"],
       category: jsonData["category"],
       occasion: jsonData["occasion"],

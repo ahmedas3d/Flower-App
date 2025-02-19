@@ -132,8 +132,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const TrackingScreen());
       default:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(
-            body: Center(
+          builder: (_) => Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(),
+            body: const Center(
               child: Text('Page not found'),
             ),
           ),

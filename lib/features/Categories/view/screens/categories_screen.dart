@@ -10,6 +10,10 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: Padding(
@@ -20,8 +24,8 @@ class CategoriesScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  height: 50,
-                  width: 285,
+                  height: height * 0.05,
+                  width: width * 0.8,
                   child: Center(
                     child: TextField(
                       decoration: InputDecoration(

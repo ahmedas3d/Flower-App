@@ -23,26 +23,29 @@ class ListAllCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, AppRoutes.productDetails);
-      },
-      child: Container(
-        height: 234,
-        width: 170,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Container(
-                height: 135,
-                width: 180,
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
+    return Container(
+      height: height * 0.95,
+      width: width * 0.4,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.grey),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            GestureDetector(
+              onTap: () =>
+                  Navigator.pushNamed(context, AppRoutes.productDetails),
+              child: Container(
+                height: height * 0.18,
+                width: width * 0.35,
                 decoration: const BoxDecoration(
-                  color: AppColors.pinkLight,
+                  color: AppColors.backgroundColor,
                 ),
                 child: Center(
                   child: Image.network(
@@ -51,80 +54,84 @@ class ListAllCategories extends StatelessWidget {
                   ),
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: AppColors.textColor1,
-                    ),
+            ),
+            const SizedBox(height: 3),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: AppColors.textColor1,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'EGP $price',
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: AppColors.textColor1,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        discount,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: AppColors.greyColor,
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.lineThrough,
-                          decorationColor: AppColors.greyColor,
-                          decorationThickness: 2.0,
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        sale,
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: AppColors.greenColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 15),
-              Container(
-                height: 30,
-                width: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: AppColors.primaryColor,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                const SizedBox(height: 3),
+                Row(
                   children: [
-                    const Icon(
-                      Icons.shopping_cart_outlined,
-                      color: Colors.white,
-                      size: 18,
+                    Text(
+                      'EGP $price',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: AppColors.textColor1,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     const SizedBox(width: 5),
                     Text(
-                      S.of(context).addToCart,
+                      discount,
                       style: const TextStyle(
                         fontSize: 14,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
+                        color: AppColors.greyColor,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.lineThrough,
+                        decorationColor: AppColors.greyColor,
+                        decorationThickness: 2.0,
+                      ),
+                    ),
+                    const SizedBox(width: 5),
+                    Text(
+                      sale,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: AppColors.greenColor,
                       ),
                     ),
                   ],
                 ),
+              ],
+            ),
+            const SizedBox(height: 5),
+            Container(
+              height: height * 0.03,
+              width: width * 0.5,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: AppColors.primaryColor,
               ),
-            ],
-          ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.white,
+                    size: 18,
+                  ),
+                  const SizedBox(width: 5),
+                  Text(
+                    S.of(context).addToCart,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -159,14 +166,16 @@ class CategoriesList extends StatelessWidget {
                 imageAsset: items[index].images[0]!,
                 title: items[index].title,
                 price: items[index].price.toString(),
-                sale: items[index].price.toString(),
-                discount: items[index].price.toString(),
+                sale: items[index].priceAfterDiscount.toString(),
+                discount: items[index].discount.toString(),
               );
             },
           );
         }
         return const Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ),
         );
       },
     );

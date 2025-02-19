@@ -970,10 +970,10 @@ class S {
     );
   }
 
-  /// `ahmedxasaad@gmail.com`
+  /// `ahmedxasaad@gmail.com & haazemsaidd@gmail.com`
   String get myEmail {
     return Intl.message(
-      'ahmedxasaad@gmail.com',
+      'ahmedxasaad@gmail.com & haazemsaidd@gmail.com',
       name: 'myEmail',
       desc: '',
       args: [],

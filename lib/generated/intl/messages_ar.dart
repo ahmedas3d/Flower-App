@@ -195,7 +195,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lowesPrice": MessageLookupByLibrary.simpleMessage("السعر الاقل"),
     "male": MessageLookupByLibrary.simpleMessage("ذكر"),
-    "myEmail": MessageLookupByLibrary.simpleMessage("ahmedxasaad@gmail.com"),
+    "myEmail": MessageLookupByLibrary.simpleMessage(
+      "ahmedxasaad@gmail.com & haazemsaidd@gmail.com",
+    ),
     "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "newOffer": MessageLookupByLibrary.simpleMessage("عرض جديد 😍"),
