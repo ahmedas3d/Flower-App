@@ -9,6 +9,7 @@ part 'products_state.dart';
 class ProductsCubit extends Cubit<ProductsState> {
   ProductsCubit() : super(ProductsInitial());
   final GetAllProducts _getAllProducts = GetAllProducts();
+  String selectedCategory = 'All';
 
   Future<void> getAllProducts() async {
     emit(ProductsLoading());
@@ -16,7 +17,10 @@ class ProductsCubit extends Cubit<ProductsState> {
       final products = await _getAllProducts.getAllProducts();
       List<ProductModel> productsList = [];
       for (var product in products.data['products']) {
-        productsList.add(ProductModel.fromJson(product));
+        if (product['category'] == selectedCategory ||
+            selectedCategory == 'All') {
+          productsList.add(ProductModel.fromJson(product));
+        }
       }
       emit(ProductsLoaded(products: productsList));
     } catch (e) {

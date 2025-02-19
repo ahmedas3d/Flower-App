@@ -1,5 +1,8 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider_base_tools/provider_base_tools.dart';
+
+import '../../viewmodel/products_cubit.dart';
 
 class AllCategories extends StatefulWidget {
   const AllCategories({super.key});
@@ -11,12 +14,16 @@ class AllCategories extends StatefulWidget {
 class _AllCategoriesState extends State<AllCategories> {
   int selectedIndex = 0;
 
-  final List<String> categories = [
-    'All',
-    'Flowers',
-    'Gifts',
-    'Cards',
-    'Jewelry',
+  final List<Map<String, String>> categories = [
+    {'All': 'All'},
+    {'gits': '673c472f1159920171827c8a'},
+    {'Flowers': '673c46fd1159920171827c85'},
+    {'cards': '673c47441159920171827c8d'},
+    {'Jewellery': '673c47591159920171827c90'},
+    {'perfumes': '673c47751159920171827c93'},
+    {'watches': '673c47881159920171827c96'},
+    {'chocolate': '673c479e1159920171827c99'},
+    {'Cakes': '673c4a551159920171827c9e'},
   ];
 
   @override
@@ -32,7 +39,15 @@ class _AllCategoriesState extends State<AllCategories> {
             onTap: () {
               setState(() {
                 selectedIndex = index;
+                context.read<ProductsCubit>().selectedCategory =
+                    categories[index].values.first;
+
+                context.read<ProductsCubit>().getAllProducts();
+
+                //chnage the list of products based on the selected id-> category
               });
+
+              print(context.read<ProductsCubit>().selectedCategory);
             },
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -40,7 +55,7 @@ class _AllCategoriesState extends State<AllCategories> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: Text(
-                    categories[index],
+                    categories[index].keys.first,
                     style: TextStyle(
                       fontSize: 16,
                       color: isActive ? AppColors.primaryColor : Colors.grey,

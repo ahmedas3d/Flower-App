@@ -152,6 +152,11 @@ class CategoriesList extends StatelessWidget {
         }
         if (state is ProductsLoaded) {
           final items = state.products;
+          if (context.read<ProductsCubit>().selectedCategory != 'All') {
+            items.removeWhere((element) =>
+                element.category !=
+                context.read<ProductsCubit>().selectedCategory);
+          }
           return GridView.builder(
             padding: const EdgeInsets.only(bottom: 20),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
