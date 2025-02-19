@@ -1,31 +1,33 @@
 import 'package:flower_app/core/constants.dart';
 import 'package:flower_app/core/routes/routes.dart';
 import 'package:flower_app/features/Categories/viewmodel/products_cubit.dart';
+import 'package:flower_app/features/Home/data/models/product/get_all_product_model.dart';
 import 'package:flower_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ListAllCategories extends StatelessWidget {
-  const ListAllCategories({
+import '../../../../core/utils/product_trager/product_trager_cubit.dart';
+
+class ListAllCategories extends StatefulWidget {
+  ListAllCategories({
     super.key,
-    required this.imageAsset,
-    required this.title,
-    required this.price,
-    required this.sale,
-    required this.discount,
+    required this.product,
   });
+  final ProductModel product;
 
-  final String imageAsset;
-  final String title;
-  final String price;
-  final String sale;
-  final String discount;
+  @override
+  State<ListAllCategories> createState() => _ListAllCategoriesState();
+}
 
+class _ListAllCategoriesState extends State<ListAllCategories> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final width = size.width;
     final height = size.height;
+    bool isexite = context.read<ProductTragerCubit>().productTrager.contains(
+          widget.product,
+        );
 
     return Container(
       height: height * 0.95,
@@ -49,7 +51,7 @@ class ListAllCategories extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.network(
-                    imageAsset,
+                    widget.product.images[0],
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -60,7 +62,7 @@ class ListAllCategories extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  widget.product.title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
@@ -72,7 +74,7 @@ class ListAllCategories extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'EGP $price',
+                      'EGP ${widget.product.price}',
                       style: const TextStyle(
                         fontSize: 14,
                         color: AppColors.textColor1,
@@ -81,7 +83,7 @@ class ListAllCategories extends StatelessWidget {
                     ),
                     const SizedBox(width: 5),
                     Text(
-                      discount,
+                      'EGP ${widget.product.priceAfterDiscount}',
                       style: const TextStyle(
                         fontSize: 14,
                         color: AppColors.greyColor,
@@ -93,7 +95,7 @@ class ListAllCategories extends StatelessWidget {
                     ),
                     const SizedBox(width: 5),
                     Text(
-                      sale,
+                      '${widget.product.discount}%',
                       style: const TextStyle(
                         fontSize: 12,
                         color: AppColors.greenColor,
@@ -104,31 +106,56 @@ class ListAllCategories extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 5),
-            Container(
-              height: height * 0.03,
-              width: width * 0.5,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: AppColors.primaryColor,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
-                    Icons.shopping_cart_outlined,
-                    color: Colors.white,
-                    size: 18,
-                  ),
-                  const SizedBox(width: 5),
-                  Text(
-                    S.of(context).addToCart,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
+            GestureDetector(
+              onTap: () {
+                if (isexite) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Product added to cart before'),
+                      duration: Duration(seconds: 1),
                     ),
+                  );
+                  return;
+                }
+
+                context
+                    .read<ProductTragerCubit>()
+                    .productTrager
+                    .add(widget.product);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Product added to cart'),
+                    duration: Duration(seconds: 1),
                   ),
-                ],
+                );
+                setState(() {});
+              },
+              child: Container(
+                height: height * 0.03,
+                width: width * 0.5,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: isexite ? AppColors.greyColor : AppColors.primaryColor,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.shopping_cart_outlined,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                    const SizedBox(width: 5),
+                    Text(
+                      S.of(context).addToCart,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -168,11 +195,7 @@ class CategoriesList extends StatelessWidget {
             itemCount: items.length,
             itemBuilder: (context, index) {
               return ListAllCategories(
-                imageAsset: items[index].images[0]!,
-                title: items[index].title,
-                price: items[index].price.toString(),
-                sale: items[index].priceAfterDiscount.toString(),
-                discount: items[index].discount.toString(),
+                product: items[index],
               );
             },
           );
